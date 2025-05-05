@@ -36,6 +36,9 @@ See u there ;)
 - meshinfo
   - [https://meshinfo.nyme.sh](https://meshinfo.nyme.sh)
   - source: [https://github.com/MeshAddicts/meshinfo](https://github.com/MeshAddicts/meshinfo)
+- meshview
+  - [https://meshview.nyme.sh](https://meshview.nyme.sh)
+  - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview) 
 - hops
   - [https://w2asm.com/hops/](https://w2asm.com/hops/)
   - source: [https://github.com/morria/hops](https://github.com/morria/hops)
