@@ -20,8 +20,8 @@ See u there ;)
   - `4` or `5` if running `CLIENT_MUTE` and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away!
   - This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running `7` hops.
 
-- **OK to  MQTT** please set to **false** | Radio Config > LoRa > OK to MQTT
-  - Default is false. When set to true, this configuration indicates that the user approves their packets to be uplinked to MQTT brokers. 
+- **OK to  MQTT** | Radio Config > LoRa > OK to MQTT
+  - Default is false. When set to true, this configuration indicates that the user approves their packets to be uplinked to MQTT brokers, which will allow your node to be seen on the mesh stats and map. 
   - If set to false, nodes receiving your packets are requested not to forward packets to MQTT.
 
 - **Rebroadcast Mode** to **CORE_PORTNUMS_ONLY** | Radio Config > Device > Rebroadcast Mode
