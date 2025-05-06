@@ -32,7 +32,7 @@ See u there ;)
 ## nyme.sh Stats & Information
 - mesh-metrics
   - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
-  - source: [https://github.com/cordelster/mesh-metrics](https://github.com/cordelster/mesh-metrics)
+  - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
 - meshinfo
   - [https://meshinfo.nyme.sh](https://meshinfo.nyme.sh)
   - source: [https://github.com/MeshAddicts/meshinfo](https://github.com/MeshAddicts/meshinfo)
