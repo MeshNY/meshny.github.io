@@ -30,6 +30,8 @@ See u there ;)
   - Should help lower high channel utilization. 
 
 ## nyme.sh Stats & Information
+Note: All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
+
 - mesh-metrics
   - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
   - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
@@ -38,7 +40,17 @@ See u there ;)
   - source: [https://github.com/MeshAddicts/meshinfo](https://github.com/MeshAddicts/meshinfo)
 - meshview
   - [https://meshview.nyme.sh](https://meshview.nyme.sh)
-  - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview) 
+  - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
+- MQTT server info
+  - address: mqtt.nyme.sh
+  - port: 1883
+  - username: meshdev
+  - password: large4cats
+  - topic: msh/US/NY
+  - enable the 'uplink' option on your default channel to share info about nodes seen (only packets with the OK to MQTT flag will be sent)
+  - the 'downlink' option will not work with this server by design. We want the mesh to stay in radio
+
+## Services on the mesh
 - hops
   - [https://w2asm.com/hops/](https://w2asm.com/hops/)
   - source: [https://github.com/morria/hops](https://github.com/morria/hops)
