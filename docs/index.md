@@ -63,3 +63,4 @@ Note: All of these stats are powered by MQTT, if you wish to appear on the stats
 
 ## Meshtastic Documentation
 - [Meshtastic Documentation](https://meshtastic.org/docs/introduction/)
+- [Simple one-page documentation](https://makernexuswiki.com/wiki/Meshtastic)
