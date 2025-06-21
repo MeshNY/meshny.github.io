@@ -20,14 +20,14 @@ See u there ;)
   - `4` or `5` if running `CLIENT_MUTE` and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away!
   - This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running `7` hops.
 
-- **OK to  MQTT** -> Radio Config > LoRa > OK to MQTT
-  - Default is false. When set to true, this configuration indicates that the user approves their packets to be uplinked to MQTT brokers, which will allow your node to be seen on the mesh stats and map. 
+- **OK to MQTT** -> Radio Config > LoRa > OK to MQTT
+  - Default is false. When set to true, this configuration indicates that the user approves their packets to be uplinked to MQTT brokers, which will allow your node to be seen on the mesh stats and map.
   - If set to false, nodes receiving your packets are requested not to forward packets to MQTT.
 
 - **Rebroadcast Mode** to **CORE_PORTNUMS_ONLY** -> Radio Config > Device > Rebroadcast Mode
-  - Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. 
+  - Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc.
   - Only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
-  - Should help lower high channel utilization. 
+  - Should help lower high channel utilization.
 
 ## nyme.sh Stats & Information
 Note: All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
@@ -57,10 +57,20 @@ Note: All of these stats are powered by MQTT, if you wish to appear on the stats
 
 ## Meshtastic Official Tools
 - [https://flasher.meshtastic.org](https://flasher.meshtastic.org)
-  - meshtastic web flasher (firwmare updater)
+  - meshtastic web flasher (firmware updater)
 - [https://client.meshtastic.org/](https://client.meshtastic.org/)
   - meshtastic web client
 
 ## Meshtastic Documentation
 - [Meshtastic Documentation](https://meshtastic.org/docs/introduction/)
 - [Simple one-page documentation](https://makernexuswiki.com/wiki/Meshtastic)
+
+## Random Troubleshooting
+If you use [the `meshtastic` python-cli](https://meshtastic.org/docs/software/python/cli/) and have been seeing the following error:
+```Python
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
+
+What is happening is someone managed to use a non-UTF8 char in their device name (both long and short) so the fix is to run:
+```bash
+meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
+```
