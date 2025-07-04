@@ -14,7 +14,7 @@ If you are joining us on Medium Fast, please do the following:
   - Meshtastic App > Security > Key Backup
 - Firmware version 2.6.x or greater (flasher link below).
 - Change your preset:
-  - Meshtastic App > Settings > LoRa > 'Medium Range - Fast' or 'MEDIUM_FAST'
+  - Meshtastic App > Settings > LoRa > '`Medium Range - Fast`' or '`MEDIUM_FAST`'
 
 ## Node Setup Tips
 - [Update your firmware](https://flasher.meshtastic.org)!
@@ -79,7 +79,7 @@ Note: All of these stats are powered by MQTT, if you wish to appear on the stats
 If you use [the `meshtastic` python-cli](https://meshtastic.org/docs/software/python/cli/) and have been seeing the following error:
 ```Python
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
-
+```
 What is happening is someone managed to use a non-UTF8 char in their device name (both long and short) so the fix is to run:
 ```bash
 meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
