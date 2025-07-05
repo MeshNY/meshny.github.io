@@ -6,15 +6,23 @@ Under [_Social_ -> _connect_ -> _us - NYC metro_](https://discord.com/channels/8
 
 See u there ;)
 
-## MEDIUM FAST COORDINATED TEST - JULY 2025
-We are conducting a full on test to see if Medium Fast(45) is a better fit for NYC than Long Fast(20).  If you would like to participate, please do so by following the steps down below.  This test will begin July 1, 2025 and will end when the community decides our next step in the coming weeks.  Check here and our discord channel to stay current and help shape the future of our mesh!
+## Coordinated MediumSlow Test – July 2025
 
-If you are joining us on Medium Fast, please do the following:
-- Backup your keys.
-  - Meshtastic App > Security > Key Backup
-- Firmware version 2.6.x or greater (flasher link below).
-- Change your preset:
-  - Meshtastic App > Settings > LoRa > '`Medium Range - Fast`' or '`MEDIUM_FAST`'
+We’re running a community test to see if **MediumSlow** is a better fit for NYC than LongFast. The test will begin on **July 6, 2025** and continue for a few weeks until we decide next steps together. Check back here and in the Discord channel for updates and discussion.
+
+We previously tested **MediumFast** starting July 1, but it significantly reduced range — many nodes couldn't reach each other.
+
+### How to Join the MediumSlow Test
+
+1. **Back up your keys**  
+   `Meshtastic App > Security > Key Backup`
+
+2. **Make sure you're on firmware 2.6.x or later**  
+   *(Firmware flasher link below)*
+
+3. **Change your LoRa preset**  
+   `Meshtastic App > Settings > LoRa >` **`Medium Range - Slow`** or **`MEDIUM_SLOW`**  
+   Make sure **Frequency Slot** is set to **52** (or **0**)
 
 ## Node Setup Tips
 - [Update your firmware](https://flasher.meshtastic.org)!
