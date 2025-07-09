@@ -2,70 +2,70 @@
 
 ## Android App
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Apple Apps
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Web Client
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Meshtastic UI
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Python CLI
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Meshtastic Site Planner
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Integrations
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Meshtasticator (Simulator)
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## Linux
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
 
 ## InkHUD
 
-### configure
-### backup
-### restore
-### misc
+### Configure
+### Backup
+### Restore
+### Misc
