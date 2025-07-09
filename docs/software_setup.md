@@ -1,9 +1,9 @@
 # Node Setup Tips
-## Update your firmware
-## Set your Role to CLIENT or CLIENT_MUTE
-## Set your Max Hops to 3 or 4
-## MQTT
-## Rebroadcast Mode
+- Update your firmware
+- Set your Role to CLIENT or CLIENT_MUTE
+- Set your Max Hops to 3 or 4
+- MQTT
+- Rebroadcast Mode
 
 # Software Setup
 
