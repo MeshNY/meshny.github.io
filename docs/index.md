@@ -5,7 +5,8 @@
 
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
 Under [_Social -> _connect_ -> us - NYC metro](https://discord.com/channels/867578229534359593/1202833898376138752)
-- see u there ;)
+
+see u there ;)
 
 **Long Island Suffolk/Nassau/Queens**
   
