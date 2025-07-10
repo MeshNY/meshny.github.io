@@ -56,7 +56,7 @@ We previously tested **MediumFast** starting July 1, but it significantly reduce
 ## Node Setup Instructions
 The community has compiled a list of [Setup](https://nyme.sh/setup.html) resources to help everyone get nodes setup correctly.  Please take the time to review [this information](https://nyme.sh/setup.html).  This is also a great reference to aid in troubleshooting your software configuration.
 
-## nyme.sh Stats & Information
+## MQTT nyme.sh Stats & Information
   - mesh-metrics
     - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
     - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
