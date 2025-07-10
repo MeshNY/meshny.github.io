@@ -7,9 +7,9 @@
 Under [_Social -> _connect_ -> us - NYC metro](https://discord.com/channels/867578229534359593/1202833898376138752)
 - see u there ;)
 
-  **Long Island Suffolk/Nassau/Queens**
+**Long Island Suffolk/Nassau/Queens**
   
-  - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
 Under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens ](https://discord.com/channels/867578229534359593/1292647069256913031)
 
 **Capital Region and Hudson Valley**
