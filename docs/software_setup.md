@@ -5,10 +5,11 @@
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
 
 - Number of hops
-  - Set your `Number of hops` to 3 or 4
+  - Default: 3
+  - Set your Number of hops to 3 or 4
   - Meshtastic App > LoRa > Number of hops
   - The default of `3` should be sufficent in a healthy mesh.  "Really, 3 is fine."
-  - `4` or `5` if running `CLIENT_MUTE` and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away! Hello Catskills!
+  - `4` or `5` if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away! Hello Catskills!
   - This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running `7` hops.
 
 - MQTT
@@ -23,7 +24,7 @@
   - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
   - Meshtastic App > Device > Device Role
   - Unless you have access to 100th flr of 1WTC or Empire State Building, you shouldn't be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`.
-  - While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing # of `CLIENT`s from retranmission resulting in an over-all diminishment of the mesh's full potential.
+  - While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients`s from retranmission resulting in an over-all diminishment of the mesh's full potential.
   - Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
 
 - Rebroadcast Mode
