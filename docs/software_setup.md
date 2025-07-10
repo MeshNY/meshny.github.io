@@ -1,10 +1,11 @@
-# Start Here
 ## Documentation
 - [Getting Started](https://meshtastic.org/docs/getting-started/) - official Meshtastic.org Getting Started Guide. This guide has the following sections:
   - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
   - [Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) - There’s constant releases with bugfixes, general improvements and new features. Please update often to stable releases!
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
-
+  - [Meshtastic Documentation](https://meshtastic.org/docs/introduction/)
+  - [Simple one-page documentation](https://makernexuswiki.com/wiki/Meshtastic)
+  
 ## Node Setup Tips 
 - Number of hops
   - Default: 3
@@ -36,49 +37,49 @@
  
  > **_NOTE:_**  Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Should help lower high channel utilization.
 
-# Software Setup
+## Software Setup
 
-## Android App
+### Android App
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Apple iOS App
+### Apple iOS App
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Apple macOS App
+### Apple macOS App
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Web Client
+### Web Client
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Meshtastic UI
+### Meshtastic UI
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Python CLI
+### Python CLI
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-### Configure
-### Backup
-### Restore
-### Misc
 If you use [the `meshtastic` python-cli](https://meshtastic.org/docs/software/python/cli/) and have been seeing the following error:
 ```Python
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
@@ -88,37 +89,37 @@ What is happening is someone managed to use a non-UTF8 char in their device name
 meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
 ```
 
-## Meshtastic Site Planner
+### Meshtastic Site Planner
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Integrations
+### Integrations
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Meshtasticator (Simulator)
+### Meshtasticator (Simulator)
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## Linux
+### Linux
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
 
-## InkHUD
+### InkHUD
 
-### Configure
-### Backup
-### Restore
-### Misc
+#### Configure
+#### Backup
+#### Restore
+#### Misc
