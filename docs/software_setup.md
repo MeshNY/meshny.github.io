@@ -4,13 +4,6 @@
   - [Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) - There’s constant releases with bugfixes, general improvements and new features. Please update often to stable releases!
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
 
-- Device Role
-  - Set your `Device Role` to `CLIENT` or `CLIENT_MUTE`
-  - Meshtastic App > Device > Device Role
-  - Unless you have access to 100th flr of 1WTC or Empire State Building, you shouldn't be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`.
-  - While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing # of `CLIENT`s from retranmission resulting in an over-all diminishment of the mesh's full potential.
-  - Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
-
 - Number of hops
   - Set your `Number of hops` to 3 or 4
   - Meshtastic App > LoRa > Number of hops
@@ -19,9 +12,26 @@
   - This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running `7` hops.
 
 - MQTT
-  - more stuff
+  - Ignore MQTT
+    - Default: Enabled
+    - Meshtastic App > Lora > Ignore MQTT
+  - Ok to MQTT
+    - Default: Disabled
+    - Meshtastic App > Lora > Ok to MQTT
+- Device Role
+  - Default: Client
+  - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
+  - Meshtastic App > Device > Device Role
+  - Unless you have access to 100th flr of 1WTC or Empire State Building, you shouldn't be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`.
+  - While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing # of `CLIENT`s from retranmission resulting in an over-all diminishment of the mesh's full potential.
+  - Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
+
 - Rebroadcast Mode
-  - more stuff
+  - Default: All
+  - Meshtastic App > Device > Rebroadcast Mode
+  - Set to `Core Portnums Only' to only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
+  - Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc.
+  - Should help lower high channel utilization.
 
 # Software Setup
 
