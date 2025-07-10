@@ -13,42 +13,40 @@
   
 ## Node Setup Tips 
 - Number of hops
-  - Default: `3`
+  - Default: 3
   - Set your Number of hops to `3` or `4`
-  - Meshtastic App > LoRa > Number of hops
+  - `Meshtastic App > LoRa > Number of hops`
     
 > **_NOTE:_**  The default of `3` should be sufficient in a healthy mesh.  "Really, 3 is fine." `4` or `5` if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasting over 100 miles away! Hello Catskills! This prevents the reverse of the effect we occasionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're 100 miles away, because they're running `7` hops.
 
 - MQTT
     - Ignore MQTT
-    - Default: `Enabled`
-    - Meshtastic App > Lora > Ignore MQTT
+    - Default: Enabled
+    - `Meshtastic App > Lora > Ignore MQTT`
   - Ok to MQTT
-    - Default: `Disabled`
-    - Meshtastic App > Lora > Ok to MQTT
-- MQTT   Server Information
-    - Enabled
     - Default: Disabled
+    - `Meshtastic App > Lora > Ok to MQTT`
+- MQTT   Server Information
     - Address: mqtt.nyme.sh
     - Port: 1883
     - Username: meshdev
     - Password: large4cats
     - Topic: msh/US/NY
-    - Meshtastic App > MQTT > Enabled
+    - `Meshtastic App > MQTT > Enabled`
 
 > **_NOTE:_**  Enable the ‘Uplink Enabled’ option on your default channel to share info about nodes seen (only packets with the OK to MQTT flag will be sent)The ‘Downlink Enabled’ option will not work with this server by design. We want the mesh to stay in radio
 
 - Device Role
-  - Default: `Client`
+  - Default: Client
   - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
-  - Meshtastic App > Device > Device Role
+  - `Meshtastic App > Device > Device Role`
 
 > **_NOTE:_**  Unless you have access to 100th floor of 1 World Trade Center or Empire State Building, you should not be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`. While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients`s from retransmission resulting in an over-all diminishment of the mesh's full potential. Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
 
 - Rebroadcast Mode
-  - Default: `All`
+  - Default:  All
   - Set to `Core Portnums Only` to only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
-  - Meshtastic App > Device > Rebroadcast Mode
+  - `Meshtastic App > Device > Rebroadcast Mode`
  
  > **_NOTE:_**  Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Should help lower high channel utilization.
 

@@ -1,10 +1,39 @@
 # Welcome to nyme.sh!
 
-## Connect with us on Discord
-Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social_ -> _connect_ -> _us - NYC metro_](https://discord.com/channels/867578229534359593/1202833898376138752)
+## Connect with us
+**New York City** 
 
-See u there ;)
+- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+Under [_Social -> _connect_ -> us - NYC metro](https://discord.com/channels/867578229534359593/1202833898376138752)
+- see u there ;)
+
+  **Long Island Suffolk/Nassau/Queens**
+  
+  - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+Under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens ](https://discord.com/channels/867578229534359593/1292647069256913031)
+
+**Capital Region and Hudson Valley**
+
+- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+Under [_Social -> connect_ -> US - NY Capital Region and Hudson Valley](https://discord.com/channels/867578229534359593/1282698033657811105)
+
+**Rochester**
+
+- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+Under [_Social -> connect -> US-Rochester, NY](https://discord.com/channels/867578229534359593/1292647069256913031)
+
+**Sullivan County and the Southern Catskills**
+
+- Kaatskills Mesh https://kmesh.us/
+
+  - Join the [Hudson Hams Discord server](https://discord.gg/2J6BuhR) to get in  touch
+  
+**Westchester County**
+
+- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+Under [Social -> connect -> US-Rochester, NY](https://discord.com/channels/867578229534359593/1383046714763509910)
+
+**If you would like to be added, submit a pull request**
 
 ## Coordinated MediumSlow Test – July 2025
 
@@ -12,83 +41,33 @@ We’re running a community test to see if **MediumSlow** is a better fit for NY
 
 We previously tested **MediumFast** starting July 1, but it significantly reduced range — many nodes couldn't reach each other.
 
-### How to Join the MediumSlow Test
+## How to Join the MediumSlow Test
 
 1. **Back up your keys**  
    `Meshtastic App > Security > Key Backup`
 
 2. **Make sure you're on firmware 2.6.x or later**  
-   *(Firmware flasher link below)*
+   [Firmware flasher within 'Node Setup Instructions'](https://nyme.sh/setup.html).
 
 3. **Change your LoRa preset**  
    `Meshtastic App > Settings > LoRa >` **`Medium Range - Slow`** or **`MEDIUM_SLOW`**  
-   Make sure **Frequency Slot** is set to **52** (or **0**)
+   Make sure **Frequency Slot** is set to **52** (or **0** if your channel name is "Medium Slow")
 
-## Node Setup Tips
-- [Update your firmware](https://flasher.meshtastic.org)!
-  - There's constant releases with bugfixes, general improvements and new features.
-
-- PLEASE set your **Role** to **CLIENT** or **CLIENT_MUTE** -> Radio Config > Device > Roles
-  - Unless you have access to 100th flr of 1WTC or Empire State Building, you shouldn't be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`.
-  - While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing # of `CLIENT`s from retranmission resulting in an over-all diminishment of the mesh's full potential.
-  - Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
-
-- PLEASE **do not** set your **Max Hops** to **7** -> Radio Config > LoRa > Max Hops
-  - The default of `3` should be sufficent in a healthy mesh.  "Really, 3 is fine."
-  - `4` or `5` if running `CLIENT_MUTE` and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away!
-  - This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running `7` hops.
-
-- **OK to MQTT** -> Radio Config > LoRa > OK to MQTT
-  - Default is false. When set to true, this configuration indicates that the user approves their packets to be uplinked to MQTT brokers, which will allow your node to be seen on the mesh stats and map.
-  - If set to false, nodes receiving your packets are requested not to forward packets to MQTT.
-
-- **Rebroadcast Mode** to **CORE_PORTNUMS_ONLY** -> Radio Config > Device > Rebroadcast Mode
-  - Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc.
-  - Only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
-  - Should help lower high channel utilization.
+## Node Setup Instructions
+The community has compiled a list of [Setup](https://nyme.sh/setup.html) resources to help everyone get nodes setup correctly.  Please take the time to review [this information](https://nyme.sh/setup.html).  This is also a great reference to aid in troubleshooting your software configuration.
 
 ## nyme.sh Stats & Information
-Note: All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
-
-- mesh-metrics
-  - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
-  - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
-- meshinfo
-  - [https://meshinfo.nyme.sh](https://meshinfo.nyme.sh)
-  - source: [https://github.com/MeshAddicts/meshinfo](https://github.com/MeshAddicts/meshinfo)
+  - mesh-metrics
+    - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
+    - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
+  - meshinfo
+    - [https://meshinfo.nyme.sh](https://meshinfo.nyme.sh)
+    - source: [https://github.com/MeshAddicts/meshinfo](https://github.com/MeshAddicts/meshinfo)
 - meshview
-  - [https://meshview.nyme.sh](https://meshview.nyme.sh)
-  - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
-- MQTT server info
-  - address: mqtt.nyme.sh
-  - port: 1883
-  - username: meshdev
-  - password: large4cats
-  - topic: msh/US/NY
-  - enable the 'uplink' option on your default channel to share info about nodes seen (only packets with the OK to MQTT flag will be sent)
-  - the 'downlink' option will not work with this server by design. We want the mesh to stay in radio
-
+    - [https://meshview.nyme.sh](https://meshview.nyme.sh)
+    - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
+> **_NOTE:_**  All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
 ## Services on the mesh
 - hops
-  - [https://w2asm.com/hops/](https://w2asm.com/hops/)
-  - source: [https://github.com/morria/hops](https://github.com/morria/hops)
-
-## Meshtastic Official Tools
-- [https://flasher.meshtastic.org](https://flasher.meshtastic.org)
-  - meshtastic web flasher (firmware updater)
-- [https://client.meshtastic.org/](https://client.meshtastic.org/)
-  - meshtastic web client
-
-## Meshtastic Documentation
-- [Meshtastic Documentation](https://meshtastic.org/docs/introduction/)
-- [Simple one-page documentation](https://makernexuswiki.com/wiki/Meshtastic)
-
-## Random Troubleshooting
-If you use [the `meshtastic` python-cli](https://meshtastic.org/docs/software/python/cli/) and have been seeing the following error:
-```Python
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
-```
-What is happening is someone managed to use a non-UTF8 char in their device name (both long and short) so the fix is to run:
-```bash
-meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
-```
+    - [https://w2asm.com/hops/](https://w2asm.com/hops/)
+    - source: [https://github.com/morria/hops](https://github.com/morria/hops)
