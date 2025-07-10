@@ -10,7 +10,7 @@
 ## Node Setup Tips 
 - Number of hops
   - Default: 3
-  - Set your Number of hops to 3 or 4
+  - Set your Number of hops to `3` or `4`
   - Meshtastic App > LoRa > Number of hops
     
 > **_NOTE:_**  The default of `3` should be sufficent in a healthy mesh.  "Really, 3 is fine." 4 or 5 if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away! Hello Catskills! This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running 7 hops.
@@ -22,7 +22,7 @@
   - Ok to MQTT
     - Default: Disabled
     - Meshtastic App > Lora > Ok to MQTT
-  - Add the MQTT deets
+  - (Add the MQTT deets!)
     
 - Device Role
   - Default: Client
@@ -34,7 +34,7 @@
 - Rebroadcast Mode
   - Default: All
   - Meshtastic App > Device > Rebroadcast Mode
-  - Set to `Core Portnums Only' to only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
+  - Set to `Core Portnums Only` to only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
  
  > **_NOTE:_**  Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Should help lower high channel utilization.
 
