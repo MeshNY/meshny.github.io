@@ -1,9 +1,11 @@
-# Node Setup Tips
+# Start Here
+## Documentation
 - [Getting Started](https://meshtastic.org/docs/getting-started/) - official Meshtastic.org Getting Started Guide. This guide has the following sections:
   - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
   - [Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) - There’s constant releases with bugfixes, general improvements and new features. Please update often to stable releases!
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
 
+## Node Setup Tips 
 - Number of hops
   - Default: 3
   - Set your Number of hops to 3 or 4
