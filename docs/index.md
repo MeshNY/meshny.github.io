@@ -4,37 +4,37 @@
 **New York City** 
 
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social -> _connect_ -> us - NYC metro](https://discord.com/channels/867578229534359593/1202833898376138752)
+Under [_Social -> _connect -> us - NYC metro_](https://discord.com/channels/867578229534359593/1202833898376138752)
 
 see u there ;)
 
 **Long Island Suffolk/Nassau/Queens**
   
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens ](https://discord.com/channels/867578229534359593/1292647069256913031)
+Under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens_](https://discord.com/channels/867578229534359593/1292647069256913031)
 
 **Capital Region and Hudson Valley**
 
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social -> connect_ -> US - NY Capital Region and Hudson Valley](https://discord.com/channels/867578229534359593/1282698033657811105)
+Under [_Social -> connect -> US - NY Capital Region and Hudson Valley_](https://discord.com/channels/867578229534359593/1282698033657811105)
 
 **Rochester**
 
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social -> connect -> US-Rochester, NY](https://discord.com/channels/867578229534359593/1292647069256913031)
+Under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867578229534359593/1292647069256913031)
 
 **Sullivan County and the Southern Catskills**
 
-- Kaatskills Mesh https://kmesh.us/
+- Kaatskills Mesh [https://kmesh.us/](https://kmesh.us)
 
-  - Join the [Hudson Hams Discord server](https://discord.gg/2J6BuhR) to get in  touch
+- Join the [Hudson Hams Discord server](https://discord.gg/2J6BuhR) to get in touch
   
 **Westchester County**
 
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [Social -> connect -> US-Rochester, NY](https://discord.com/channels/867578229534359593/1383046714763509910)
+Under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867578229534359593/1383046714763509910)
 
-**If you would like to be added, submit a pull request**
+**If you would like to be added to this list, [submit a pull request](https://github.com/MeshNY/meshny.github.io/pulls)**
 
 ## Coordinated MediumSlow Test – July 2025
 
