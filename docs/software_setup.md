@@ -24,11 +24,7 @@
   - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
   - Meshtastic App > Device > Device Role
 
-> **_NOTE:_**  The note content.
-
-  - Unless you have access to 100th flr of 1WTC or Empire State Building, you shouldn't be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`.
-  - While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients`s from retranmission resulting in an over-all diminishment of the mesh's full potential.
-  - Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
+> **_NOTE:_**  Unless you have access to 100th flr of 1WTC or Empire State Building, you shouldn't be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`. While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients`s from retranmission resulting in an over-all diminishment of the mesh's full potential. Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
 
 - Rebroadcast Mode
   - Default: All
