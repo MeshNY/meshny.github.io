@@ -18,6 +18,8 @@
   - Ok to MQTT
     - Default: Disabled
     - Meshtastic App > Lora > Ok to MQTT
+  - Add the MQTT deets
+    
 - Device Role
   - Default: Client
   - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
