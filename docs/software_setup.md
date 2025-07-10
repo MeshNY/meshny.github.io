@@ -8,9 +8,8 @@
   - Default: 3
   - Set your Number of hops to 3 or 4
   - Meshtastic App > LoRa > Number of hops
-  - The default of `3` should be sufficent in a healthy mesh.  "Really, 3 is fine."
-  - `4` or `5` if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away! Hello Catskills!
-  - This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running `7` hops.
+    
+> **_NOTE:_**  The default of `3` should be sufficent in a healthy mesh.  "Really, 3 is fine." 4 or 5 if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasted over 100 miles away! Hello Catskills! This prevents the reverse of the effect we occassionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're >75miles away, because they're running 7 hops.
 
 - MQTT
   - Ignore MQTT
