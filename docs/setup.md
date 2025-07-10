@@ -33,8 +33,8 @@
 
 - Rebroadcast Mode
   - Default: All
-  - Meshtastic App > Device > Rebroadcast Mode
   - Set to `Core Portnums Only` to only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
+  - Meshtastic App > Device > Rebroadcast Mode
  
  > **_NOTE:_**  Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Should help lower high channel utilization.
 
