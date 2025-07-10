@@ -47,6 +47,14 @@
 ### Backup
 ### Restore
 ### Misc
+If you use [the `meshtastic` python-cli](https://meshtastic.org/docs/software/python/cli/) and have been seeing the following error:
+```Python
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
+```
+What is happening is someone managed to use a non-UTF8 char in their device name (both long and short) so the fix is to run:
+```bash
+meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
+```
 
 ## Meshtastic Site Planner
 
