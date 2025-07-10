@@ -3,6 +3,7 @@
   - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
   - [Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) - There’s constant releases with bugfixes, general improvements and new features. Please update often to stable releases!
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
+
 - [Meshtastic Documentation](https://meshtastic.org/docs/introduction/)
 - [Simple one-page documentation](https://makernexuswiki.com/wiki/Meshtastic)
   
