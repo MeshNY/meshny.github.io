@@ -20,7 +20,14 @@
 ### Restore
 ### Misc
 
-## Apple Apps
+## Apple iOS App
+
+### Configure
+### Backup
+### Restore
+### Misc
+
+## Apple macOS App
 
 ### Configure
 ### Backup
