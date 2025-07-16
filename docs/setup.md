@@ -54,10 +54,61 @@
 
 ### Apple iOS App
 
+In the following sections, we are setting up a Sense Cap T1000-E (v2.6.11) for use over Bluetooth with an iPhone
+
 #### Configure
+
+1. Download Meshtastic app from app store
+
+2. Connect to node in Meshtastic app.
+- Enable Bluetooth on iOS device.
+- Within the Meshtastic app, select: Bluetooth > Available Radios > select node > enter pair code 
+  - If your node does not have a screen, the PIN is '123456'
+  - If your node has a screen, look at it for the PIN
+
+3. Set LoRa Region
+- Options
+  - Set LoRa Region (LoRa Config) > Options > Region > United States (required)
+  - Use Preset: Enabled
+  - Presets: Long Range - Fast
+- Advanced
+  - Ignore MQTT: (default: Disabled)
+  - Ok to MQTT: (default: Disabled)
+
+> **_NOTE:_**  For MQTT configuration information, please visit https://nyme.sh/setup.html
+
+  - Transmit Enabled: Enabled
+  - Number of hops: 3 or 4
+  - Frequency Slot: 20
+
+> **_NOTE:_**  If you have Frequency Slot set to 0, you must name your primary channel 'LongFast'
+
+4. Scroll to bottom...Save
+
+5. Node will disconnect, reboot and reconnect.
+ 
+ Your node has a basic LongFast configuration
+
 #### Backup
+
+Private Key - backup your private key to your iCloud keychain.
+1. Within the Meshtastic app, select: Settings > Key Backup > Backup
+
+2. if successful, 'Private Key saved successfully to iCloud keychain' will appear in green.
+
 #### Restore
+
+Private Key - restore your private key from your iCloud keychain.
+1. Within the Meshtastic app, select: Settings > Key Backup > Restore
+
+2. if successful, 'Private Key restored successfully from iCloud keychain' will appear in green.
+
 #### Misc
+
+Private Key - delete your private key in your iCloud keychain.
+1. Within the Meshtastic app, select: Settings > Key Backup > Delete icon
+
+2. if successful, 'Private Key deleted successfully from iCloud keychain' will appear in green.
 
 ### Apple macOS App
 
