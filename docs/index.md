@@ -67,7 +67,9 @@ The community has compiled a list of [Setup](https://nyme.sh/setup.html) resourc
 - meshview
     - [https://meshview.nyme.sh](https://meshview.nyme.sh)
     - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
+
 > **_NOTE:_**  All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
+
 ## Services on the mesh
 - hops
     - [https://w2asm.com/hops/](https://w2asm.com/hops/)
