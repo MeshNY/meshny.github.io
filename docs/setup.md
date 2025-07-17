@@ -146,37 +146,14 @@ What is happening is someone managed to use a non-UTF8 char in their device name
 meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
 ```
 
-### Meshtastic Site Planner
+### Linux Native
 
 #### Configure
+
+]https://meshtastic.org/docs/hardware/devices/linux-native-hardware/](https://meshtastic.org/docs/hardware/devices/linux-native-hardware/) - "This page outlines the setup of Meshtastic on Linux-native devices, utilizing portduino to run the Meshtastic firmware under Linux."
+
 #### Backup
 #### Restore
 #### Misc
 
-### Integrations
-
-#### Configure
-#### Backup
-#### Restore
-#### Misc
-
-### Meshtasticator (Simulator)
-
-#### Configure
-#### Backup
-#### Restore
-#### Misc
-
-### Linux
-
-#### Configure
-#### Backup
-#### Restore
-#### Misc
-
-### InkHUD
-
-#### Configure
-#### Backup
-#### Restore
-#### Misc
+[https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts](https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts) - "This is a helper script designed to help you choose which channel (beta/alpha/daily) of meshtasticd to install for raspberry pi OS"
