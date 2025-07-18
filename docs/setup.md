@@ -74,7 +74,7 @@ The iOS and Android apps have a similar interface. The following instructions ar
 
 ### Configure Your Node
 
-Once connected, you should see the node's name in the upper right corner of the app. Tap the name to view the node's details. Scroll down and tape "Remote Administration" to access the configuration options.
+Once connected, you should see the node's name in the upper right corner of the app. Tap the name to view the node's details. Scroll down and tap "Remote Administration" to access the configuration options.
 
 1. Set LoRa Region
    - Options
