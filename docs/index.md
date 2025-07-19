@@ -1,10 +1,10 @@
 # Welcome to nyme.sh!
-
+https://discord.gg/tk5a6sSdyS
 ## Connect with us
-**New York City** 
+**New York City and other New York State regions** 
 
-- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social -> _connect -> us - NYC metro_](https://discord.com/channels/867578229534359593/1202833898376138752)
+- [nyme.sh Discord - https://discord.gg/tk5a6sSdyS](https://discord.gg/tk5a6sSdyS)
+  - (If your local mesh needs a local channel, stop by and let's chat)
 
 see u there ;)
 
