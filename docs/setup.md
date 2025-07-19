@@ -1,7 +1,7 @@
 # Documentation
 - [Getting Started](https://meshtastic.org/docs/getting-started/) - Official Meshtastic.org Getting Started Guide. This guide has the following sections:
   - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
-  - [Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) - There’s constant releases with bug-fixes, general improvements and new features. Please update often to stable releases!
+  - [Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) - There are constant releases with bug-fixes, general improvements and new features. Please update often to stable releases!
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
 
 - [Meshtastic Documentation](https://meshtastic.org/docs/introduction/)
@@ -27,18 +27,18 @@
     - Topic: msh/US/NY
     - `Meshtastic App > MQTT > Enabled`
 
-> **_NOTE:_**  Enable the ‘Uplink Enabled’ option on your default channel to share info about nodes seen (only packets with the OK to MQTT flag will be sent)The ‘Downlink Enabled’ option will not work with this server by design. We want the mesh to stay in radio
+> **_NOTE:_**  Enable the 'Uplink Enabled' option on your default channel to share info about nodes seen (only packets with the OK to MQTT flag will be sent). The 'Downlink Enabled' option will not work with this server by design. We want the mesh to stay on radio communication only.
 
 - Device Role
   - Default: Client
   - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
   - `Meshtastic App > Device > Device Role`
 
-> **_NOTE:_**  Unless you have access to 100th floor of 1 World Trade Center or Empire State Building, you should not be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`. While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients`s from retransmission resulting in an over-all diminishment of the mesh's full potential. Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
+> **_NOTE:_**  Unless you have access to 100th floor of 1 World Trade Center or Empire State Building, you should not be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`. While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients from retransmitting resulting in an over-all diminishment of the mesh's full potential. Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
 
 - Rebroadcast Mode
   - Default:  All
-  - Set to `Core Portnums Only` to only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
+  - Set to `Core Portnums Only` to only rebroadcast packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
   - `Meshtastic App > Device > Rebroadcast Mode`
  
 > **_NOTE:_**  Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Should help lower high channel utilization.
@@ -59,7 +59,7 @@ Your T1000-E may arrive with an older version of the Meshtastic firmware. Upgrad
 ### Configure
 
 1. Connect to node in Meshtastic app
-   - Enable Bluetooth on Android device.
+   - Enable Bluetooth on your Android device.
    - Within the Meshtastic app, tap the lower right corner button to connect to a node.
      - Select: Bluetooth > Available Radios > scan/select node > enter pair code
      - If your node does not have a screen, the PIN is '123456'
@@ -85,9 +85,9 @@ Your T1000-E may arrive with an older version of the Meshtastic firmware. Upgrad
 
    > **_NOTE:_**  If you have Frequency Slot set to 0, you must name your primary channel 'LongFast'
 
-4. Scroll to bottom and tap Save
+4. Scroll to the bottom and tap Save
 
-5. Node will disconnect, reboot and reconnect.
+5. The node will disconnect, reboot, and reconnect.
 
    Your node now has a basic LongFast configuration.
 
@@ -113,14 +113,14 @@ The backup .cfg files contain your node's complete configuration including chann
 
 ## Apple iOS App
 
-In the following sections, we are setting up a Sense Cap T1000-E (v2.6.11) for use over Bluetooth with an iPhone
+In the following sections, we are setting up a Sense Cap T1000-E (v2.6.11) for use over Bluetooth with an iPhone.
 
 ### Configure
 
-1. Download Meshtastic app from app store
+1. Download the Meshtastic app from the App Store
 
-2. Connect to node in Meshtastic app.
-   - Enable Bluetooth on iOS device.
+2. Connect to the node in Meshtastic app.
+   - Enable Bluetooth on your iOS device.
    - Within the Meshtastic app, select: Bluetooth > Available Radios > select node > enter pair code
      - If your node does not have a screen, the PIN is '123456'
      - If your node has a screen, look at it for the PIN
@@ -142,11 +142,11 @@ In the following sections, we are setting up a Sense Cap T1000-E (v2.6.11) for u
 
    > **_NOTE:_**  If you have Frequency Slot set to 0, you must name your primary channel 'LongFast'
 
-4. Scroll to bottom...Save
+4. Scroll to the bottom and tap Save
 
-5. Node will disconnect, reboot and reconnect.
+5. The node will disconnect, reboot, and reconnect.
 
-   Your node has a basic LongFast configuration
+   Your node now has a basic LongFast configuration.
 
 ### Backup
 
