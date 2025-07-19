@@ -49,34 +49,26 @@ These instructions have been written for connecting to a Sense Cap T1000-E (v2.6
 
 Your T1000-E may arrive with an older version of the Meshtastic firmware. Upgrading this device "over the air" is not currently supported from mobile, so you'll need a computer to do this. Please see the [Getting Started - Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) guide for more information.
 
-## Mobile App Setup (iOS & Android)
+## Android App
 
-### Install the App
+### Install
 
-#### iOS (iPhone, iPad)
-- Download the Meshtastic app from [Apple App Store](https://apps.apple.com/in/app/meshtastic/id1586432531).
-
-#### Android
 - Download the Meshtastic app from [Google Play Store](https://play.google.com/store/apps/details?id=com.geeksville.mesh&hl=en_US).
 - Optional: You can join the beta channel to test the latest features and improvements.
 
-### Connect to your Node
+### Configure
 
-The iOS and Android apps have a similar interface. The following instructions are for iOS, but are also similar for Android. You may be prompted with a Bluetooth security warning when connecting to your node for the first time. Accept it to proceed.
-
-1. Open the Meshtastic app and read the introduction screens.
-
-2. Enable Bluetooth on your device and connect to your node:
+1. Connect to node in Meshtastic app
+   - Enable Bluetooth on Android device.
    - Within the Meshtastic app, tap the lower right corner button to connect to a node.
      - Select: Bluetooth > Available Radios > scan/select node > enter pair code
      - If your node does not have a screen, the PIN is '123456'
      - If your node has a screen, look at it for the PIN
+   - You may be prompted with a Bluetooth security warning when connecting to your node for the first time. Accept it to proceed.
 
-### Configure Your Node
+2. Once connected, you should see the node's name in the upper right corner of the app. Tap the name to view the node's details. Scroll down and tap "Remote Administration" to access the configuration options.
 
-Once connected, you should see the node's name in the upper right corner of the app. Tap the name to view the node's details. Scroll down and tap "Remote Administration" to access the configuration options.
-
-1. Set LoRa Region
+3. Set LoRa Region
    - Options
      - Set LoRa Region (LoRa Config) > Options > Region > United States (required)
      - Use Preset: Enabled
@@ -93,43 +85,86 @@ Once connected, you should see the node's name in the upper right corner of the 
 
    > **_NOTE:_**  If you have Frequency Slot set to 0, you must name your primary channel 'LongFast'
 
-2. Scroll to bottom and tap Save
+4. Scroll to bottom and tap Save
 
-3. Node will disconnect, reboot and reconnect.
+5. Node will disconnect, reboot and reconnect.
 
    Your node now has a basic LongFast configuration.
 
-4. Recommended: Set your Bluetooth Password (for devices without a screen)
+6. Recommended: Set your Bluetooth Password (for devices without a screen)
    - The default password on most devices without a screen is '123456', for devices with a screen it is randomly generated and shown on the screen.
    - If you would like to change this, tap the Bluetooth button, and enter a new password.
    - You will need to reconnect with the new password after the node reboots.
 
-5. Optional: Change your node's name
+7. Optional: Change your node's name
    - In the Remote Administration screen, tap the User button, and enter a new name for your node.
 
-### Backup and Restore
+### Backup
 
-#### iOS - Backup
+While viewing your node's Remote Administration, scroll all the way to the bottom. There's a Backup button that will save a .cfg backup file to the Downloads directory on your device.
+
+### Restore
+
+While viewing your node's Remote Administration, scroll all the way to the bottom. There's a Restore button that allows you to select and restore a previously saved .cfg backup file from your device.
+
+### Misc
+
+The backup .cfg files contain your node's complete configuration including channels, settings, and keys. Store these files securely as they contain sensitive information.
+
+## Apple iOS App
+
+In the following sections, we are setting up a Sense Cap T1000-E (v2.6.11) for use over Bluetooth with an iPhone
+
+### Configure
+
+1. Download Meshtastic app from app store
+
+2. Connect to node in Meshtastic app.
+   - Enable Bluetooth on iOS device.
+   - Within the Meshtastic app, select: Bluetooth > Available Radios > select node > enter pair code
+     - If your node does not have a screen, the PIN is '123456'
+     - If your node has a screen, look at it for the PIN
+
+3. Set LoRa Region
+   - Options
+     - Set LoRa Region (LoRa Config) > Options > Region > United States (required)
+     - Use Preset: Enabled
+     - Presets: Long Range - Fast
+   - Advanced
+     - Ignore MQTT: (default: Disabled)
+     - Ok to MQTT: (default: Disabled)
+
+   > **_NOTE:_**  For MQTT configuration information, please visit https://nyme.sh/setup.html
+
+     - Transmit Enabled: Enabled
+     - Number of hops: 3 or 4
+     - Frequency Slot: 20
+
+   > **_NOTE:_**  If you have Frequency Slot set to 0, you must name your primary channel 'LongFast'
+
+4. Scroll to bottom...Save
+
+5. Node will disconnect, reboot and reconnect.
+
+   Your node has a basic LongFast configuration
+
+### Backup
 
 Private Key - backup your private key to your iCloud keychain.
 1. Within the Meshtastic app, select: Settings > Key Backup > Backup
 2. If successful, 'Private Key saved successfully to iCloud keychain' will appear in green.
 
-#### iOS - Restore
+### Restore
 
 Private Key - restore your private key from your iCloud keychain.
 1. Within the Meshtastic app, select: Settings > Key Backup > Restore
 2. If successful, 'Private Key restored successfully from iCloud keychain' will appear in green.
 
-#### iOS - Delete Backup
+### Misc
 
 Private Key - delete your private key in your iCloud keychain.
 1. Within the Meshtastic app, select: Settings > Key Backup > Delete icon
 2. If successful, 'Private Key deleted successfully from iCloud keychain' will appear in green.
-
-#### Android - Backup/Restore
-
-For Android devices, backup and restore functionality may vary by app version. Check the app settings for available backup options.
 
 ## macOS Desktop App
 
