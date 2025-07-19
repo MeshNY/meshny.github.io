@@ -1,9 +1,9 @@
 # Welcome to nyme.sh!
-https://discord.gg/tk5a6sSdyS
+
 ## Connect with us
 **New York City and other New York State regions** 
 
-- [nyme.sh Discord - https://discord.gg/tk5a6sSdyS](https://discord.gg/tk5a6sSdyS)
+- nyme.sh Discord - [https://discord.gg/tk5a6sSdyS](https://discord.gg/tk5a6sSdyS)
   - (If your local mesh needs a local channel, stop by and let's chat)
 
 see u there ;)
