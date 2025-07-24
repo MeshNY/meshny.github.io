@@ -1,7 +1,7 @@
 # Welcome to nyme.sh!
 
 ## Connect with us
-**New York City and other New York State regions** 
+**New York City and other New York State regions**
 
 - nyme.sh Discord - [https://discord.gg/tk5a6sSdyS](https://discord.gg/tk5a6sSdyS)
   - (If your local mesh needs a local channel, stop by and let's chat)
@@ -9,7 +9,7 @@
 see u there ;)
 
 **Long Island Suffolk/Nassau/Queens**
-  
+
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
 Under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens_](https://discord.com/channels/867578229534359593/1292647069256913031)
 
@@ -28,31 +28,42 @@ Under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867
 - Kaatskills Mesh [https://kmesh.us/](https://kmesh.us)
 
 - Join the [Hudson Hams Discord server](https://discord.gg/2J6BuhR) to get in touch
-  
+
 **Westchester County**
 
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
-Under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867578229534359593/1383046714763509910)
+Under [_Social -> connect -> US - NY - Westchester County_](https://discord.com/channels/867578229534359593/1383046714763509910)
 
 **If you would like to be added to this list, [submit a pull request](https://github.com/MeshNY/meshny.github.io/pulls)**
 
-## Coordinated MediumSlow Test – July 2025
+## Coordinated Testing – July 2025
 
-We’re running a community test to see if **MediumSlow** is a better fit for NYC than LongFast. The test will begin on **July 6, 2025** and continue for a few weeks until we decide next steps together. Check back here and in the Discord channel for updates and discussion.
+After testing **MediumFast** then **MediumSlow** we're now testing **LongFast** with a non-default frequency.
 
-We previously tested **MediumFast** starting July 1, but it significantly reduced range — many nodes couldn't reach each other.
+We ran a community test to see if **MediumFast** or **MediumSlow** would be a better fit for NYC than LongFast. The test originally began with MF on **July 1, 2025** and continued for a few weeks until we decided neither Medium preset was working as well as we had hoped in the challenging RF Environment of NYC.  While there were noticeable gains in the mesh's responsiveness from the faster transmissions times reliability remained illusive.
 
-## How to Join the MediumSlow Test
+## How to Join the Test
 
-1. **Back up your keys**  
+1. **Back up your keys**
    `Meshtastic App > Security > Key Backup`
 
-2. **Make sure you're on firmware 2.6.x or later**  
+2. **Make sure you're on firmware 2.6.x or later**
    [Firmware flasher within 'Node Setup Instructions'](https://nyme.sh/setup.html).
 
-3. **Change your LoRa preset**  
-   `Meshtastic App > Settings > LoRa >` **`Medium Range - Slow`** or **`MEDIUM_SLOW`**  
-   Make sure **Frequency Slot** is set to **52** (or **0** if your channel name is "Medium Slow")
+3. **Change your Primary channel**
+   `Meshtastic App > Settings > Channel > Primary`:
+    - Name: `nyme.sh`
+    - PSK/Key: `AQ==`
+
+4. **Change your LoRa preset**
+   `Meshtastic App > Settings > LoRa >`
+    - Presets: **`Long Range - Fast`** or **`LONG_FAST`**<br />
+   Make sure **Frequency Slot** is set to `24` (or `0` if you're on iOS/macOS though fine to explicitly set `24`)
+
+   If you use the `meshtastic` python-cli to manage your node(s) can set them all in one go:<br />
+   `meshtastic --ch-set name nyme.sh --ch-set psk default --ch-index 0 --set lora.channel_num 24`
+
+
 
 ## Node Setup Instructions
 The community has compiled a list of [Setup](https://nyme.sh/setup.html) resources to help everyone get nodes setup correctly.  Please take the time to review [this information](https://nyme.sh/setup.html).  This is also a great reference to aid in troubleshooting your software configuration.
