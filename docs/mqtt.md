@@ -1,9 +1,9 @@
 
-# dracoling's very tired guide to MQTT in the nyme.sh 
+# dracoling's quick guide to MQTT in the nyme.sh 
 
 MQTT is used by [meshview](https://meshview.nyme.sh) and our other services to collect, collate, and distribute packet information from devices all over the mesh. 
 
-On the NYme.sh MQTT services we do not enable the relaying function that many other locations have as our community has shown a strong desire to maintain the mesh via radio only. 
+In other meshes and in the original Meshtastic design MQTT is used more for relaying between remote sites. On the NYme.sh MQTT services we have disabled the relaying function as our community has shown a strong desire to maintain the mesh via radio only. 
 
 For more information feel free to read on!
 
