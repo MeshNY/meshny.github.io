@@ -40,15 +40,14 @@ Under [_Social -> connect -> US - NY - Westchester County_](https://discord.com/
 The community has compiled a list of [Setup](https://nyme.sh/setup.html) resources to help everyone get nodes setup correctly.  Please take the time to review [this information](https://nyme.sh/setup.html).  This is also a great reference to aid in troubleshooting your software configuration.
 
 ## MQTT nyme.sh Stats & Information
+  - a [guide to MQTT in the nyme.sh](https://nyme.sh/mqtt.html) 
+  - meshview
+    - [https://meshview.nyme.sh](https://meshview.nyme.sh)
+    - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
   - mesh-metrics
     - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
     - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
-  - meshinfo
-    - [https://meshinfo.nyme.sh](https://meshinfo.nyme.sh)
-    - source: [https://github.com/MeshAddicts/meshinfo](https://github.com/MeshAddicts/meshinfo)
-- meshview
-    - [https://meshview.nyme.sh](https://meshview.nyme.sh)
-    - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
+
 
 > **_NOTE:_**  All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
 
