@@ -15,6 +15,7 @@ Under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens_](https:/
 
 **Capital Region and Hudson Valley**
 
+- Upstate Mesh [https://www.upstatemesh.org/](https://www.upstatemesh.org/)
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
 Under [_Social -> connect -> US - NY Capital Region and Hudson Valley_](https://discord.com/channels/867578229534359593/1282698033657811105)
 
