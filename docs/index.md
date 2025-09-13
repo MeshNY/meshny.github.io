@@ -35,6 +35,12 @@ Under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867
 - Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
 Under [_Social -> connect -> US - NY - Westchester County_](https://discord.com/channels/867578229534359593/1383046714763509910)
 
+**Buffalo**
+
+- BuffaLoRa & SnyderMesh [https://buffalora.org](https://buffalora.org)
+- Visit us on the [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs)
+Under [_Social -> connect -> US - NY - Western_](https://discord.com/channels/867578229534359593/1214181209597280357)
+
 **If you would like to be added to this list, [submit a pull request](https://github.com/MeshNY/meshny.github.io/pulls)**
 
 ## Node Setup Instructions
