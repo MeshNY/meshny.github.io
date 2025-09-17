@@ -48,12 +48,12 @@ The community has compiled a list of [Setup](https://nyme.sh/setup.html) resourc
 
 ## MQTT nyme.sh Stats & Information
   - a [guide to MQTT in the nyme.sh](https://nyme.sh/mqtt.html) 
-  - meshview
+  - Meshview
     - [https://meshview.nyme.sh](https://meshview.nyme.sh)
     - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
-  - mesh-metrics
-    - [https://dash.nyme.sh](https://dash.nyme.sh) u: guest p: guest
-    - source: [https://github.com/tcivie/meshtastic-metrics-exporter](https://github.com/tcivie/meshtastic-metrics-exporter)
+  - Malla
+    - [https://malla.nyme.sh](https://malla.nyme.sh)
+    - source: [https://github.com/zenitraM/malla](https://github.com/zenitraM/malla)
 
 
 > **_NOTE:_**  All of these stats are powered by MQTT, if you wish to appear on the stats or maps you must enable "OK to MQTT" on your radio.
