@@ -1,0 +1,61 @@
+Small node build
+
+The initial enclosure I was using was the small black with front 4 screw cover but I opted for the swing door on this build for easier node maintenance. 
+
+All items linked below. 
+
+Some things you that will make life easier:
+
+A drill index
+
+A unibit kit aka step bit
+
+
+Machine screws - 6/32 x 3/4 inch long are in the photo below, but i think 1/2 inch long would work best. Along with the 6/32 nuts. In this build we need 7 of each. 
+
+
+The small black enclosure linked below comes with water tight connectors and breath hole in image below
+
+
+Mark the front of the enclosure for mounting the solar panel with sharpie or with the larger panel there is this sticker. 
+
+
+Mark the bottom of the enclosure for breathe hole and connector for solar wire entry. Center of the box height and space the holes equally. These are not critical dimensions. 
+
+Mark the top for antenna connection. Center / center for a clean look. 
+
+The connector i like to use has a flange that i believe make a more secure build and a better water protection. The marks need to be precise. Use step bit to make the hole. Check the connector will sit flush but still be snug. 
+
+
+Drill 4 holes with a small drill bit 7/64 is just enough for the screw. Add nut to the bottom. 
+
+
+Drill 3 holes for the solar panel mount or they amount you need for your panel and secure them with the same screws and nuts 
+
+
+
+Drill bottom 2 holes in the enclosure with step bit. Make sure you have lock nut clearance if using different enclosures. 
+
+
+I use this dual lock velcro to the back of the battery and the node as well. Helps keep everything from moving around during transport and during the build. 
+
+
+
+Insert panel wire through waterproof connector underneath 
+
+Plug in antenna connection and solar / battery connectors. Keep all wires isolated. I like the clip splices. There is a wago 2 port wago that works well. Is blue splice is an alternative. 
+
+
+
+
+
+Before you make your spices double check polarity. These plugs i ordered are reversed and a little delicate to swap pin. I confirmed panel polarity and battery polarity with tester. Check the Rak wisblock power instructions that indicates both positives are interior on the board. 
+
+Wire management is at your discretion, I like to keep it loose because im in build mode. If you want to change anything, the more zipties you have the harder it is to change things. 
+
+
+
+Screw in the antenna to the face plate and adjust. Sun hours in the winter are lower. Try to have panel facing south with a flatter angle to account for low lying sun. 
+
+
+
