@@ -2,7 +2,7 @@ nyme.sh is a group of people enthusiastic about mesh radio technology, mainly ba
 
 - Discord: [discord.nyme.sh](https://discord.nyme.sh)
 - Meshview: [meshview.nyme.sh](https://meshview.nyme.sh)
-
+- Malla: [malla.nyme.sh](https://malla.nyme.sh)
 
 
 # nyme.sh Meshtastic settings
