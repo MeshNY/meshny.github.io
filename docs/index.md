@@ -74,3 +74,7 @@ See [Setup](/setup.html) for more information.
 - hops
     - [https://w2asm.com/hops/](https://w2asm.com/hops/)
     - source: [https://github.com/morria/hops](https://github.com/morria/hops)
+
+## Resources
+- [Austin Mesh's DIY solar build BOM](https://www.austinmesh.org/devices/#solar)
+- [Signals Rising's solar-build BOM](/solar-build.html)
