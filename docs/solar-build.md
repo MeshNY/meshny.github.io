@@ -4,7 +4,7 @@ Solar Node node based on the NiceRa design — a small form-factor board using a
 
 -----
 
-- CN3791 6v regulator
+- CN3791 6V regulator
   - https://www.aliexpress.us/item/3256807169064245.html
   - Amazon.com-equivalent:
 https://www.amazon.com/Charger-Charging-Controller-Lithium-Material/dp/B0CYX6RZH3/
@@ -14,15 +14,15 @@ https://www.amazon.com/Charger-Charging-Controller-Lithium-Material/dp/B0CYX6RZH
   - Amazon.com-equivalent:
 https://www.amazon.com/dp/B0D3M6BYQT
 
-- 5.5v solar panels
+- 5.5V solar panels
   - https://www.alibaba.com/product-detail/AK-Manufacturer-Small-Size-Mini-PET_1601499045380.html
   - Amazon.com-equivalent: https://www.amazon.com/dp/B0B51HZ9D9
 
-- 915mhz fiberglass type N antennas with ipex adapters
+- 915 MHz fiberglass type N antennas with ipex adapters
   - https://www.alibaba.com/product-detail/915mhz-25CM-fiberglassantenna-with-N-female_1601114869277.html
   - Amazon.com-equivalent: https://www.amazon.com/dp/B08H8J6ZV6
 
-- ip65 enclosures of size matching solar panels
+- IP65 enclosures of size matching solar panels
   - https://www.alibaba.com/product-detail/Electric-Power-Contactor-Boxes-Casing-Customized_1601287594824.html
   - Amazon.com-equivalent: https://www.amazon.com/dp/B0DX75JBLM
 
@@ -33,7 +33,7 @@ https://www.amazon.com/dp/B0D3M6BYQT
 - DIY custom pcb design
   - https://github.com/NomDeTom/NiceRa
 
-- Heltec HT-RA62 915mhz
+- Heltec HT-RA62 915 MHz
   - https://www.aliexpress.us/item/3256808064524476.html
 
 ------
