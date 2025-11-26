@@ -40,7 +40,7 @@ for more information https://meshtastic.org/docs/configuration/radio/device/
 - **Long Name:** MyNodeNameOrWhatever (can be up to 36 bytes long)
 - **Short Name:** AB12 (can be up to 4 bytes long)
 - **Unmessagable:** Disabled (cannot Direct Message the node. Used for infrastructure nodes)
-- **Licensed Operator:** Disabled (leave disabled unless you are an Aamateur radio licensed operator)
+- **Licensed Operator:** Disabled (leave disabled unless you are an Amateur radio licensed operator)
 
 ## Device
 - **Device Role:** Client or Client_Mute
