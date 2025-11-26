@@ -34,8 +34,8 @@ A Meshtastic QR Code contains the LoRa config and channel values needed for radi
 # Device Configuration
 for more information https://meshtastic.org/docs/configuration/radio/device/
 ## User
-- Long Name: PizzaDeliveryDude (can be up to 36 bytes long)
-- Short Name: PDD0 (can be up to 4 bytes long)
+- Long Name: MyNodeNameOrWhatever (can be up to 36 bytes long)
+- Short Name: AB12 (can be up to 4 bytes long)
 - Unmessagable: Disabled (cannot Direct Message the node. Used for infrastructure nodes)
 - Licensed Operator: Disabled (leave disabled unless you are an Aamateur radio licensed operator)
 ## Bluetooth
