@@ -12,7 +12,7 @@
 - [https://client.meshtastic.org/](https://client.meshtastic.org/) - Meshtastic web client
 
 # Basic Node Configuration
-https://nyme.sh/node_configuration.html
+Visit this page to make sure you have all of the settings correct to chat with the locals https://nyme.sh/node_configuration.html
   
 # Node Setup Tips 
 (will be rolled into Basic Node Configuration)
