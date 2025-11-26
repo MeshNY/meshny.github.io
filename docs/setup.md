@@ -10,8 +10,12 @@
 # Meshtastic Official Tools
 - [https://flasher.meshtastic.org](https://flasher.meshtastic.org) - Meshtastic web flasher (firmware updater)
 - [https://client.meshtastic.org/](https://client.meshtastic.org/) - Meshtastic web client
+
+# Basic Node Configuration
+https://nyme.sh/node_configuration.html
   
 # Node Setup Tips 
+(will be rolled into Basic Node Configuration)
 - Number of hops
   - Default: 3
   - Set your Number of hops to `3` or `4`
