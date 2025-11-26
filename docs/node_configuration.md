@@ -18,7 +18,7 @@ for more information https://meshtastic.org/docs/configuration/radio/lora/
 > **_NOTE:_**  The default of `3` should be sufficient in a healthy mesh.  "Really, 3 is fine." `4` or `5` if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasting over 100 miles away! Hello Catskills! This prevents the reverse of the effect we occasionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're 100 miles away, because they're running `7` hops.
 
 ## Channels
-for more innformation https://meshtastic.org/docs/configuration/radio/channels/
+for more information https://meshtastic.org/docs/configuration/radio/channels/
 
 You need at least one primary Channel, it should be configured as follows:
 - **Name:** Long_Fast (this will set the correct Frequency Slot if set to 0)
