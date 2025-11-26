@@ -12,30 +12,7 @@
 - [https://client.meshtastic.org/](https://client.meshtastic.org/) - Meshtastic web client
 
 # Basic Node Configuration
-Visit this page to make sure you have all of the settings correct to chat with the locals https://nyme.sh/node_configuration.html
-  
-# Node Setup Tips 
-(will be rolled into Basic Node Configuration)
-- Number of hops
-  - Default: 3
-  - Set your Number of hops to `3` or `4`
-  - `Meshtastic App > LoRa > Number of hops`
-    
-> **_NOTE:_**  The default of `3` should be sufficient in a healthy mesh.  "Really, 3 is fine." `4` or `5` if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasting over 100 miles away! Hello Catskills! This prevents the reverse of the effect we occasionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're 100 miles away, because they're running `7` hops.
-
-- Device Role
-  - Default: Client
-  - Set your Device Role to `CLIENT` or `CLIENT_MUTE`
-  - `Meshtastic App > Device > Device Role`
-
-> **_NOTE:_**  Unless you have access to 100th floor of 1 World Trade Center or Empire State Building, you should not be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`. While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients from retransmitting resulting in an over-all diminishment of the mesh's full potential. Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
-
-- Rebroadcast Mode
-  - Default:  All
-  - Set to `Core Portnums Only` to only rebroadcast packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.
-  - `Meshtastic App > Device > Rebroadcast Mode`
- 
-> **_NOTE:_**  Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Should help lower high channel utilization.
+Visit this page to make sure you have all of the basic configuration settings correct to chat with the locals https://nyme.sh/node_configuration.html
 
 # Software Setup
 
