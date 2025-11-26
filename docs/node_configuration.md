@@ -1,5 +1,7 @@
 # nyme.sh basic node configuration with nyme.sh MQTT
 
+The human user will have to use an application (Android, iOS, Linux, etc) to connect and configure a hardware node.  Below are the basic settings the node will need to communicate with other nodes.
+
 # Radio Configuration
 ## LoRa
 for more information https://meshtastic.org/docs/configuration/radio/lora/
@@ -15,7 +17,8 @@ for more information https://meshtastic.org/docs/configuration/radio/lora/
 
 ## Channels
 for more innformation https://meshtastic.org/docs/configuration/radio/channels/
-To connect with your fellow New Yorkers, you need at least one Channel. It should be configured as follows:
+
+You need at least one primary Channel, it should be configured as follows:
 - Name: Long_Fast (this will set the correct Frequency Slot if set to 0)
 - Key Size: Default
 - Key: AQ==
