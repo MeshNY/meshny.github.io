@@ -4,7 +4,7 @@ The human user will have to use an application (Android, iOS, Linux, etc) to con
 
 # Radio Configuration
 ## LoRa
-for more information https://meshtastic.org/docs/configuration/radio/lora/
+for more information [https://meshtastic.org/docs/configuration/radio/lora/](https://meshtastic.org/docs/configuration/radio/lora/)
 - **Region:** United States
 - **Use Preset:** Enabled
 - **Presets:** Long Range - Fast (conversationally known as LongFast, LF20 or LF)
@@ -18,7 +18,7 @@ for more information https://meshtastic.org/docs/configuration/radio/lora/
 > **_NOTE:_**  The default of `3` should be sufficient in a healthy mesh.  "Really, 3 is fine." `4` or `5` if running CLIENT_MUTE and/or having particular difficulties, but with such a small and densely packed geographic area you are quite likely to have those higher hopped packets leave the Metro area and end up rebroadcasting over 100 miles away! Hello Catskills! This prevents the reverse of the effect we occasionally encounter where Meshes in North PA or CT will show up on the Mesh in NYC, even though they're 100 miles away, because they're running `7` hops.
 
 ## Channels
-for more information https://meshtastic.org/docs/configuration/radio/channels/
+for more information [https://meshtastic.org/docs/configuration/radio/channels/](https://meshtastic.org/docs/configuration/radio/channels/)
 
 You need at least one primary Channel, it should be configured as follows:
 - **Name:** Long_Fast (this will set the correct Frequency Slot if set to 0)
@@ -30,11 +30,11 @@ You need at least one primary Channel, it should be configured as follows:
 - **MQTT Downlink Disabled:** Disabled (the nyme.sh MQTT server has this disabled anyway)
 
 ## Security
-for more information https://meshtastic.org/docs/configuration/radio/security/
+for more information [https://meshtastic.org/docs/configuration/radio/security/](https://meshtastic.org/docs/configuration/radio/security/)
 - **Key Backup:** highly recommended to backup your private key
 
 # Device Configuration
-for more information https://meshtastic.org/docs/configuration/radio/device/
+for more information [https://meshtastic.org/docs/configuration/radio/device/](https://meshtastic.org/docs/configuration/radio/device/)
 
 ## User
 - **Long Name:** MyNodeNameOrWhatever (can be up to 36 bytes long)
@@ -51,10 +51,10 @@ for more information https://meshtastic.org/docs/configuration/radio/device/
 > **_NOTE:_**  Unless you have access to 100th floor of 1 World Trade Center or Empire State Building, you should not be using an "infrastructure" role such as `REPEATER`, `ROUTER`, `ROUTER_CLIENT` or `ROUTER_LATE`. While you may have the most honest and pure of intentions in choosing such a role the reality is they will pre-empt the large and ever-increasing number of clients from retransmitting resulting in an over-all diminishment of the mesh's full potential. Please, don't be that person and read up on the [importance of choosing the right device role](https://meshtastic.org/blog/choosing-the-right-device-role/).
 
 # Module Configuration
-for more information https://meshtastic.org/docs/configuration/module/
+for more information [https://meshtastic.org/docs/configuration/module/](https://meshtastic.org/docs/configuration/module/)
 
 ## MQTT
-- https://nyme.sh/mqtt.html - dracoling's quick guide to MQTT in the nyme.sh
+- [dracoling's quick guide to MQTT in the nyme.sh](https://nyme.sh/mqtt.html)
 
 
 # nyme.sh advanced node configuration
