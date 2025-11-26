@@ -31,18 +31,15 @@ You need at least one primary Channel, it should be configured as follows:
 for more information https://meshtastic.org/docs/configuration/radio/security/
 - Key Backup: highly recommended to backup your private key
 
-## Share QR Code
-A Meshtastic QR Code contains the LoRa config and channel values needed for radios to communicate.  You can share a complete channelconfiguration using the Replace Channels option, if you choose Add Channels your shared channels will be added to the channels on the receiving  radio.
-
 # Device Configuration
 for more information https://meshtastic.org/docs/configuration/radio/device/
+
 ## User
 - Long Name: MyNodeNameOrWhatever (can be up to 36 bytes long)
 - Short Name: AB12 (can be up to 4 bytes long)
 - Unmessagable: Disabled (cannot Direct Message the node. Used for infrastructure nodes)
 - Licensed Operator: Disabled (leave disabled unless you are an Aamateur radio licensed operator)
-## Bluetooth
-- Enabled: Enabled (probably)
+
 ## Device
 - Device Role: Client or Client_Mute
 - Rebroadcast Mode: Core Portnums Only (Ignores packets from non-standard portnums such as: TAK, RangeTest, PaxCounter, etc. Only rebroadcasts packets with standard portnums: NodeInfo, Text, Position, Telemetry, and Routing.)
@@ -51,8 +48,10 @@ for more information https://meshtastic.org/docs/configuration/radio/device/
 
 # Module Configuration
 for more information https://meshtastic.org/docs/configuration/module/
+
 ## MQTT
 - https://nyme.sh/mqtt.html - dracoling's quick guide to MQTT in the nyme.sh
+
 
 # nyme.sh advanced node configuration
 ## Position
