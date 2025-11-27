@@ -61,4 +61,6 @@ for more information [https://meshtastic.org/docs/configuration/module/](https:/
 
 # nyme.sh advanced node configuration
 ## Position
+- somebody fill me in one day please :)
 ## Range Test
+- somebody fill me in one day please :)
