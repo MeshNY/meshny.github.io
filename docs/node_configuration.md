@@ -1,3 +1,5 @@
+Quick Site Navigation [Home](/index.html) [Setup](/setup.html) [Basic Node Settings](/node_configuration.html) [Build Resources](/build_resources.html)
+
 # nyme.sh basic node configuration with nyme.sh MQTT
 
 The human user will have to use an application (Android, iOS, Linux, etc) to connect and configure a hardware node.  Below are the basic settings the node will need to communicate with other nodes.
