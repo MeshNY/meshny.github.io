@@ -1,3 +1,5 @@
+Quick Site Navigation [Home](/index.html) [Setup](/setup.html) [Basic Node Settings](/node_configuration.html) [Build Resources](/build_resources.html)
+
 # Documentation
 - [Getting Started](https://meshtastic.org/docs/getting-started/) - Official Meshtastic.org Getting Started Guide. This guide has the following sections:
   - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
