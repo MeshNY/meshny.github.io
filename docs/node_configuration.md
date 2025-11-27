@@ -23,7 +23,7 @@ for more information [https://meshtastic.org/docs/configuration/radio/lora/](htt
 for more information [https://meshtastic.org/docs/configuration/radio/channels/](https://meshtastic.org/docs/configuration/radio/channels/)
 
 You need at least one primary Channel, it should be configured as follows:
-- **Name:** Long_Fast (this will set the correct Frequency Slot if set to 0)
+- **Name:** LongFast (this will need to be set if the Frequency Slot is `0`)
 - **Key Size:** Default
 - **Key:** AQ==
 - **Channel Role:** Primary
