@@ -55,6 +55,7 @@ Depending on what computing devices you have, pick an app to use as your primary
 - [Linux Native](https://meshtastic.org/docs/hardware/devices/linux-native-hardware/)
 - MacOS - [Apple App Store](https://apps.apple.com/in/app/meshtastic/id1586432531)
 - Official Meshtastic Web Client - [https://client.meshtastic.org](https://client.meshtastic.org)
+  - [Official Meshtastic Web Client Documentation](https://meshtastic.org/docs/software/web-client/)
 - [Python CLI](https://meshtastic.org/docs/software/python/cli/)
 
 # Connect to the mesh!
@@ -82,47 +83,6 @@ linebreak
   - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
 
   - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
-  
-# Software Setup
-
-These instructions have been written for connecting to a Sense Cap T1000-E (v2.6.11) via Bluetooth, but should be similar for other devices as well.  Please see the [Getting Started](https://meshtastic.org/docs/getting-started/) guide for more information.
-
-Your T1000-E may arrive with an older version of the Meshtastic firmware. Upgrading this device "over the air" is not currently supported from mobile, so you'll need a computer to do this. Please see the [Getting Started - Flash Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) guide for more information.
-
-## Web Client
-
-[https://client.meshtastic.org/](https://client.meshtastic.org/)
-
-#### Configure
-
-[https://meshtastic.org/docs/software/web-client/](https://meshtastic.org/docs/software/web-client/) - Official Documentation
-
-#### Backup
-
-- Let the interface remind you!
-  - There will be a pop-up in the lower right hand corner asking you to backup your keys, remind you in 7 days, or to never remind you.  Back your keys up, it takes <15 seconds.
-- Navigation > Radio Config > Security > Private Key
-  - Copy and paste into backup file of your choosing.
-- Navigation > Radio Config > Security > Public Key
-  - Copy and paste into backup file of your choosing.
-
-#### Restore
-
-- Navigation > Radio Config > Security > Private Key
-  - Copy private key from backup file and paste here.
-- Navigation > Radio Config > Security > Public Key
-  - Copy public key from backup file and paste here.
-
-#### Misc
-
-## Meshtastic UI (MUI)
-
-[https://meshtastic.org/docs/software/meshtastic-ui/](https://meshtastic.org/docs/software/meshtastic-ui/) - Meshtastic UI (MUI) is an independent user interface for Meshtastic devices, designed to provide direct interaction with the network without requiring a phone app for most basic settings.
-
-#### Configure
-#### Backup
-#### Restore
-#### Misc
 
 ## Python CLI
 
