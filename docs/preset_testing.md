@@ -2,7 +2,7 @@
 
 # nyme.sh Preset Testing Introduction
 
-In the early days of alternate preset testing, MS52, MF45 and LF24 were done.  Since then we have a website where we can formally organize communication on the mesh.
+In the early days of alternate preset testing, MS52, MF45 and LF24 were done.  Now we have a website where we can formally organize communication on the mesh.
 
 # Current Preset Test
 - **Start Date:** Fall 2025
