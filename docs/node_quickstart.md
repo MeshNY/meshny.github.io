@@ -49,7 +49,7 @@ Please update often to stable releases! Overview is as follows:
 - Select firmware
 - Flash
 
-(yes, you can install WITH CAUTION alpha firmware with the The Konami code: ↑ ↑ ↓ ↓ ← → ← → B A)
+> **_NOTE:_**  yes, you can install WITH CAUTION alpha firmware with the The Konami code: ↑ ↑ ↓ ↓ ← → ← → B A
 
 # Software
 
@@ -64,7 +64,7 @@ Depending on what computing devices you have, pick an app to use as your primary
 
 # Connect to the mesh!
 
-You have made it this far, now it is time to chat with your locals! Check out the [basic node settings for nyme.sh](https://nyme.sh/node_configuration.html) and if you have any questions, feel free to reach out on the [nyme.sh Discord](https://discord.nyme.sh).
+You have made it this far, you have hardware with current firmware, an app to connect to your node, now it is time to chat with your locals! Check out the [basic node settings for nyme.sh](https://nyme.sh/node_configuration.html) and if you have any questions, feel free to reach out on the [nyme.sh Discord](https://discord.nyme.sh).
 
 ************ old shit below here ************
 
