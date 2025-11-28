@@ -12,7 +12,7 @@ This guide will be broken into the following sections:
 - Software
   - Using an app to connect to your node
 - Connect
-  - connect to the mesh and start chatting
+  - connect to the local mesh and start chatting
 
 # Documentation
 
@@ -53,7 +53,7 @@ Please update often to stable releases! Overview is as follows:
 
 # Software
 
-Depending on what computing devices you have, pick an app to use as your primary interface to the hardware node. One thing to keep in mind is one hardware node is meant to be paired with one software app to keep a consistant node databas and message log.
+Depending on what computing devices you have, pick an app to use as your primary interface to the hardware node. One thing to keep in mind is one hardware node is meant to be paired with one software app to keep a consistant node database and message log.
 - Android - [Google Play Store](https://play.google.com/store/apps/details?id=com.geeksville.mesh&hl=en_US).
 - Apple iOS - [Apple App Store](https://apps.apple.com/us/app/meshtastic/id1586432531)
 - [Linux Native](https://meshtastic.org/docs/hardware/devices/linux-native-hardware/)
@@ -65,61 +65,3 @@ Depending on what computing devices you have, pick an app to use as your primary
 # Connect to the mesh!
 
 You have made it this far, you have hardware with current firmware, an app to connect to your node, now it is time to chat with your locals! Check out the [basic node settings for nyme.sh](https://nyme.sh/node_configuration.html) and if you have any questions, feel free to reach out on the [nyme.sh Discord](https://discord.nyme.sh).
-
-************ old shit below here ************
-
-linebreak
-
-linebreak
-
-linebreak
-
-linebreak
-
-linebreak
-
-linebreak
-
-************ old shit below here ************
-## Python CLI
-
-[https://meshtastic.org/docs/software/python/cli/](https://meshtastic.org/docs/software/python/cli/) - Offcial Documentation
-
-#### Configure
-#### Backup
-
-```bash
-meshtastic --export-config > MyNodeNameOrWhatever_config_04072025.yaml
-```
-
-#### Restore
-
-```bash
-meshtastic --configure MyNodeNameOrWhatever_config_04072025.yaml
-```
-
-#### Misc Node DB Export
-```bash
-meshtastic --nodes › MyNodeNameOrWhatever_nodedb_04072025.yaml
-```
-#### Misc UTF-8 Error
-If you use [the Python CLI](https://meshtastic.org/docs/software/python/cli/) and have seen the following error:
-```Python
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
-```
-What is happening is someone managed to use a non-UTF8 char in their device name (both long and short) so the fix is to run:
-```bash
-meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
-```
-
-## Linux Native
-
-#### Configure
-
-- [https://meshtastic.org/docs/hardware/devices/linux-native-hardware/](https://meshtastic.org/docs/hardware/devices/linux-native-hardware/) - "This page outlines the setup of Meshtastic on Linux-native devices, utilizing portduino to run the Meshtastic firmware under Linux."
-
-#### Backup
-#### Restore
-#### Misc
-
-- [https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts](https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts) - "This is a helper script designed to help you choose which channel (beta/alpha/daily) of meshtasticd to install for raspberry pi OS"
