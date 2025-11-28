@@ -1,6 +1,6 @@
 [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [myme.sh Advanced Node Settings](/node_configuration_adv.html)  [Build Resources](/build_resources.html)
 
-# nyme.sh advanced node configuration
+# nyme.sh Advanced Node Configuration
 
 ## Position
 - somebody fill me in one day please :)
