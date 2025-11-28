@@ -1,6 +1,6 @@
 [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [myme.sh Advanced Node Settings](/node_configuration_adv.html)  [Build Resources](/build_resources.html)
 
-# nyme.sh basic node configuration with MQTT
+# nyme.sh Basic Node Configuration with MQTT
 
 The human user will have to use a software application (Android, iOS, Linux, etc) to connect and configure a hardware node.  If the firmware has not been updated, please take the time to do that now. [https://flasher.meshtastic.org](https://flasher.meshtastic.org)
 
