@@ -6,7 +6,7 @@ This quickstart guide is meant to help you get started with your Meshtastic expe
 
 This guide will be broken into the following sections:
 - Documentation
-  - Official Documentation (you should really read these when you can)
+  - Official Documentation (you should really read this)
 - Hardware
   - Picking your first node
 - Software
@@ -16,14 +16,16 @@ This guide will be broken into the following sections:
 
 # Documentation
 
-There is plenty of Meshtastic documenation to read.  Listed below is offical documentation from Meshtastic
+There is plenty of Meshtastic documenation to read.  Below is offical documentation from Meshtastic
 - [https://meshtastic.org/docs/introduction/](https://meshtastic.org/docs/introduction/)
 
-Unofficial documentation listed below
+Please take the time now if you have not already done so and read through the [Official Meshtastic Getting Started Documentation](https://meshtastic.org/docs/getting-started/). It goes into detail about [Installing Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/), [Flashing Firmware](https://meshtastic.org/docs/getting-started/flashing-firmware/) and [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/).
+
+Unofficial documentation
 - [https://makernexuswiki.com/wiki/Meshtastic](https://makernexuswiki.com/wiki/Meshtastic)
 # Hardware
 
-There are plenty of hardware nodes to choose from.  Popular manufacturers in this space include, but are not limited to:
+There are plenty of hardware nodes to choose from. Nodes range from turnkey solutions (Seed Studio T1000-e for example) to DIY solar nodes with a RAK Wisblock core and a high gain antenna. Popular manufacturers in this space include, but are not limited to:
 
 - Heltec [https://heltec.org](https://heltec.org)
 - RAK Wireless [https://www.rakwireless.com](https://www.rakwireless.com)
@@ -46,6 +48,8 @@ Please update often to stable releases! Overview is as follows:
 - Select your target device
 - Select firmware
 - Flash
+
+(yes, you can install WITH CAUTION alpha firmware with the The Konami code: ↑ ↑ ↓ ↓ ← → ← → B A)
 
 # Software
 
@@ -77,13 +81,6 @@ linebreak
 linebreak
 
 ************ old shit below here ************
-
-# Documentation
-- [Getting Started](https://meshtastic.org/docs/getting-started/) - Official Meshtastic.org Getting Started Guide. This guide has the following sections:
-  - [Install Serial Drivers](https://meshtastic.org/docs/getting-started/serial-drivers/)
-
-  - [Initial Configuration](https://meshtastic.org/docs/getting-started/initial-config/)
-
 ## Python CLI
 
 [https://meshtastic.org/docs/software/python/cli/](https://meshtastic.org/docs/software/python/cli/) - Offcial Documentation
