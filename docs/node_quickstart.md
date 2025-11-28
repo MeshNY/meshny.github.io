@@ -9,6 +9,8 @@ This guide will be broken into the following sections:
   - Official Documentation (you should really read this)
 - Hardware
   - Picking your first node
+- Firmware
+  - Update your hardware to current firmware
 - Software
   - Using an app to connect to your node
 - Connect
