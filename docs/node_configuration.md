@@ -2,7 +2,9 @@ Quick Site Navigation [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quic
 
 # nyme.sh basic node configuration with MQTT
 
-The human user will have to use an application (Android, iOS, Linux, etc) to connect and configure a hardware node.  Below are the basic settings the node will need to communicate with other nodes.
+The human user will have to use a software application (Android, iOS, Linux, etc) to connect and configure a hardware node.  If the firmware has not been updated, please take the time to do that now. [https://flasher.meshtastic.org](https://flasher.meshtastic.org)
+
+Below are the basic settings the node will need to communicate with other nodes.
 
 # Radio Configuration
 ## LoRa
