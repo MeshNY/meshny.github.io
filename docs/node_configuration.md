@@ -1,8 +1,10 @@
-Quick Site Navigation [Home](/index.html)  [Setup](/setup.html)  [Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
+Quick Site Navigation [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
 
-# nyme.sh basic node configuration with nyme.sh MQTT
+# nyme.sh basic node configuration with MQTT
 
-The human user will have to use an application (Android, iOS, Linux, etc) to connect and configure a hardware node.  Below are the basic settings the node will need to communicate with other nodes.
+The human user will have to use a software application (Android, iOS, Linux, etc) to connect and configure a hardware node.  If the firmware has not been updated, please take the time to do that now. [https://flasher.meshtastic.org](https://flasher.meshtastic.org)
+
+Below are the basic settings the node will need to communicate with other nodes.
 
 # Radio Configuration
 ## LoRa
@@ -64,3 +66,44 @@ for more information [https://meshtastic.org/docs/configuration/module/](https:/
 - somebody fill me in one day please :)
 ## Range Test
 - somebody fill me in one day please :)
+
+## Python CLI
+
+[https://meshtastic.org/docs/software/python/cli/](https://meshtastic.org/docs/software/python/cli/) - Offcial Documentation
+
+#### Configure
+#### Backup
+
+```bash
+meshtastic --export-config > MyNodeNameOrWhatever_config_04072025.yaml
+```
+
+#### Restore
+
+```bash
+meshtastic --configure MyNodeNameOrWhatever_config_04072025.yaml
+```
+
+#### Misc Node DB Export
+```bash
+meshtastic --nodes › MyNodeNameOrWhatever_nodedb_04072025.yaml
+```
+#### Misc UTF-8 Error
+If you use [the Python CLI](https://meshtastic.org/docs/software/python/cli/) and have seen the following error:
+```Python
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe0 in position 8: 'utf-8' codec can't decode byte 0xe0 in position 8: unexpected end of data in field: meshtastic.protobuf.User.long_name```
+```
+What is happening is someone managed to use a non-UTF8 char in their device name (both long and short) so the fix is to run:
+```bash
+meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0'
+```
+
+## Linux Native
+
+#### Configure
+
+- [https://meshtastic.org/docs/hardware/devices/linux-native-hardware/](https://meshtastic.org/docs/hardware/devices/linux-native-hardware/) - "This page outlines the setup of Meshtastic on Linux-native devices, utilizing portduino to run the Meshtastic firmware under Linux."
+
+#### Misc
+
+- [https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts](https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts) - "This is a helper script designed to help you choose which channel (beta/alpha/daily) of meshtasticd to install for raspberry pi OS"
