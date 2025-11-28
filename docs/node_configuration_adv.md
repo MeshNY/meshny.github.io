@@ -1,3 +1,5 @@
+Quick Site Navigation [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
+
 # nyme.sh advanced node configuration
 
 ## Position
