@@ -1,4 +1,4 @@
-Quick Site Navigation [Home](/index.html)  [Setup](/setup.html)  [Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
+Quick Site Navigation [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
 
 # nyme.sh Quickstart Guide
 
