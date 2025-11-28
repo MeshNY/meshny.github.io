@@ -8,6 +8,17 @@
 ## Range Test
 - somebody fill me in one day please :)
 
+## Local Weather
+
+Would you like to send or get weather station messages over the mesh?  If so, you can add the weather channel to your channels. Have questions?  Answers on our [Discord weather channel](https://discord.com/channels/1395794339329998970/1426995670207824033).
+- **Name:** Wx
+- **Key Size:** 1 byte
+- **Key:** WQ==
+- **Channel Role:** Secondary
+- **Allow Position Requests:** Disabled
+- **MQTT Uplink Enabled:** Disabled
+- **MQTT Downlonk Enabled:** Disabled
+
 ## Python CLI
 
 [https://meshtastic.org/docs/software/python/cli/](https://meshtastic.org/docs/software/python/cli/) - Offcial Documentation
