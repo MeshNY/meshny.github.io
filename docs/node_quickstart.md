@@ -49,7 +49,7 @@ Please update often to stable releases! Overview is as follows:
 
 # Software
 
-Apps, apps and more apps!
+Depending on what computing devices you have, pick an app to use as your primary interface to the hardware node. One thing to keep in mind is one hardware node is meant to be paired with one software app to keep a consistant node databas and message log.
 - Android - [Google Play Store](https://play.google.com/store/apps/details?id=com.geeksville.mesh&hl=en_US).
 - Apple iOS - [Apple App Store](https://apps.apple.com/us/app/meshtastic/id1586432531)
 - [Linux Native](https://meshtastic.org/docs/hardware/devices/linux-native-hardware/)
