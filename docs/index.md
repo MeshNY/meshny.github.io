@@ -1,4 +1,4 @@
-Quick Site Navigation [Home](/index.html)  [Setup](/setup.html)  [Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
+Quick Site Navigation [Home](/index.html)  [nyme,sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
 
 # Welcome to the party!
 nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New York City area and nearby, but anyone with an interest is invited to join—no matter where you’re from. If you’re curious about Meshtastic, we’d love to have you be part of our community! Join us on Discord to chat with the crew.  See you there ;)
