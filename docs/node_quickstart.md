@@ -40,7 +40,7 @@ As 2025 draws to a close, the [nyme.sh MQTT stats](https://meshview.nyme.sh/stat
 To update the firmware of your node, you will need to use a Chromium based web-browser such as Google Chrome or Microsoft Edge.
 Mozilla Firefox and Apple Safari will NOT work.
 - [https://flasher.meshtastic.org](https://flasher.meshtastic.org) - Meshtastic web flasher (firmware updater)
-- [Official Flasher Documentation](https://meshtastic.org/docs/getting-started/flashing-firmware/)
+  - [Official Flasher Documentation](https://meshtastic.org/docs/getting-started/flashing-firmware/)
 
 Please update often to stable releases! Overview is as follows:
 - Select your target device
