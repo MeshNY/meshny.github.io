@@ -1,4 +1,4 @@
-Quick Site Navigation [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
+[Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [nyme.sh Advanced Node Settings](/node_configuration_adv.html)  [Build Resources](/build_resources.html)
 
 # nyme.sh Quickstart Guide
 
@@ -9,6 +9,8 @@ This guide will be broken into the following sections:
   - Official Documentation (you should really read this)
 - Hardware
   - Picking your first node
+- Firmware
+  - Update your hardware to current firmware
 - Software
   - Using an app to connect to your node
 - Connect

@@ -1,16 +1,19 @@
-Quick Site Navigation [Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [Build Resources](/build_resources.html)
+[Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [nyme.sh Advanced Node Settings](/node_configuration_adv.html)  [Build Resources](/build_resources.html)
 
 # Welcome to the party!
 nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New York City area and nearby, but anyone with an interest is invited to join—no matter where you’re from. If you’re curious about Meshtastic, we’d love to have you be part of our community! Join us on Discord to chat with the crew.  See you there ;)
 
 - Discord: [discord.nyme.sh](https://discord.nyme.sh)
 
-# nyme.sh Meshtastic settings
+# nyme.sh Current Meshtastic Settings
 
 The main nyme.sh [Meshtastic](https://meshtastic.org) network is currently operating on the `LongFast` preset, default Frequency Slot `20`.
 
 - See [Setup](/setup.html) for more complete information.
 - See [Basic Node Settings](/node_configuration.html) for nyme.sh recommended settings.
+
+# nyme.sh Preset Testing
+Check out our current alternate preset testing by visiting our [nyme.sh Preset Testing](/preset_testing.html) page.
 
 # nyme.sh Stats & Services
 
