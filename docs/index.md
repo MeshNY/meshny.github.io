@@ -9,8 +9,8 @@ nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New
 
 The main nyme.sh [Meshtastic](https://meshtastic.org) network is currently operating on the `LongFast` preset, default Frequency Slot `20`.
 
-- See [Setup](/setup.html) for more complete information.
-- See [Basic Node Settings](/node_configuration.html) for nyme.sh recommended settings.
+- See [nyme.sh Quickstart Guide](/node_quickstart.html) for a quick start guide to get chatting with the locals.
+- See [nyme.sh Basic Node Settings](/node_configuration.html) for nyme.sh mesh recommended settings.
 
 # nyme.sh Preset Testing
 Check out our current alternate preset testing by visiting our [nyme.sh Preset Testing](/preset_testing.html) page.
