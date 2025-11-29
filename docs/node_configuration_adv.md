@@ -54,6 +54,3 @@ meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0
 #### Misc
 
 - [https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts](https://github.com/chrismyers2000/MeshAdv-Mini/tree/main/Data/Misc/Installer%20Scripts) - "This is a helper script designed to help you choose which channel (beta/alpha/daily) of meshtasticd to install for raspberry pi OS"
-
-# nyme.sh Infrastructure Node Guidelines
-[nyme.sh Infrastructure Node Guidelines](/node_infrastructure.html)
