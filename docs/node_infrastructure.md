@@ -9,6 +9,7 @@ Having infrastructure nodes that are able to reliably communicate with one anoth
 - **Location, location, location!** Rooftop of the tallest building/structure in your area with clear line of sight to other infrastucture node locations. This would also include permission to place the node to begin with.
 - **Environment** This node will live outside and will need to be protected from the elements.  A proper sealed and vented enclosure to maintain normal node operation.
 - **Power** Infrastructure nodes will need to be supplied with reliable power 24/7.  Nodes of this nature commonly use solar panels and a large (for the node) sized battery.  Check the [Build Resources](/build_resources.html) for more information
+- A **Single Board Computer** including Raspberry Pi or other internet based remote admininstration for configuration and firmware updates if access is difficult.
 
 ## Software Guidelines
 
