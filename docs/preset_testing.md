@@ -6,7 +6,10 @@ Winter 2025 saw the beginnings of alternate preset testing: MS52, MF45 and LF24.
 
 # Current Preset Test
 **Start Date:** Fall 2025 
+
 **End Date:** TBD
+
+**#testing-medium-slow** [https://discord.nyme.sh](discord.nyme.sh)
 
 Entirely default MediumSlow (MS) settings:
 - **LoRa preset:** MediumSlow (BW: 250, SF 10)
