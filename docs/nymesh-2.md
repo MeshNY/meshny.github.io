@@ -20,7 +20,7 @@ MeshCore lends itself to this approach through its protocol and defaults. The ba
 
 - _It is desired to have widespread, independent, RF-only communication across the metro._ A text message-centric, cooperatively operated radio mesh is something people want to make and use.
 
-- _Replacing Meshtastic with MeshCore is not feasible or necessary at this time._ While adopting MeshCore would make certain parts of this easier, getting a critical mass to switch is much more difficult. Also, the current mesh is actually working suprisingly well for default settings. And some do not find MeshCore appealing for various reasons.
+- _Replacing Meshtastic with MeshCore is not feasible or necessary at this time._ While adopting MeshCore would make certain parts of this easier, getting a critical mass to switch is much more difficult. Also, the current mesh is actually working surprisingly well for default settings. And some do not find MeshCore appealing for various reasons.
 
 
 ### Mesh layers
@@ -33,7 +33,7 @@ MeshCore lends itself to this approach through its protocol and defaults. The ba
 
 ## Baymesh recommendations
 
-This is a summary of learnings from primarily Baymesh, probably the largest Meshtastic mesh in operation. They have switched presets twice, and actually have multiple Meshtastic and MeshCore networks in the San Franscisco Bay area. (Where unlinked, the quotes are from private Discord messages.) Other mesh groups have conveyed similar thinking.
+This is a summary of learnings from primarily Baymesh, probably the largest Meshtastic mesh in operation. They have switched presets twice, and actually have multiple Meshtastic and MeshCore networks in the San Francisco Bay area. (Where unlinked, the quotes are from private Discord messages.) Other mesh groups have conveyed similar thinking.
 
 1. **Organize and communicate:** use a reliable channel to coordinate efforts (eg Discord). Use tools to gather data and document results (Meshview/Malla). Don’t be timid, feel free to experiment—so long as it’s not hard to revert settings there is little harm in trying things out. Each mesh and even cluster of the mesh has its own considerations that needs practical experience to work best. The official guidelines are very abstract generalizations.
 
@@ -41,11 +41,11 @@ This is a summary of learnings from primarily Baymesh, probably the largest Mesh
 
 3. **Don’t be afraid of routers.** Nodes that can see a lot of nodes that can’t see each other should be ROUTER or ROUTER_LATE. Well-placed infrastructure is the only way to reliably deliver packets. (Not necessarily mountain-top or tower-only; anything that provides useful connections. The key is to monitor and pay attention, experiment.) SNR-based conditional relay maybe makes sense in an ad hoc mesh between portable nodes but is terrible for reliability in infrastructure meshes since it inherently favors poorly situated nodes.
 
-    > Any node with height , and a view … that can obviously reach things many miles away…shows up in paths with many directs… router
+    > Any node with height, and a view … that can obviously reach things many miles away…shows up in paths with many directs… router
     >
-    > the best ~10-15% of your nodes… and they’re spread out as is practical …(SNR based timers are really bad  and route things right into black holes… we gave up on client role almost entirely )
+    > the best ~10-15% of your nodes… and they’re spread out as is practical …(SNR based timers are really bad  and route things right into black holes… we gave up on client role almost entirely)
     >
-    > The meshes that failed and then went to MeshCore …. were the ones that were scolded to make every single node a Client and never use router ever.
+    > The meshes that failed and then went to MeshCore… were the ones that were scolded to make every single node a Client and never use router ever.
 
 4. **Don’t be afraid of hops.** The admonition about hop increases being exponential is driven from simulations of evenly-spaced “ideal” meshes. Real-world meshes tend to be clusters, which makes for propagation that is [less-than-linear](https://discord.com/channels/867578229534359593/1161490210165628998/1433086232421990531) to hop count.
 The recently introduced [0-hops for favorites](https://github.com/meshtastic/firmware/pull/7992) feature was devised by Baymesh specifically to get around the low hop limit. It lets them establish a reliable, frictionless backbone for packets that goes from [San Luis Obispo to Tahoe](https://meshview.bayme.sh/packet/4140053132). Packets can save their hops for the infill layer getting to and from the backbone.
@@ -74,7 +74,7 @@ The recently introduced [0-hops for favorites](https://github.com/meshtastic/fir
 The link budget calculation is for a single transmission on a link on paper. Practical SNR is impacted by collisions from meshing and other real-world sporadic interference.
 > ST is 12db worse than LF but we did not see that degradation.  We saw about half (8db) and 90% links still worked
 
-Less airtime _improves_ SNR of each transmission by reducing the amount of background noise, reduces the chance of collision, and improves reliability with redundancy for when there is a collision or other interference not just through time but through space: the each recipient gets a retry of the packet at _different times_ and from _different angles_. A useful spread of `ROUTER` and `ROUTER_LATE` ensures a receiving node gets multiple chances to hear a packet.
+Less airtime _improves_ SNR of each transmission by reducing the amount of background noise, reduces the chance of collision, and improves reliability with redundancy for when there is a collision or other interference not just through time but through space: each recipient gets a retry of the packet at _different times_ and from _different angles_. A useful spread of `ROUTER` and `ROUTER_LATE` ensures a receiving node gets multiple chances to hear a packet.
 
 Faster airtime means routers typically become additive to mesh performance rather than subtractive. Also, routers _should_ be robust with battery backup and solar etc, but it’s potentially okay if they aren’t: a well formed mesh should be able to tolerate nodes dropping offline and still route packets to their destination, providing multiple redundant paths.
 
