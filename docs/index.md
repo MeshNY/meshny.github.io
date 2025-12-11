@@ -13,9 +13,9 @@ The main nyme.sh [Meshtastic](https://meshtastic.org) network is currently opera
 - See [nyme.sh Basic Node Settings](/node_configuration.html) for nyme.sh mesh recommended settings.
 
 # nyme.sh Preset Testing
-Check out our current alternate preset testing by visiting our [nyme.sh Preset Testing](/preset_testing.html) page.
 
 # nyme.sh Stats & Services
+We are actively seeking viable alternate radio settings. Check the [preset testing](/preset-testing.html) page for the latest info.
 
 ## MQTT nyme.sh Stats & Information
   - [guide to MQTT in the nyme.sh](/mqtt.html)
