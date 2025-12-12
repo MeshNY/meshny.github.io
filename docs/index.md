@@ -5,27 +5,28 @@ nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New
 
 - Discord: [discord.nyme.sh](https://discord.nyme.sh)
 
-# nyme.sh Current Meshtastic Settings
+# Current Meshtastic Settings
 
 The main nyme.sh [Meshtastic](https://meshtastic.org) network is currently operating on the `LongFast` preset, default Frequency Slot `20`.
 
 - See [nyme.sh Quickstart Guide](/node_quickstart.html) for a quick start guide to get chatting with the locals.
 - See [nyme.sh Basic Node Settings](/node_configuration.html) for nyme.sh mesh recommended settings.
 
-# nyme.sh Preset Testing
-Check out our current alternate preset testing by visiting our [nyme.sh Preset Testing](/preset_testing.html) page.
+# Preset Testing
 
-# nyme.sh Stats & Services
+We are actively seeking viable alternate radio settings. Check the [preset testing](/preset-testing.html) page for the latest info.
 
-## MQTT nyme.sh Stats & Information
+# Stats & Services
+
+## MQTT Stats & Information
   - [guide to MQTT in the nyme.sh](/mqtt.html)
 
-## Malla nyme.sh
+## Malla
   - [https://malla.nyme.sh](https://malla.nyme.sh)
     - Alternate view of MQTT data, with detailed packet information and link analysis
     - source: [https://github.com/zenitraM/malla](https://github.com/zenitraM/malla)
 
-## Meshview nyme.sh
+## Meshview
   - [https://meshview.nyme.sh](https://meshview.nyme.sh)
     - View of MQTT-collected messages and packets, with a conversation feed, map, and network graph
     - source: [https://github.com/pablorevilla-meshtastic/meshview](https://github.com/pablorevilla-meshtastic/meshview)
