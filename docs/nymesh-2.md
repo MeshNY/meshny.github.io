@@ -1,6 +1,6 @@
 # nyme.sh 2.0
 
-There’s a crystalizing pattern for functional metro-scale meshes: __favor infrastructure with predictable relay behavior across reliable links, and minimize airtime__.
+There’s a crystallizing pattern for functional metro-scale meshes: __favor infrastructure with predictable relay behavior across reliable links, and minimize airtime__.
 
 MeshCore lends itself to this approach through its protocol and defaults. The basic recipe for implementing this with Meshtastic is to make it a lot like MeshCore through configuration. This does mean fighting some of Meshtastic’s tendencies since it is ad hoc-first, but Baymesh and PDX are proving it’s entirely possible to make an infrastructure-driven mesh using Meshtastic, enabled by recent firmware changes they’ve prompted. (A huge thank you to the folks from Baymesh and PDX meshes, and others, for their insights!)
 
