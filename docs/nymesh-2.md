@@ -2,7 +2,7 @@
 
 There’s a crystalizing pattern for functional metro-scale meshes: __favor infrastructure with predictable relay behavior across reliable links, and minimize airtime__.
 
-MeshCore lends itself to this approach through its protocol and defaults. The basic recipe for implementing this with Meshtastic is to make it a lot like MeshCore through configuration. This does mean fighting some of Meshtastic’s tendencies since it is ad hoc-first, but Baymesh is proving it’s entirely possible to make an infrastructure-driven mesh using Meshtastic, enabled by recent firmware changes they’ve prompted.
+MeshCore lends itself to this approach through its protocol and defaults. The basic recipe for implementing this with Meshtastic is to make it a lot like MeshCore through configuration. This does mean fighting some of Meshtastic’s tendencies since it is ad hoc-first, but Baymesh and PDX are proving it’s entirely possible to make an infrastructure-driven mesh using Meshtastic, enabled by recent firmware changes they’ve prompted. (A huge thank you to the folks from Baymesh and PDX meshes, and others, for their insights!)
 
 
 ## Background
@@ -25,7 +25,7 @@ MeshCore lends itself to this approach through its protocol and defaults. The ba
 
 ### Mesh layers
 
-These aren’t strict definitions, just a broad categorization that is useful to talk about nodes in generalized terms. Each actual node plays its own role in the emergent network.
+These aren’t strict definitions, just a broad categorization that is useful when talking about nodes in generalized terms. Each actual node plays its own role in the emergent network.
 
 1. **Backbone**: core infrastructure nodes in good locations that reliably link to each other and are central to the mesh graph. These can usually be heard by many more nodes than they can hear reliably.
 2. **Infill**: secondary infrastructure nodes that help lift packets up above the building clutter or push them down into areas not covered by the backbone. These also help with reliability by providing temporal or spatial redundancy of packets.
@@ -53,7 +53,7 @@ This is a summary of learnings from primarily Baymesh, probably the largest Mesh
 
     To the extent that high hop counts are a problem and create swirling tangles of propagation, it’s because there is no router to cancel all the clients that shouldn’t be passing the message, and because of a slow preset that forces nodes to wait a while for clear airtime. (MeshCore gets away with 64 hops just fine.)
 
-5. **Minimize airtime.** This is essential for reducing the chance of collision, the biggest problem for dense meshes since even a router can't overcome it. [Everybody who has heard we’re still on LongFast has been surprised.]
+5. **Minimize airtime.** This is essential for reducing the chance of collision, the biggest problem for dense meshes since even a router can't overcome it. [Everybody who has heard we’re still on LongFast has been surprised. Most metros switch well below our scale.]
     - Reduce extraneous transmissions such as telemetry, position, nodeinfo.
     - Use the fastest LoRa settings you can.
         - This is aided significantly by bandpass filters, which can give back the link budget lost by a faster preset.
@@ -86,8 +86,12 @@ An additional improvement that Baymesh hasn’t explicitly recommended but I've 
 
 For example, [this node](https://meshview.bayme.sh/node/862158404) at a key site was primarily a backup sitting in `CLIENT_MUTE`, but is currently running as a `MediumSlow` router to ease their transition to `MediumFast`.
 
-A good site is a scarce resource much more than node hardware is. Much like how telecom companies lay excess fiber in anticipation of future needs, since the trenching is the expensive part, we should consider placing extra hardware where feasible.
+A good site is a scarce resource much more than node hardware is. Much like how telecom companies lay excess fiber in anticipation of future needs, since the trenching is the expensive part, we should consider placing extra hardware where feasible. This does raise cost and needs careful management of potential interference, but those are solvable problems and having multiple devices greatly simplifies changes and experimentation.
 
+
+### Aside 2: MQTT backhaul
+
+Something else to consider, not mentioned specifically but observed, is using MQTT for key links that are currently difficult over RF. Even if the desire is RF-only to encourage a fully independent network, judicious use of MQTT can help the network grow and fill certain gaps, to be replaced by RF later. Also, there are techniques to make specific links robust and maintain the resilience aspect of the network in the case of major power or internet outages.
 
 
 ## Considerations about being off-default
@@ -106,7 +110,7 @@ A good site is a scarce resource much more than node hardware is. Much like how 
 
 ### Spectrum sweeps
 
-Use `rtl_power` with an SDR to check the 33cm band from different areas in the city to get a picture of where the clearest areas of the band are
+Use `rtl_power` with an SDR to check the 33cm band from different areas in the city to get a picture of where the clearest areas of the band are. We have dabbled with this previously—the middle of the 33cm band seems relatively clear compared to the lower portion used by LF20—but it needs a more productive effort.
 
 ### Test network
 
