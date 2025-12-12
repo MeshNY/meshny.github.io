@@ -1,0 +1,102 @@
+[Home](/index.html)  [nyme.sh Quickstart Guide](/node_quickstart.html)  [nyme.sh Basic Node Settings](/node_configuration.html)  [nyme.sh Advanced Node Settings](/node_configuration_adv.html)  [Build Resources](/build_resources.html)  [FAQs](/faq.html)
+
+
+# Glossary
+
+A list of terminology often used when discussing mesh and radio topics (US-centric):
+
+- **2m/140 band:** the band of spectrum from 144 MHz to 148 MHz, allocated to Amateur Radio Service use
+- **33cm/915 band:** the band of spectrum from 902 MHz to 928 MHz in the US, allocated primarily to unlicensed ISM use, which Meshtastic operates within
+- **70cm/440 band:** the band of spectrum from 420 to 450 MHz in the US, allocated to Amateur Radio Service use
+- **airtime:** the amount of time a transmission requires from start to finish
+- **Alfa:** a brand of antenna
+- **APRS:** Automatic Packet Reporting System, a digital packet transmission used by amateur radio operators that also functions in a mesh fashion; traditionally operates in the 2m band, but has a new LoRa variant operating in the 70cm band
+- **attenuation:** the decrease in signal strength caused by obstacles such as buildings, trees, bodies, poor connections, and so on
+- **backbone nodes:** infrastructure nodes in key locations with reliable links to each other that form the core of a regional network, typically on towers or mountains
+- **bandwidth (BW):** a continuous range of frequencies a signal occupies
+- **base (station):** a station at a fixed location, often with substantial antenna or power capability
+- **BLE:** Bluetooth Low Energy, a technology for connecting client devices like phones to mesh nodes
+- **building clutter:** the attenuation caused by the general built environment in an area
+- **callsign:** an identifier used by a station, often alphanumeric; used by the FCC to organize licensees
+- **channel:** the feature Meshtastic uses to group messages, using encryption keys; also describes labeled frequencies in general RF contexts
+- **channel utilization:** a measure of how much time a radio spends sending or receiving LoRa packets
+- **chirp:** the fundamental unit of a LoRa transmission that sweeps across frequencies in the bandwidth of the signal
+- **client:** a device and/or software used to connect with and control a node, and interact with the mesh; also a Meshtastic role that conditionally repeats packets
+- **CLIENT:** a Meshtastic role that conditionally repeats packets after ROUTERs
+- **CLIENT_BASE:** a Meshtastic role that conditionally repeats packets after ROUTERs, with additional behaviors intended for fixed nodes
+- **coding rate (CR):** the amount of redundant bits included in a LoRa transmission, increasing signal resiliency at the cost of airtime
+- **dB:** [Decibel](https://en.wikipedia.org/wiki/Decibel), a measure of signal power ratios
+- **dBi:** a measure of antenna gain in dB with respect to a dipole antenna
+- **dBi:** a measure of antenna gain in dB with respect to a theoretical isotropic radiator
+- **dBm:** a measure of power in dB with respect to milliwatts, 30 dBm equals 1 Watt
+- **digipeater:** an APRS node that repeats packets
+- **dipole:** a type of antenna with two electrical radiators that operate at opposite ends of an alternating current
+- **duty cycle:** the percentage of a given time window a radio spends transmitting, some jurisdictions limit this by law
+- **EIRP:** Effective Isotropic Radiated Power, the final power output from an antenna after combining transmitted power, feed line loss, and antenna gain
+- **feed line:** the path the signal takes from the transmitter to the antenna, often coaxial cable
+- **feed point:** the point of the antenna the feed line connects to
+- **filter:** a device used inline that reduces interference from signals on
+- **fixed node:** a node installed in specific, unmoving location
+- **flash:** the process of updating the firmware of the node
+- **flasher:** the [tool](https://flasher.meshtastic.org) used to update firmware
+- **FRS:** Family Radio Service, a channelized portion of UHF spectrum allocated for unlicensed use, “walkie talkies”
+- **gateway:** a node that uplinks packets to, or downlinks from, MQTT
+- **GMRS:** General Mobile Radio Service, a channelized portion of UHF spectrum licensed by the FCC
+- **ham:** someone with an Amateur Radio License, aka Ham Radio (_not_ an acronym or initialism)
+- **Heltec:** a manufacturer of node hardware
+- **HT:** Handheld Transceiver, a portable radio
+- **iGate:** an APRS gateway
+- **infill nodes:** infrastructure nodes that provides a second level of coverage and function to bridge street level with the backbone, typically on high rooftops
+- **ISM:** Industrial, Scientific, and Medical; describes [bands of spectrum](https://en.wikipedia.org/wiki/ISM_radio_band) dedicated to this generally unlicensed purpose
+- **LNA:** [low noise amplifier](https://en.wikipedia.org/wiki/Low-noise_amplifier), use to increase receiver input
+- **LongFast (LF):** one of the Meshtastic LoRa radio presets, sometimes combined with a frequency slot such as LF20 for the default slot
+- **LoRa:** Long Range, a [proprietary RF modulation technology](https://en.wikipedia.org/wiki/LoRa) that mesh nodes use to transmit signals to other nodes
+- **LoRaWAN:** a networking protocol on top of LoRa typically used for collecting sensor data
+- **MC:** [MeshCore](https://meshcore.co.uk)
+- **MediumFast (MF):** one of the Meshtastic LoRa radio presets
+- **MediumSlow (MS):** one of the Meshtastic LoRa radio presets
+- **mesh:** a network of radio nodes that relay messages to propagate them
+- **mobile (station):** a radio transceiver attached to or associated with a vehicle
+- **MQTT:** a [protocol](https://mqtt.org) for queuing and distributing messages; used by Meshtastic to aggregate packets over the internet
+- **MT:** [Meshtastic](https://meshtastic.org)
+- **Muzi:** a node manufacturer and parts seller
+- **narrow:** when describing LoRa radio settings, typically refers to narrow bandwidths like the default MeshCore setting of 62.5 kHz
+- **net:** a scheduled meeting of radio operators over RF, generally conducted by a designated _controller_
+- **node:** a LoRa radio and microcontroller running Meshtastic or MeshCore firmware, the physical unit of a mesh
+- **N-type connector:** a common weatherproof [RF connector](https://en.wikipedia.org/wiki/N_connector) used for larger antennas, typically intended for base stations and outdoor installations and connected to node PCBs using pigtails and coaxial cable
+- **PA:** [power amplifier](https://en.wikipedia.org/wiki/RF_power_amplifier), used to increase transmitter power output
+- **packet:** the base unit of data for Lora, each transmission consists of a complete packet that includes metadata describing how it should be routed, along with a payload
+- **PCB:** [printed circuit board](https://en.wikipedia.org/wiki/Printed_circuit_board)
+- **pigtail:** a short cable typically converting one type of connector to another, such as uFL to N-bulkhead
+- **portable (station):** a radio transceiver made to be carried by hand, like a walkie-talkie
+- **preset:** a particular set of radio parameters
+- **RAK:** a manufacturer of node components
+- **repeater:** in MeshCore, an infrastructure node role that repeats packets, typically placed in high locations; also a legacy, deprecated Meshtastic node role
+- **ROUTER:** in Meshtastic, an infrastructure node role that repeats packets before other roles, typically placed in high locations
+- **ROUTER_LATE:** in Meshtastic, an infrastructure node role that repeats packets after clients
+- **RF:** “Radio Frequency” radiation or energy, the electromagnetic radio waves created by alternating current that are the medium of the mesh
+- **RP-SMA:** A variant of SMA connector that inverts which threading has the pin and socket, originally used by manufacturers to comply with FCC rules in the early days of WiFi
+- **Rokland:** a retailer of RAK hardware and other parts
+- **RSSI:** Received Signal Strength Indicator, the power of an incoming signal typically expressed in dBm
+- **rubber duck:** a style of short, flexible, often poor antenna, typically included with node kits and consumer grade radios
+- **RX:** reception or receiver
+- **RTL-SDR:** a popular brand and model of SDR
+- **SAW:** Surface Acoustic Wave, usually referring to a type of bandpass filter that operates using this phenomenon
+- **SDR:** Software Defined Radio, a type of radio that can be controlled by computer, often used to scan different frequencies
+- **Seeed:** a manufacturer of node components
+- **ShortTurbo (ST):** one of the LoRa radio presets
+- **(frequency) slot:** a numeric label representing a specific center frequency for a Meshtastic node to use, based on dividing the ISM spectrum by a particular bandwidth, such as 20 for 906.875 MHz when using 250 kHz bandwidth
+- **SMA:** a common [type of RF connector](https://en.wikipedia.org/wiki/SMA_connector) used by smaller antennas or other components like filters, often connected to a PCB via pigtail but may be directly mounted
+- **SNR:** Signal-to-Noise ratio, the strength of the signal relative to the strength of the background noise, typically given in dB and often negative for LoRa transmissions
+- **spread factor (SF):** the amount of time used for each chirp in a LoRa transmission; higher spread factors increase resistance to noise but decrease data rate
+- **station:** a radio transmitter and/or receiver with an associated identity or callsign
+- **(V)SWR:** Voltage Standing Wave Reflection, a measure of how closely the antenna resonates to a particular frequency and consequently how efficiently it radiates energy instead of converting it to heat; 1 is the ideal value, above 2 is considered poor
+- **transceiver:** a radio capable of both transmit and receive
+- **tropospheric ducting / 🌈🦆:** a phenomenon where atmospheric conditions refract radio signals and cause them to travel much farther than usual
+- **tuning:** the process of adjusting an antenna to achieve resonance at a particular frequency
+- **TX:** transmission or transmitter
+- **U.FL/IPEX:** a type of [miniature RF connector](https://en.wikipedia.org/wiki/Hirose_U.FL) used by many node PCBs
+- **UHF:** [Ultra High Frequency](https://en.wikipedia.org/wiki/Ultra_high_frequency), the spectrum from 300 MHz to 3 GHz
+- **VHF:** [Very High Frequency](https://en.wikipedia.org/wiki/Very_high_frequency), the spectrum from 30 MHz to 300 MHz
+- **VNA:** Vector Network Analyzer, a tool to measure characteristics of antennas and other RF components
+- **whip:** a style of antenna, usually thin and flexible, popular for handheld and portable nodes
