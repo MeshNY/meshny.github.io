@@ -99,7 +99,7 @@ Something else to consider, not mentioned specifically but observed, is using MQ
 - Requires actively directing newcomers to the local settings, with beacons and instructions
   - We already are pretty good about doing this anyway, directing people to the discord
 - Cuts off connections beyond the mesh proper and requires bridging to adjacent meshes
-  - This is desirable as it avoids a large mesh being too noisy a neighbor but more deliberate linking is could be possible
+  - This is desirable as it avoids a large mesh being too noisy a neighbor but more deliberate linking could be possible
   - This is undesirable because it cuts off outlying folks who rely on uncooperative intermediates, and bridging may not be possible
 - Complicates travel since you have to change your settings
   - Less of a concern now that other locations are also switching to their own settings
