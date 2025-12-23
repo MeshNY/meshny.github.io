@@ -2,11 +2,7 @@
 
 # nyme.sh Advanced Node Configuration
 
-## Position
-- somebody fill me in one day please :)
 
-## Range Test
-- somebody fill me in one day please :)
 
 ## Local Weather
 
@@ -14,6 +10,17 @@ Would you like to send or get weather station messages over the mesh?  If so, yo
 - **Name:** Wx
 - **Key Size:** 1 byte
 - **Key:** WQ==
+- **Channel Role:** Secondary
+- **Allow Position Requests:** Disabled
+- **MQTT Uplink Enabled:** Disabled
+- **MQTT Downlonk Enabled:** Disabled
+
+## meshing-around
+
+Add this channel to interact with meshing-around bots on the mesh.  Add this channel to your existing meshing-around bot.
+- **Name:** mesh-around
+- **Key Size:** 1 byte
+- **Key:** mQ==
 - **Channel Role:** Secondary
 - **Allow Position Requests:** Disabled
 - **MQTT Uplink Enabled:** Disabled
@@ -50,6 +57,30 @@ meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0
 ```
 
 ## Linux Native
+
+#### Bluetooth Low Energy (BLE)
+[https://meshtastic.org/docs/software/python/cli/usage/#utilizing-ble-via-the-python-cli](https://meshtastic.org/docs/software/python/cli/usage/#utilizing-ble-via-the-python-cli)
+
+To pair a node via BLE, you may need to do this manually from the linux terminal
+
+```
+bluetoothctl
+```
+
+Then in the bluetoothctl prompt:
+
+```power on
+agent on
+default-agent
+scan on
+( Wait for your device to appear, note the MAC address )
+scan off
+pair <MAC_ADDRESS>
+( Enter PIN if prompted )
+trust <MAC_ADDRESS>
+( Don't connect yet, just pair and trust )
+exit
+```
 
 #### Misc
 
