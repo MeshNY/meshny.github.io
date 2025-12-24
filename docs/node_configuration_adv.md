@@ -62,23 +62,27 @@ meshtastic --remove-node '!0c3a9bb0' && meshtastic --set-ignored-node '!0c3a9bb0
 [https://meshtastic.org/docs/software/python/cli/usage/#utilizing-ble-via-the-python-cli](https://meshtastic.org/docs/software/python/cli/usage/#utilizing-ble-via-the-python-cli)
 
 To pair a node via BLE, you may need to do this manually from the linux terminal
-
 ```
 bluetoothctl
 ```
-
 Then in the bluetoothctl prompt:
-
-```power on
+```
+power on
 agent on
 default-agent
 scan on
-( Wait for your device to appear, note the MAC address )
+```
+Wait for your device to appear, note the MAC address
+```
 scan off
 pair <MAC_ADDRESS>
-( Enter PIN if prompted )
+```
+Enter PIN if prompted
+```
 trust <MAC_ADDRESS>
-( Don't connect yet, just pair and trust )
+```
+Don't connect yet, just pair and trust
+```
 exit
 ```
 
