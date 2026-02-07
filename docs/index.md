@@ -66,3 +66,7 @@ We are actively seeking viable alternate radio settings. Check the [preset testi
 
 ## New Jersey
 - Forest Edge: [forest-edge.info](https://forest-edge.info/)
+
+## Connecticut
+- CT Mesh (Statewide): [ctmesh.org](https://ctmesh.org/)
+- [CT Mesh Discord](https://discord.gg/m4F328as3K)
