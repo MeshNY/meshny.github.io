@@ -16,12 +16,11 @@ Most nodes are very low power, typically transmitting at only 150 mW. This can g
 Antennas this group has experience with and recommends:
 
 - Personal nodes:
-  - [Muzi Whip](https://muzi.works/products/whip-antenna-17cm) / aka Gizont Whip on Amazon: SMA, excellent SWR, a favorite
+  - [Muzi Whip](https://muzi.works/products/whip-antenna-17cm) / aka Gizont Whip on Amazon: SMA, excellent SWR, a favorite ([technical review](https://discord.com/channels/1395794339329998970/1395794340823040197/1462276878890172521))
   - [ZBM2 Mesh Whip V2](https://zbm2industries.com/products/v2-mesh-whip): large but durable, needs BNC adapter
 - Fixed nodes:
-  - [Alfa 5 dBi](https://muzi.works/products/alfa-outdoor-antenna): compact, great VSWR, good for lower nodes
-  - [Slnkdsco 5.8 dBi](https://www.amazon.com/Waterproof-Fiberglass-SenseCAP-EasyLinkIn-SyncroB/dp/B09N2H166D): effective for its price, good for nodes higher up
-  - [Rokland 5.8 dBi large profile](https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/5-8-dbi-n-male-omni-outdoor-915-mhz-antenna-large-profile-32-height-for-helium-rak-miner-2-nebra-indoor-bobcat): _big_ but well performing
+  - [Alfa 5 dBi](https://muzi.works/products/alfa-outdoor-antenna): compact, great VSWR, good for lower nodes ([technical review](https://discord.com/channels/1395794339329998970/1395794340823040197/1455987107917988084))
+  - [Rokland 5.8 dBi large profile](https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/5-8-dbi-n-male-omni-outdoor-915-mhz-antenna-large-profile-32-height-for-helium-rak-miner-2-nebra-indoor-bobcat): _big_ but well performing, ([technical review](https://discord.com/channels/1395794339329998970/1395794340823040197/1461036965595054230))
 
 These antennas all have good reflection loss characteristics (low VSWR) and will transmit your signal efficiently.
 
