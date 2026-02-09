@@ -21,7 +21,7 @@ None.
 - **Frequency Slot:** 22
 - **Outcome:**
 
-    This was a limited test of a few specific links, seeking to confirm we were able to continue managing key infrastructure nodes under shorter-range settings. We also sought to verify that key links could still work. The test was conducted on slot 22 since one of the nodes has a tight cavity filter and would need retuning to move elsewhere. We started on LongFast to get a baseline without congestion. As expected this performed very well. Once the all the links were in place they formed a fairly linear chain of links. Without congestion we were having fluid conversations and DMs between JC, Astoria, Brooklyn Navy Yard, Far Rockaway, UES, and Garden City LI.
+    This was a limited test of a few specific links, seeking to confirm we were able to continue managing key infrastructure nodes under shorter-range settings. We also sought to verify that key links could still work. The test was conducted on slot 22 since one of the nodes has a tight cavity filter and would need retuning to move elsewhere. We started on LongFast to get a baseline without congestion. As expected this performed very well. Once all the links were in place they formed a fairly linear chain of links. Without congestion we were having fluid conversations and DMs between JC, Astoria, Brooklyn Navy Yard, Far Rockaway, UES, and Garden City LI.
 
     The move to MediumSlow had a hiccup. Some nodes made the switch but one of the routers became unresponsive. Instead of just switching to MediumSlow as commanded, it also spontaneously moved to slot 17 and unset its region, taking itself offline. The owner was able to recover it via local connection the next morning.
 
