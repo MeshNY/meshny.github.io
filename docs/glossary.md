@@ -64,6 +64,7 @@ A list of terminology often used when discussing mesh and radio topics (US-centr
 - **net:** a scheduled meeting of radio operators over RF, generally conducted by a designated _controller_
 - **node:** a LoRa radio and microcontroller running Meshtastic or MeshCore firmware, the physical unit of a mesh
 - **N-type connector:** a common weatherproof [RF connector](https://en.wikipedia.org/wiki/N_connector) used for larger antennas, typically intended for base stations and outdoor installations and connected to node PCBs using pigtails and coaxial cable
+- **NYC Mesh:** a [mesh wifi network](https://www.nycmesh.net/) servicing much of the city, distinct from NYMesh though there is spiritual overlap
 - **PA:** [power amplifier](https://en.wikipedia.org/wiki/RF_power_amplifier), used to increase transmitter power output
 - **packet:** the base unit of data for Lora, each transmission consists of a complete packet that includes metadata describing how it should be routed, along with a payload
 - **PCB:** [printed circuit board](https://en.wikipedia.org/wiki/Printed_circuit_board)
