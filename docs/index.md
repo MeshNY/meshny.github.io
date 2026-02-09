@@ -6,7 +6,7 @@ nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New
 
 - Discord: [discord.nyme.sh](https://discord.nyme.sh)
 
-(If you’re looking for the mesh wifi network, see [NYC Mesh](https://www.nycmesh.net/).)
+(If you’re looking for the mesh WiFi network, see [NYC Mesh](https://www.nycmesh.net/).)
 
 # Current Meshtastic Settings
 
