@@ -1,4 +1,3 @@
-{% include nav.html %}
 
 # nyme.sh Advanced Node Configuration
 

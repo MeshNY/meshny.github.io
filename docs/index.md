@@ -1,4 +1,5 @@
-{% include nav.html %}
+---
+---
 
 # Welcome to the party!
 

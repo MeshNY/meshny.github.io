@@ -1,4 +1,3 @@
-{% include nav.html %}
 
 # Build Resources
 - [Austin Mesh's DIY solar build BOM](https://www.austinmesh.org/devices/#solar)

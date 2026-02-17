@@ -1,4 +1,3 @@
-{% include nav.html %}
 
 # NiceRa-Solar Build BOM List provided by Signals Rising
 
