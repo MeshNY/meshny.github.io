@@ -1,8 +1,7 @@
-{% include nav.html %}
 
 # nyme.sh Infrastructure Node Guidelines
 
-Having infrastructure nodes that are able to reliably communicate with one another is what makes the mesh work best. Following these guidelines will help ensure that we can help the reliability of the greater mesh and provide redundancy for data to travel. Participation is 100% voluntary and we please ask you follow these guidelines if you want to deploy an infrastructure node using roles of `ROUTER` or `ROUTER_LATE`. If you can meet the guidelines below, post in the [Discord infrastructure channel](https://discord.nyme.sh) and see if there is a need for a infrastructure role in your area. 
+Having infrastructure nodes that are able to reliably communicate with one another is what makes the mesh work best. Following these guidelines will help ensure that we can help the reliability of the greater mesh and provide redundancy for data to travel. Participation is 100% voluntary and we please ask you follow these guidelines if you want to deploy an infrastructure node using roles of `ROUTER` or `ROUTER_LATE`. If you can meet the guidelines below, post in the [Discord infrastructure channel](https://discord.nyme.sh) and see if there is a need for a infrastructure role in your area.
 
 ## Hardware Guidelines
 

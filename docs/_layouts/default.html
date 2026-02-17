@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=albert-sans:400,400i,700,700i" rel="stylesheet" />
+    {% include css-reset.html %}
+    {% include css-critical.html %}
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <!-- https://edezekiel.medium.com/css-only-responsive-navigation-menu-c36ad02751e8 -->
+    <nav>
+      <div class="collapsible-nav">
+        <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
+        <input type="checkbox" id="main-menu-toggle" class="menu-toggle-input" />
+        <label for="main-menu-toggle" class="menu-toggle" aria-label="Toggle menu">&#9776;</label>
+        <div class="nav-links">
+          <a class="logo-link" href="/">
+            <img class="nav-logo" src="/images/logo-256.png">
+          </a>
+          <a href="/">Home</a>
+          <a href="/node_quickstart.html">Getting Started</a>
+          <a href="/node_configuration.html">Basic Config</a>
+          <a href="/node_configuration_adv.html">Advanced Config</a>
+          <a href="/build_resources.html">Builds</a>
+          <hr />
+          <a href="/faq.html">FAQ</a>
+          <a href="/glossary.html">Glossary</a>
+          <hr />
+          <a href="https://discord.nyme.sh">Discord</a>
+          <a href="https://meshview.nyme.sh">Meshview</a>
+          <a href="https://malla.nyme.sh">Malla</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      {{ content }}
+    </main>
+    <div id="accent"></div>
+    <script>
+      Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6')).forEach(el => {
+        const a = document.createElement('a');
+        a.href = `#${ el.id }`;
+        a.textContent = '#';
+        a.classList.add('deeplink');
+        el.appendChild(a);
+        el.classList.add('has-deeplink');
+      });
+    </script>
+  </body>
+</html>

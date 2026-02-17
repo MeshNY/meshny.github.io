@@ -1,4 +1,3 @@
-{% include nav.html %}
 
 # Searching for Radio Settings
 
