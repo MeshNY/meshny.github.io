@@ -1,10 +1,27 @@
+---
+title: FAQ
+---
 
-# FAQs
+# Frequently Asked Questions
 
 Also see the [Glossary](/glossary.html) for common terminology.
 
 
 ## Hardware
+
+Complete nodes that work well in our experience:
+
+Personal handheld nodes:
+
+  - [Muzi R1 Neo](https://muzi.works/products/r1-neo-complete-meshtastic-device)
+  - [Muzi H2T](https://muzi.works/products/h2t-complete-device-heltec-t114-with-gps-running-meshtastic)
+  - [Seeed Wio Tracker L1](https://www.seeedstudio.com/Wio-Tracker-L1-Pro-p-6454.html)
+  - [Seeed SenseCAP T1000E](https://muzi.works/products/seeed-t1000e)
+  - [RAK WisMesh Tag](https://store.rokland.com/products/wismesh-tag-from-rakwireless-mokosmart-meshtastic-compatible-card-sized-node-us915-mhz)
+
+Fixed solar nodes:
+
+  - [Seeed SenseCAP Solar](https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-Pro-for-Meshtastic-LoRa-p-6412.html)
 
 
 ### What antenna?
