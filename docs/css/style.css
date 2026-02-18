@@ -167,6 +167,8 @@ main {
   --color-links_visited: var(--palette-dark_blue_darker);
   --color-links_hover: var(--palette-dark_blue_lighter);
   --color-text: var(--palette-warm_black);
+  --color-primary_accent: var(--palette-nyc_orange);
+  --color-secondary_accent: var(--palette-light_blue);
 
 }
 @media (prefers-color-scheme: dark) {
@@ -176,6 +178,8 @@ main {
     --color-links_visited: var(--palette-light_blue_darker);
     --color-links_hover: var(--palette-light_blue_lighter);
     --color-text: var(--palette-warm_white);
+    --color-primary_accent: var(--palette-nyc_orange);
+    --color-secondary_accent: var(--palette-dark_blue_lighter);
   }
 }
 
@@ -315,3 +319,41 @@ details summary {
   cursor: pointer;
 }
 
+.small {
+  font-size: 0.8em;
+}
+
+dt {
+  float: left;
+  clear: left;
+  width: 12em;
+  &::after {
+    content: ':';
+  }
+}
+
+p {
+  margin-top: 0;
+}
+
+u {
+  &.-primary {
+    border-bottom-color: var(--color-primary_accent);
+  }
+  &.-secondary {
+    border-bottom-color: var(--color-secondary_accent);
+  }
+}
+
+.callout {
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  padding: var(--gutter);
+  margin-bottom: var(--gutter);
+  &.-primary {
+    border-color: var(--color-primary_accent);
+  }
+  &.-secondary {
+    border-color: var(--color-secondary_accent);
+  }
+}

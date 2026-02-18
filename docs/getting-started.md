@@ -18,17 +18,19 @@ If you don’t already have a device, see our list of [recommended complete node
 To connect to the wide-area Meshtastic network in the NYC area…
 
 1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)
-
+2. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
 
 ### Personal/handheld/mobile nodes
 
 1. Role: <u>CLIENT_MUTE</u>
 2. Position: <u>disabled</u>, or
     - <u>enable</u> smart position
+        - smart interval <u>30 minutes</u> or more
+        - update distance <u>100<u> or more
     - <u>disable</u> altitude
-    - GPS updates and broadcasts: <u>30 minutes</u> or longer
+    - GPS polling interval: <u>30 minutes</u> or longer
 3. Telemetry: <u>off</u>
-4. Device info: <u>12 hour</u> interval or longer
+4. Device info: <u>18 hour</u> interval or longer
 5. LoRa hop limit: <u>5</u>
 
 ### Stationary/fixed nodes
@@ -36,18 +38,28 @@ To connect to the wide-area Meshtastic network in the NYC area…
 1. Role: <u>CLIENT_BASE</u><sup><a href="#meshtastic-footnote-role">*</a></sup>
 2. Position: <u>disabled</u>, or
     - <u>disable</u> smart position
+    - <u>enable</u> altitude
     - GPS updates and broadcasts: <u>24 hour</u> interval or longer
 3. Telemetry: <u>off</u>, or at least <u>6 hour</u> interval if remote
 4. Device info: <u>24 hour</u> interval
 5. LoRa hop limit: <u>3</u>
 
-### Meshtastic radio settings
+### Radio settings
 
-- Preset: <u>Long Range - Fast</u>
-- Frequency slot: <u>20</u> or <u>0</u>
-- Public channel name: <u>LongFast</u> or blank
-- Public channel key: <u>1 byte</u>, <u><code>AQ==</code></u>
-- Ok To MQTT: <u>enabled</u> (optional, to appear on the [map](https://meshview.nyme.sh/map))
+<div class="callout -primary" id="meshtastic-radio-settings">
+  <p>Current primary mesh radio settings:</p>
+  <dl>
+    <dt>Preset</dt>
+    <dd><u>Long Range - Fast</u></dd>
+    <dt>Frequency slot</dt>
+    <dd><u>20</u> or <u>0</u></dd>
+    <dt>Public channel name</dt>
+    <dd><u>LongFast</u> or blank</dd>
+    <dt>Public channel key</dt>
+    <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
+  </dl>
+</div>
+
 
 <details>
   <summary>Explanation of the settings</summary>
@@ -64,18 +76,27 @@ To connect to the wide-area Meshtastic network in the NYC area…
 
 To connect to the wide-area MeshCore network in the NYC area:
 
-1. Ensure your companion node is on the [latest firmware](https://flasher.meshtastic.org)
-2. Radio settings, <u>US/Canada recommended</u>:
+1. Ensure your companion node is on the [latest firmware](https://flasher.meshcore.co.uk)
 
-    <a id="meshcore-radio-settings" />
+<div class="callout" id="meshcore-radio-settings">
+  <p>MeshCore radio settings:</p>
+  <dl>
+    <dt>Preset</dt>
+    <dd><u>US/Canada recommended</u></dd>
+    <dt>Frequency</dt>
+    <dd><u>910.525 MHz</u></dd>
+    <dt>Bandwidth</dt>
+    <dd><u>62.5 kHz</u></dd>
+    <dt>Spread Factor</dt>
+    <dd><u>7</u></dd>
+    <dt>Coding Rate</dt>
+    <dd><u>5</u></dd>
+  </dl>
+  <p class="small">
+    Increase coding rate if you find your messages are not getting received. This setting is cross-compatible.
+  </p>
+</div>
 
-    |-----------------------|---------------------|
-    | LoRa settings         |                     |
-    |-----------------------|---------------------|
-    | Bandwidth             | `62.5 kHz`          |
-    | Spread Factor         | `7`                 |
-    | Coding Rate           | `5`                 |
-    |-----------------------|---------------------|
 
 For repeaters:
 
