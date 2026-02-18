@@ -357,3 +357,20 @@ u {
     border-color: var(--color-secondary_accent);
   }
 }
+
+blockquote {
+  border-left: 5px solid var(--color-secondary_accent);
+  padding-left: 1rem;
+  margin-left: 0;
+}
+
+.float-right {
+  float: right;
+  margin-left: var(--gutter);
+}
+
+p, ul {
+  img {
+    width: 100%;
+  }
+}
