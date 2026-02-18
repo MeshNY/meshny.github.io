@@ -20,7 +20,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
 1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)
 2. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
 
-### Personal/handheld/mobile nodes
+### Personal/handheld/mobile node configuration
 
 1. Role: <u>CLIENT_MUTE</u>
 2. Position: <u>disabled</u>, or
@@ -33,7 +33,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
 4. Device info: <u>18 hour</u> interval or longer
 5. LoRa hop limit: <u>5</u>
 
-### Stationary/fixed nodes
+### Stationary/fixed node configuration
 
 1. Role: <u>CLIENT_BASE</u><sup><a href="/faq#what-role-do-i-chose">*</a></sup>
 2. Position: <u>disabled</u>, or
@@ -43,6 +43,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
 3. Telemetry: <u>off</u>, or at least <u>6 hour</u> interval if remote
 4. Device info: <u>24 hour</u> interval
 5. LoRa hop limit: <u>3</u>
+6. (Optional) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
 
 ### Radio settings
 
@@ -60,6 +61,26 @@ To connect to the wide-area Meshtastic network in the NYC area…
   </dl>
 </div>
 
+<div class="callout" id="mediumslow">
+  <p><strong>Please ensure your node follows the <a href="#personalhandheldmobile-node-configuration">above configuration</a> before connecting to the network.</strong></p>
+  <p><em>Experimental</em> settings to access the next-generation network:</p>
+  <dl>
+    <dt>Preset</dt>
+    <dd><u>Medium Range - Slow</u></dd>
+    <dt>Frequency slot</dt>
+    <dd><u>48</u></dd>
+    <dt>Public channel name</dt>
+    <dd><u>MediumSlow</u> or blank</dd>
+    <dt>Public channel key</dt>
+    <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
+  </dl>
+  <p>
+    Personal nodes: increase LoRa hop limit to <u>7</u>. (Yes, really.)
+  </p>
+  <p class="small">
+    Note that the <a href="/preset-testing">migration</a> to the “MediumSlow” network is a work-in-progress. Only some of the infrastructure has moved. You may find it very difficult to reach either network, or experience unreliable message delivery. Network status and help available in the <a href="https://discord.nyme.sh">Discord chat</a>.
+  </p>
+</div>
 
 <details>
   <summary>Explanation of the settings</summary>
@@ -72,7 +93,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
 
 To connect to the wide-area MeshCore network in the NYC area:
 
-1. Ensure your companion node is on the [latest firmware](https://flasher.meshcore.co.uk)
+1. Ensure your companion node or repeater is on the [latest firmware](https://flasher.meshcore.co.uk)
 
 <div class="callout" id="meshcore-radio-settings">
   <p>MeshCore radio settings:</p>
