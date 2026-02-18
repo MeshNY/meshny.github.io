@@ -55,10 +55,10 @@ There is a lot of nuance to Meshtastic role selection that depends on the node h
 These are the recommended starting points for connecting to a city-wide mesh:
 
 - Portable/mobile nodes, like handheld or on a car: `CLIENT_MUTE`
-- Base nodes, at home (even rooftop): `CLIENT`
-- Rooftop nodes, even a fairly tall apartment: `CLIENT`
+- Base nodes, at home (even rooftop): `CLIENT_BASE`
+- Rooftop nodes, even a fairly tall apartment: `CLIENT_BASE`
 
-If you have multiple nodes at home, only set at most one to `CLIENT`; multiple `CLIENT` nodes in close proximity can cause undesired behavior without care, not just for the broader mesh but even for yourself.
+If you have multiple nodes at home, only set at most one to `CLIENT` or `CLIENT_BASE`; multiple `CLIENT`/`CLIENT_BASE` nodes in close proximity can cause undesired behavior without care, not just for the broader mesh but even for yourself.
 
 Once the node is up-and-running and you are reliably connecting to other nodes and operators, you will be able to evaluate its contribution to the mesh and consider infrastructure roles like `ROUTER` and `ROUTER_LATE`. These roles have particular characteristics relative to `CLIENT`, and require a careful understanding of how the node relates to its mesh neighbors to be beneficial. And importantly, it requires an ability to readily maintain the node as the mesh evolves.
 
