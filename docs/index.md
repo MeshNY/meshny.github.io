@@ -18,12 +18,12 @@ The main nyme.sh [Meshtastic](https://meshtastic.org) network is currently opera
 
 ## Preset Testing
 
-We are actively seeking viable alternate radio settings. Check the [preset testing](/preset-testing.html) page for the latest info.
+We are actively seeking viable alternate radio settings. Check the [preset testing](/preset-testing/) page for the latest info.
 
 ## Stats & Services
 
 ### MQTT Stats & Information
-  - [guide to MQTT in the nyme.sh](/mqtt.html)
+  - [guide to MQTT in the nyme.sh](/mqtt/)
 
 ### Malla
   - [https://malla.nyme.sh](https://malla.nyme.sh)

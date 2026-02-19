@@ -37,7 +37,7 @@ None.
 - **Frequency Slot:** 52 (default)
 - **Outcome:**
 
-    Where it worked, it _worked_. Good links got very good due to the lack of congestion. Poor links became marginal or impossible due to the drop in link budget and inadequate packet-level redundancy. Overall the test confirmed a lot of the thinking about [how a wide-area mesh can be effective](/nymesh-2.html), either through positive or negative outcomes.
+    Where it worked, it _worked_. Good links got very good due to the lack of congestion. Poor links became marginal or impossible due to the drop in link budget and inadequate packet-level redundancy. Overall the test confirmed a lot of the thinking about [how a wide-area mesh can be effective](/nymesh-2/), either through positive or negative outcomes.
 
     Participation was a bit limited, geographically: Jersey City, a scattering in Manhattan, some in Astoria and out to Corona, and a small handful in Brooklyn. Jersey City had pre-existing MediumSlow links, adding a few more with great success and connecting easily to Midtown. CmW2 also was able to link with P0NY in downtown Brooklyn. 25WA and P0NY provided solid relays for some, but Brooklyn infrastructure participation was otherwise nonexistent. Queens had good connections within its boundaries.
 

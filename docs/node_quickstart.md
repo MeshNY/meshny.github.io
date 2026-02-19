@@ -65,4 +65,4 @@ Depending on what computing devices you have, pick an app to use as your primary
 
 # Connect to the mesh!
 
-You have made it this far, you have hardware with current firmware, an app to connect to your node, now it is time to chat with your locals! Check out the [basic node settings for nyme.sh](https://nyme.sh/node_configuration.html) and if you have any questions, feel free to reach out on the [nyme.sh Discord](https://discord.nyme.sh).
+You have made it this far, you have hardware with current firmware, an app to connect to your node, now it is time to chat with your locals! Check out the [basic node settings for nyme.sh](https://nyme.sh/node_configuration/) and if you have any questions, feel free to reach out on the [nyme.sh Discord](https://discord.nyme.sh).
