@@ -4,7 +4,7 @@ title: FAQ
 
 # Frequently Asked Questions
 
-Also see the [Glossary](/glossary.html) for common terminology.
+Also see the [Glossary](/glossary/) for common terminology.
 
 
 ## Hardware
@@ -69,7 +69,7 @@ The general guideline is an infrastructure node needs to have a great view of th
 
 Enable Lora settings > OkToMQTT, and check that you are sharing positions in Channels > Primary.
 
-See the [MQTT instructions](/mqtt.html).
+See the [MQTT instructions](/mqtt/).
 
 
 ### Why do messages show negative hops?

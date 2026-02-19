@@ -57,4 +57,4 @@ for more information [https://meshtastic.org/docs/configuration/radio/device/](h
 for more information [https://meshtastic.org/docs/configuration/module/](https://meshtastic.org/docs/configuration/module/)
 
 ## MQTT
-- [dracoling's quick guide to MQTT in the nyme.sh](https://nyme.sh/mqtt.html)
+- [dracoling's quick guide to MQTT in the nyme.sh](https://nyme.sh/mqtt/)
