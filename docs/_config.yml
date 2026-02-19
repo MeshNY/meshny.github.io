@@ -1,5 +1,6 @@
 title: MeshNY
 description: MeshNY
+permalink: pretty
 defaults:
   -
     scope:

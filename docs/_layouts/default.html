@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>{{ page.title }}</title>
+    <title>
+      {% if page.title %}
+        {{ page.title }} / {{ site.title | default: "NYMesh" }}
+      {% else %}
+        {{ site.title | default: "NYMesh" }}
+      {% endif %}
+    </title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=albert-sans:400,400i,700,700i" rel="stylesheet" />
     {% include css-reset.html %}
@@ -22,8 +28,9 @@
             <img class="nav-logo" src="/images/logo-256.png">
           </a>
           <a href="/">Home</a>
-          <a href="/node_quickstart.html">Getting Started</a>
-          <a href="/node_configuration.html">Basic Config</a>
+          <a href="/getting-started">Getting Started</a>
+          <hr />
+          <a href="/node_configuration.html">Config</a>
           <a href="/node_configuration_adv.html">Advanced Config</a>
           <a href="/build_resources.html">Builds</a>
           <hr />
