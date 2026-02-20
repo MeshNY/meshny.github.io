@@ -31,7 +31,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
     - GPS polling interval: <u>30 minutes</u> or longer
 3. Telemetry: <u>off</u>
 4. Device info: <u>18 hour</u> interval or longer
-5. LoRa hop limit: <u>5</u>
+5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>5</u>
 
 ### Stationary/fixed node configuration
 
@@ -42,7 +42,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
     - GPS updates and broadcasts: <u>24 hour</u> interval or longer
 3. Telemetry: <u>off</u>, or at least <u>6 hour</u> interval if remote
 4. Device info: <u>24 hour</u> interval
-5. LoRa hop limit: <u>3</u>
+5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>3</u>
 6. (Optional) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
 
 ### Radio settings
@@ -75,7 +75,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
     <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
   </dl>
   <p>
-    Personal nodes: increase LoRa hop limit to <u>7</u>. (Yes, really.)
+    Personal nodes: increase LoRa <span class="js-konami" data-alt="bunny">hop</span> limit to <u>7</u>. (Yes, really.)
   </p>
   <p class="small">
     Note that the <a href="/preset-testing">migration</a> to the “MediumSlow” network is a work-in-progress. Only some of the infrastructure has moved. You may find it very difficult to reach either network, or experience unreliable message delivery. Network status and help available in the <a href="https://discord.nyme.sh">Discord chat</a>.
@@ -119,3 +119,46 @@ For repeaters:
 
 1. Set zero-hop auto advert interval to <u>180 minutes</u> or more
 2. Set flood auto advert interval to <u>12 hours</u> or more
+
+
+<script>
+  // Some Konami nonsense just for fun.
+  const KEY_UP = 38;
+  const KEY_DOWN = 40;
+  const KEY_LEFT = 37;
+  const KEY_RIGHT = 39;
+  const KEY_B = 66;
+  const KEY_A = 65;
+  const COMBO = [
+    KEY_UP,
+    KEY_UP,
+    KEY_DOWN,
+    KEY_DOWN,
+    KEY_LEFT,
+    KEY_RIGHT,
+    KEY_LEFT,
+    KEY_RIGHT,
+    KEY_B,
+    KEY_A,
+  ];
+  let combo;
+  function resetCombo () {
+    combo = [...COMBO];
+  }
+  function checkCombo (event) {
+    if (combo[0] === event.which) {
+      combo.shift();
+      if (combo.length === 0) {
+        Array.from(document.querySelectorAll('.js-konami')).forEach(el => {
+          const replacement = el.dataset.alt;
+          el.textContent = replacement;
+        });
+        window.removeEventListener('keydown', checkCombo);
+      }
+    } else {
+      resetCombo();
+    }
+  }
+  resetCombo();
+  window.addEventListener('keydown', checkCombo);
+</script>
