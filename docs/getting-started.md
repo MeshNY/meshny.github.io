@@ -17,7 +17,7 @@ If you don’t already have a device, see our list of [recommended complete node
 
 To connect to the wide-area Meshtastic network in the NYC area…
 
-1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)
+1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)<span class="js-mt-firmware"></span>
 2. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
 
 ### Personal/handheld/mobile node configuration
@@ -145,43 +145,56 @@ For repeaters:
 
 
 <script>
-  // Some Konami nonsense just for fun.
-  const KEY_UP = 38;
-  const KEY_DOWN = 40;
-  const KEY_LEFT = 37;
-  const KEY_RIGHT = 39;
-  const KEY_B = 66;
-  const KEY_A = 65;
-  const COMBO = [
-    KEY_UP,
-    KEY_UP,
-    KEY_DOWN,
-    KEY_DOWN,
-    KEY_LEFT,
-    KEY_RIGHT,
-    KEY_LEFT,
-    KEY_RIGHT,
-    KEY_B,
-    KEY_A,
-  ];
-  let combo;
-  function resetCombo () {
-    combo = [...COMBO];
-  }
-  function checkCombo (event) {
-    if (combo[0] === event.which) {
-      combo.shift();
-      if (combo.length === 0) {
-        Array.from(document.querySelectorAll('.js-konami')).forEach(el => {
-          const replacement = el.dataset.alt;
-          el.textContent = replacement;
-        });
-        window.removeEventListener('keydown', checkCombo);
-      }
-    } else {
-      resetCombo();
+  (function () {
+    // Some Konami nonsense just for fun.
+    const KEY_UP = 38;
+    const KEY_DOWN = 40;
+    const KEY_LEFT = 37;
+    const KEY_RIGHT = 39;
+    const KEY_B = 66;
+    const KEY_A = 65;
+    const COMBO = [
+      KEY_UP,
+      KEY_UP,
+      KEY_DOWN,
+      KEY_DOWN,
+      KEY_LEFT,
+      KEY_RIGHT,
+      KEY_LEFT,
+      KEY_RIGHT,
+      KEY_B,
+      KEY_A,
+    ];
+    let combo;
+    function resetCombo () {
+      combo = [...COMBO];
     }
-  }
-  resetCombo();
-  window.addEventListener('keydown', checkCombo);
+    function checkCombo (event) {
+      if (combo[0] === event.which) {
+        combo.shift();
+        if (combo.length === 0) {
+          Array.from(document.querySelectorAll('.js-konami')).forEach(el => {
+            const replacement = el.dataset.alt;
+            el.textContent = replacement;
+          });
+          window.removeEventListener('keydown', checkCombo);
+        }
+      } else {
+        resetCombo();
+      }
+    }
+    resetCombo();
+    window.addEventListener('keydown', checkCombo);
+  })();
+</script>
+
+<script>
+  (async function () {
+    const req = await fetch('https://api.meshtastic.org/github/firmware/list');
+    const { releases } = await req.json();
+    if (releases.stable?.[0]?.id) {
+      const el = document.querySelector('.js-mt-firmware');
+      el.textContent = ` (${ releases.stable[0].id.replace(/\.[\w]+$/,'') }+)`;
+    }
+  })();
 </script>
