@@ -13,7 +13,7 @@ During the summer of 2025, many operators decided to undertake an organized test
 
 ## Current Preset Test
 
-As of 2026 February 18 it's not a test. We are beginning to migrate to <u>Medium Range - Slow</u>. See the [configuration info](/getting-started#mediumslow) to connect.
+As of 2026 February 18 it’s no longer a test. We are beginning to migrate to <u>Medium Range - Slow</u>. See the [configuration info](/getting-started/#mediumslow) to connect.
 
 The rationale for the slot and preset choice (from <a href="https://discord.com/channels/1395794339329998970/1426696399235321906/1472014386896965656">discussion</a>):
 
