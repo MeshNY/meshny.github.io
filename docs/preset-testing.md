@@ -1,14 +1,47 @@
+---
+title: Radio Preset Testing
+---
 
 # Searching for Radio Settings
 
 - Meshtastic: [“Is LongFast Holding Your Mesh Back? Better LoRa Presets for Bigger Meshtastic Networks”](https://meshtastic.org/blog/why-your-mesh-should-switch-from-longfast/)
+
+<a href="https://k2xap.radio/mesh/lora-shapes"><img src="/images/preset-comparison.webp" alt="Series of transmissions at varying widths and lengths, labeled with the preset names." style="max-width: 120px" class="float-right"></a>
 
 During the summer of 2025, many operators decided to undertake an organized test of different radio presets. Concerned with some rogue routers and uncooperative nodes, as well as the growing density, it seemed sensible to explore non-default radio configurations, in effect reforming the mesh. Results were mixed, see below.
 
 
 ## Current Preset Test
 
-None.
+As of 2026 February 18 it’s no longer a test. We are beginning to migrate to <u>Medium Range - Slow</u>. See the [configuration info](/getting-started/#mediumslow) to connect.
+
+The rationale for the slot and preset choice (from <a href="https://discord.com/channels/1395794339329998970/1426696399235321906/1472014386896965656">discussion</a>):
+
+> Why move at all?
+> - LongFast is very slow, nearly twice as much airtime as MediumSlow, most metros move to faster settings at densities an order of magnitude lower than what we’re at.
+> - being on the default means we are constantly dealing with the unfavorable default behaviors or uncooperative operators, and all the legacy nodes
+>
+> Why MediumSlow not LongFast on 48?
+> - MediumSlow works on a lot of the links we’ve tried, and where it didn’t that will likely be solved by participation/density and filtering
+> - the reduced airtime is especially necessary for scaling, and making the network more reliable with additional routers
+>
+> Why not the default for MediumSlow, slot 52?
+> - slight bit of additional friction will give us an opportunity to remind people of the appropriate configs via the website
+> - allows surrounding regions or personal mesh users to not get automatically swamped by our traffic if they use the MediumSlow preset as well
+> - Having an explicit slot avoids the complications of automatic selection based on primary name that have messed people up in previous tests
+>
+> Why slot 48, 913.875 MHz specifically?
+> - Generally, the middle of the 915 band is more clear than either end, based on rtl_power scans: <a href="/images/rtl_power-scan.webp"><img src="/images/rtl_power-scan.webp"  style="max-width: 480px" alt="RF waterfall across the entire 915 MHz ISM band showing columns of RF activity every 300 kHz, lesser columns every 100 kHz. Large hazy portions also in columns along frequencies in the lower and upper portions of the band."></a>
+> - Distance from 906.875 (LF20) and 910.525 (MC) means sites can use tight filtering more effectively, either to block remaining LF20 traffic or as dual-nodes
+> - avoids the smart meter channels as best as it can without picking an explicit frequency override and/or bandwidth, only overlaps with half a major meter channel on 914.0 MHz <a href="/images/middle-slots.jpg"><img src="/images/middle-slots.jpg" style="max-width: 480px" alt="Meshtastic frequency slots superimposed over an RTL power scan showing how they overlap with different major meter activity."></a>
+> - still close enough to the MediumSlow _and_ MediumFast defaults that if we change our mind about using a non-standard channel we don’t have to re-tune any filters
+>
+> Why not MediumFast?
+> - We could try it! It might work at the current density. We don’t know.
+>
+> Slot 49 would also probably work fine but 48 is just a smidge farther from the MS default (52). 42 & 43 also minimally overlap a meter channel but start to get within filter range of 910.525 (MeshCore default).
+
+
 
 ## Past Preset Tests
 
