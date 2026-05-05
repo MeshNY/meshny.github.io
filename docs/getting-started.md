@@ -33,7 +33,7 @@ These are nodes that you carry with you, in your pocket, bag, belt, mounted on y
 2. Position: <u>disabled</u>, or
     - <u>enable</u> smart position
         - smart interval <u>30 minutes</u> or more
-        - update distance <u>100 m<u> or more
+        - update distance <u>100 m</u> or more
     - <u>disable</u> altitude
     - GPS polling interval: <u>30 minutes</u> or longer
 3. Telemetry: <u>off</u>
@@ -95,7 +95,7 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
 
 <details class="small">
   <summary>Explanation of the settings</summary>
-  <p><code>CLIENT_BASE</code> helps differentiate the infrastructure nodes from personal nodes. It also enables handy infrastructure behaviors through favoriting adjacent routers and personal nodes, features that work best when the node is in a static position. <code>CLIENT_BASE</code> is also the recommended starting point even if the node is particulary well situated.</p>
+  <p><code>CLIENT_BASE</code> helps differentiate the infrastructure nodes from personal nodes. It also enables handy infrastructure behaviors through favoriting adjacent routers and personal nodes, features that work best when the node is in a static position. <code>CLIENT_BASE</code> is also the recommended starting point even if the node is well sited.</p>
   <p>Altitude is useful for line-of-sight estimates. But smart position has trouble with altitude if it changes due to GPS variation and can spam position unnecessarily. 24 hours is sufficient to stay on the map.</p>
   <p>Position is highly recommended for infrastructure nodes so users can understand which nodes provide coverage for them. (It doesn’t have to be exact, but should be a useful approximation.) Fixed position is recommended even if there is GPS present. The GPS is still useful for keeping the node's clock accurate, but it can cause unexpected position variations due to errant GPS signal reception. 24 hours is sufficient to maintain the clock without a meaningful drain on the battery of solar nodes.</p>
   <p>Telemetry broadcasts are useful to monitor the health of the node, but more frequent than 6 hours is excessive and takes up useful airtime.</p>
@@ -110,7 +110,7 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
 There are currently two different Meshtastic networks operating in the NYC area. Joining a network requires configuring your radio to use the same LoRa settings. You are free to join whichever one you can reach, or both if you have multiple devices.
 
 <div class="callout -primary" id="mediumslow">
-  <p><strong><em>Please</em> ensure your node follows the <a href="#personalhandheldmobile-node-configuration">above configuration</a> before connecting to the network.</strong></p>
+  <p><strong><em>Please</em> ensure your node follows the <a href="#personal-node-configuration">above configuration</a> before connecting to the network.</strong></p>
   <p>Current primary mesh radio settings:</p>
   <dl>
     <dt>Preset</dt>
@@ -123,7 +123,7 @@ There are currently two different Meshtastic networks operating in the NYC area.
     <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
   </dl>
   <p>
-    Personal nodes: increase LoRa <span class="js-konami" data-alt="bunny">hop</span> limit to <u>7</u>. (Yes, really.)
+    <strong>Personal nodes: increase LoRa <span class="js-konami" data-alt="bunny">hop</span> limit to <u>7</u>.</strong> (Yes, really.)
   </p>
   <p class="small">
     This network is <a href="/preset-testing/">actively forming</a>. Not all infrastructure has moved yet. You may find it difficult to reach some parts of the network during the transition. Network status and help is available in the <a href="https://discord.nyme.sh">Discord chat</a>.
@@ -158,7 +158,7 @@ There are currently two different Meshtastic networks operating in the NYC area.
 
 To connect to the wide-area MeshCore network in the NYC area:
 
-1. Ensure your companion is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mt-companion-firmware"></span>
+1. Ensure your companion is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-companion-firmware"></span>
 
 <div class="callout" id="meshcore-radio-settings">
   <p>MeshCore radio settings:</p>
@@ -182,7 +182,7 @@ To connect to the wide-area MeshCore network in the NYC area:
 
 For repeaters:
 
-1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mt-repeater-firmware"></span>
+1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
 2. Set zero-hop auto advert interval to <u>360 minutes</u> or more
 3. Set flood auto advert interval to <u>24 hours</u> or more
 
@@ -233,7 +233,7 @@ For repeaters:
 
 <script>
   (async function () {
-    const req = await fetch('https://prod-operator.fly.dev/api/firmware/latest);
+    const req = await fetch('https://prod-operator.fly.dev/api/firmware/latest');
     const { meshtastic, meshcore } = await req.json();
     if (meshtastic?.stable) {
       const el = document.querySelector('.js-mt-firmware');
