@@ -5,7 +5,7 @@
 
 nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New York City metro area, but anyone with an interest is invited to join—no matter where you’re from. If you’re curious about Meshtastic or other mesh radio technologies, we’d love to have you be part of our community! Join us on Discord to chat with the crew.  See you there ;)
 
-- See [**Getting Started**](/getting-started) to get up and running with the area network
+- See [**Getting Started**](/getting-started) to get up and running with the area networks
 - Join us on Discord: [discord.nyme.sh](https://discord.nyme.sh)
 
 (If you’re looking for the mesh WiFi network, see [NYC Mesh](https://www.nycmesh.net/).)

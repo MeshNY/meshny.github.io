@@ -1,4 +1,6 @@
-
+---
+title: MQTT
+---
 # dracoling's quick guide to MQTT in the nyme.sh
 
 MQTT is used by [meshview](https://meshview.nyme.sh) and our other services to collect, collate, and distribute packet information from devices all over the mesh.
