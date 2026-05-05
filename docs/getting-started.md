@@ -107,6 +107,8 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
 
 ### Radio settings
 
+There are currently two different Meshtastic networks operating in the NYC area. Joining a network requires configuring your radio to use the same LoRa settings. You are free to join whichever one you can reach, or both if you have multiple devices.
+
 <div class="callout -primary" id="mediumslow">
   <p><strong><em>Please</em> ensure your node follows the <a href="#personalhandheldmobile-node-configuration">above configuration</a> before connecting to the network.</strong></p>
   <p>Current primary mesh radio settings:</p>
@@ -124,7 +126,7 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
     Personal nodes: increase LoRa <span class="js-konami" data-alt="bunny">hop</span> limit to <u>7</u>. (Yes, really.)
   </p>
   <p class="small">
-    The network is actively <a href="/preset-testing/">migrating</a> to MediumSlow. Not all infrastructure has moved yet. You may find it difficult to reach some parts of the network during the transition. Network status and help is available in the <a href="https://discord.nyme.sh">Discord chat</a>.
+    This network is <a href="/preset-testing/">actively forming</a>. Not all infrastructure has moved yet. You may find it difficult to reach some parts of the network during the transition. Network status and help is available in the <a href="https://discord.nyme.sh">Discord chat</a>.
   </p>
 </div>
 
@@ -140,6 +142,9 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
     <dt>Public channel key</dt>
     <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
   </dl>
+  <p class="small">
+    These settings are the default, out-of-the-box Meshtastic settings. A bit of infrastructure is maintained on these settings to catch newcomers, travelers, and stragglers. Some users continue with this network since it provides the greater range that they need (at the expense of severe congestion).
+  </p>
 </div>
 
 <details>
