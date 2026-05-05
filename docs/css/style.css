@@ -326,7 +326,7 @@ details summary {
 dt {
   float: left;
   clear: left;
-  width: 12em;
+  width: 10em;
   &::after {
     content: ':';
   }

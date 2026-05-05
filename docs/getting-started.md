@@ -159,7 +159,7 @@ To connect to the wide-area MeshCore network in the NYC area:
   <p>MeshCore radio settings:</p>
   <dl>
     <dt>Preset</dt>
-    <dd><u>US/Canada recommended</u></dd>
+    <dd><u>US/Canada</u></dd>
     <dt>Frequency</dt>
     <dd><u>910.525 MHz</u></dd>
     <dt>Bandwidth</dt>
