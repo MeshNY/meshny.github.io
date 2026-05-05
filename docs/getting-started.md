@@ -153,7 +153,7 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
 
 To connect to the wide-area MeshCore network in the NYC area:
 
-1. Ensure your companion node or repeater is on the [latest firmware](https://flasher.meshcore.co.uk)
+1. Ensure your companion is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mt-companion-firmware"></span>
 
 <div class="callout" id="meshcore-radio-settings">
   <p>MeshCore radio settings:</p>
@@ -177,8 +177,9 @@ To connect to the wide-area MeshCore network in the NYC area:
 
 For repeaters:
 
-1. Set zero-hop auto advert interval to <u>360 minutes</u> or more
-2. Set flood auto advert interval to <u>24 hours</u> or more
+1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mt-repeater-firmware"></span>
+2. Set zero-hop auto advert interval to <u>360 minutes</u> or more
+3. Set flood auto advert interval to <u>24 hours</u> or more
 
 
 <script>
@@ -227,11 +228,19 @@ For repeaters:
 
 <script>
   (async function () {
-    const req = await fetch('https://api.meshtastic.org/github/firmware/list');
-    const { releases } = await req.json();
-    if (releases.stable?.[0]?.id) {
+    const req = await fetch('https://prod-operator.fly.dev/api/firmware/latest);
+    const { meshtastic, meshcore } = await req.json();
+    if (meshtastic?.stable) {
       const el = document.querySelector('.js-mt-firmware');
-      el.textContent = ` (${ releases.stable[0].id.replace(/\.[\w]+$/,'') }+)`;
+      el.textContent = ` (${ meshtastic.stable.replace(/\.[\w]+$/,'') }+)`;
+    }
+    if (meshcore?.companion) {
+      const el = document.querySelector('.js-mc-companion-firmware');
+      el.textContent = ` (${ meshcore.companion.replace(/\.[\w]+$/,'') }+)`;
+    }
+    if (meshcore?.repeater) {
+      const el = document.querySelector('.js-mc-repeater-firmware');
+      el.textContent = ` (${ meshcore.repeater.replace(/\.[\w]+$/,'') }+)`;
     }
   })();
 </script>
