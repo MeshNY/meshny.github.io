@@ -24,7 +24,7 @@ A list of terminology often used when discussing mesh and radio topics (US-centr
 - **CLIENT_BASE:** a Meshtastic role that conditionally repeats packets after ROUTERs, with additional behaviors intended for fixed nodes
 - **coding rate (CR):** the amount of redundant bits included in a LoRa transmission, increasing signal resiliency at the cost of airtime
 - **dB:** [Decibel](https://en.wikipedia.org/wiki/Decibel), a measure of signal power ratios
-- **dBi:** a measure of antenna gain in dB with respect to a dipole antenna
+- **dBd:** a measure of antenna gain in dB with respect to a dipole antenna
 - **dBi:** a measure of antenna gain in dB with respect to a theoretical isotropic radiator
 - **dBm:** a measure of power in dB with respect to milliwatts, 30 dBm equals 1 Watt
 - **digipeater:** an APRS node that repeats packets
@@ -38,6 +38,7 @@ A list of terminology often used when discussing mesh and radio topics (US-centr
 - **flash:** the process of updating the firmware of the node
 - **flasher:** the [tool](https://flasher.meshtastic.org) used to update firmware
 - **FRS:** Family Radio Service, a channelized portion of UHF spectrum allocated for unlicensed use, “walkie talkies”
+- **gain**: an increase in signal strength through passive or active means
 - **gateway:** a node that uplinks packets to, or downlinks from, MQTT
 - **GMRS:** General Mobile Radio Service, a channelized portion of UHF spectrum licensed by the FCC
 - **ham:** someone with an Amateur Radio License, aka Ham Radio (_not_ an acronym or initialism)
