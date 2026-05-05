@@ -1,4 +1,11 @@
+---
+title: NYMesh 2.0
+date: 2025-12-03
+---
+
 # nyme.sh 2.0
+
+2025 December 3
 
 There’s a crystallizing pattern for functional metro-scale meshes: __favor infrastructure with predictable relay behavior across reliable links, and minimize airtime__.
 
@@ -120,6 +127,8 @@ A few realistically situated nodes. Ideally a mix of construction, with and with
 
 This is a bit of a circular dependency, since a proper test network needs filters but [investing in filters](https://discord.com/channels/1395794339329998970/1441831475602522162) requires choosing a frequency which requires testing presets. SDR sweeps should help.
 
+Update: [settled on 913.875 MHz](/preset-testing/) (aka slot 48).
+
 ### Plan actual cutover
 
-TBD
+Update, 2026 February 18: it has [begun](/getting-started/#mediumslow).
