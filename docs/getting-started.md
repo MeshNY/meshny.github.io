@@ -15,23 +15,30 @@ If you don’t already have a device, see our list of [recommended complete node
 
 ## Meshtastic
 
-To connect to the wide-area Meshtastic network in the NYC area…
+To connect to the wide-area Meshtastic networks in the NYC area…
 
 1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)<span class="js-mt-firmware"></span>
 2. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
+3. Configure your node as described below, based on how you use it:
 
-### Personal/handheld/mobile node configuration
+### Personal node configuration
+
+These are nodes that you send messages from. Either fixed or mobile.
+
+#### Handheld node config
+
+These are nodes that you carry with you, in your pocket, bag, belt, mounted on your car, and so on.
 
 1. Role: <u>CLIENT_MUTE</u>
 2. Position: <u>disabled</u>, or
     - <u>enable</u> smart position
         - smart interval <u>30 minutes</u> or more
-        - update distance <u>100<u> or more
+        - update distance <u>100 m<u> or more
     - <u>disable</u> altitude
     - GPS polling interval: <u>30 minutes</u> or longer
 3. Telemetry: <u>off</u>
 4. Device info: <u>18 hour</u> interval or longer
-5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>5</u>
+5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>7</u>
 
 <details class="small">
   <summary>Explanation of the settings</summary>
@@ -39,30 +46,60 @@ To connect to the wide-area Meshtastic network in the NYC area…
   <p>Smart position is preferred because it reduces the broadcasts if position hasn’t changed. However, it has trouble with altitude so it’s best to disable this—altitude is usually not helpful for mobile nodes. Generally, position doesn’t need to be sent more frequently than 30 minutes.</p>
   <p>Telemetry is disabled because we don’t need to know your battery level or channel utilization on a regular basis. Neither are meaningful to the rest of the mesh.</p>
   <p>Reducing automatic device info broadcasts avoids the throttling that inhibits the request user info features, and it makes room for more useful packets generally. Also, nodes have the ability to send node info on-demand if the operator needs to advertise their info.</p>
-  <p>Personal nodes usually need more <span class="js-konami" data-alt="bunnies">hops</span> to work through the infill to get to and from the network backbone. On the next-gen MediumSlow network (see below) this changes to the maximum of <em>7</em> because the network adopts <a href="/nymesh-2/">packet-level resliency</a> instead of link-level, and needs the additional <span class="js-konami" data-alt="bunnies">hops</span> to allow for retries.</p>
+  <p>Personal nodes usually need more <span class="js-konami" data-alt="bunnies">hops</span> to work through the infill to get to and from the network backbone. The next-gen MediumSlow network relies on this being the maximum of <em>7</em> because the network adopts <a href="/nymesh-2/">packet-level resiliency</a> instead of link-level, and needs the additional <span class="js-konami" data-alt="bunnies">hops</span> to allow for retries and path diversity.</p>
 </details>
 <br>
 
-### Stationary/fixed node configuration
+#### Stationary personal node config
 
-1. Role: <u>CLIENT_BASE</u><sup><a href="/faq#what-role-do-i-chose">*</a></sup>
+These are your base station nodes that live on your desk or your roof, _that you also send messages from_. They are nodes you connect directly to, rather than use as a relay. (If you _do not_ send messages directly from the roof node, see [below](#infrastructure-node-configuration).)
+
+1. Role: <u>CLIENT</u>
 2. Position: <u>disabled</u>, or
     - <u>disable</u> smart position
     - <u>enable</u> altitude
     - fixed position recommended
     - GPS polling interval (if applicable): <u>24 hours</u>
     - broadcast interval: <u>24 hour</u> interval or longer
-3. Telemetry: <u>off</u>, or at least <u>6 hour</u> interval if remote
-4. Device info: <u>24 hour</u> interval
-5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>3</u>
-6. (Optional) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
+3. Telemetry: <u>off</u>.
+4. Device info: <u>18 hour</u> interval or longer
+5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>7</u>
 
 <details class="small">
   <summary>Explanation of the settings</summary>
-  <p><code>CLIENT_BASE</code> helps differentiate the fixed nodes from mobile nodes. It also enables handy infrastructure behaviors through favoriting adjacent routers and personal nodes, features that work best when the node is in a static position.</p>
+  <p><code>CLIENT</code> is the preferred starting point for fixed personal nodes because they are likely to provide useful conditional relay.</p>
+  <p>Position is optional, but helpful to understand the physical realities of the mesh. Smart position is not recommended, since the node is not moving. It can have trouble with variations from a GPS fix so it’s best to set an explicit fixed position. Altitude is helpful for understanding coverage.</p>
+  <p>Telemetry is preferred disabled because others generally don’t need to know your battery level or channel utilization on a regular basis. Neither are meaningful to the rest of the mesh. The node will still relay its battery info regularly when you connect your app to it.</p>
+  <p>Reducing automatic device info broadcasts avoids the throttling that inhibits the request user info features, and it makes room for more useful packets generally. Also, nodes have the ability to send node info on-demand if the operator needs to advertise their info.</p>
+  <p>Personal nodes usually need more <span class="js-konami" data-alt="bunnies">hops</span> to work through the infill to get to and from the network backbone. The next-gen MediumSlow network relies on this being the maximum of <em>7</em> because the network adopts <a href="/nymesh-2/">packet-level resiliency</a> instead of link-level, and needs the additional <span class="js-konami" data-alt="bunnies">hops</span> to allow for retries and path diversity.</p>
+</details>
+<br>
+
+
+### Infrastructure node configuration
+
+Nodes that are in a fixed location and intended solely for relay purposes. These nodes are _not_ used to send messages directly. They typically are solar builds in remote locations. (If you _do_ send messages from the node, see [above](#stationary-personal-node-config).)
+
+1. Role: <u>CLIENT_BASE</u><sup><a href="/faq#what-role-do-i-chose">*</a></sup>
+2. Is Unmessagable: <u>true</u>
+3. Position:
+    - <u>disable</u> smart position
+    - <u>enable</u> altitude
+    - fixed position recommended
+    - GPS polling interval (if applicable): <u>24 hours</u>
+    - broadcast interval: <u>24 hour</u> interval or longer
+4. Telemetry: at least <u>6 hour</u> interval
+5. Device info: <u>48 hour</u> interval
+6. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>2</u>
+7. (Optional, _strongly recommended_) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
+
+<details class="small">
+  <summary>Explanation of the settings</summary>
+  <p><code>CLIENT_BASE</code> helps differentiate the infrastructure nodes from personal nodes. It also enables handy infrastructure behaviors through favoriting adjacent routers and personal nodes, features that work best when the node is in a static position. <code>CLIENT_BASE</code> is also the recommended starting point even if the node is particulary well situated.</p>
   <p>Altitude is useful for line-of-sight estimates. But smart position has trouble with altitude if it changes due to GPS variation and can spam position unnecessarily. 24 hours is sufficient to stay on the map.</p>
-  <p>Fixed position is recommended even if there is GPS present. The GPS is still useful for keeping the node's clock accurate, but it can cause unexpected position variations due to errant GPS signal reception.</p>
-  <p>Telemetry broadcasts on a local node are unnecessary. If the node is remote, 6 hours or longer is sufficient to know its health.</p>
+  <p>Position is highly recommended for infrastructure nodes so users can understand which nodes provide coverage for them. (It doesn’t have to be exact, but should be a useful approximation.) Fixed position is recommended even if there is GPS present. The GPS is still useful for keeping the node's clock accurate, but it can cause unexpected position variations due to errant GPS signal reception. 24 hours is sufficient to maintain the clock without a meaningful drain on the battery of solar nodes.</p>
+  <p>Telemetry broadcasts are useful to monitor the health of the node, but more frequent than 6 hours is excessive and takes up useful airtime.</p>
+  <p>Device info is significantly curtailed because it’s not necessary for the nodes to route packets, and takes up airtime.</p>
   <p><span class="js-konami" data-alt="Bunny">Hop</span> limit: fixed nodes should focus on advertising to their immediate vicinity. They also should be within direct or single-<span class="js-konami" data-alt="bunny">hop</span> range of infrastructure, and don’t need as many <span class="js-konami" data-alt="bunnies">hops</span> to reach through the infill — they <em>are</em> the infill.</p>
 </details>
 <br />
@@ -71,7 +108,7 @@ To connect to the wide-area Meshtastic network in the NYC area…
 ### Radio settings
 
 <div class="callout -primary" id="mediumslow">
-  <p><strong>Please ensure your node follows the <a href="#personalhandheldmobile-node-configuration">above configuration</a> before connecting to the network.</strong></p>
+  <p><strong><em>Please</em> ensure your node follows the <a href="#personalhandheldmobile-node-configuration">above configuration</a> before connecting to the network.</strong></p>
   <p>Current primary mesh radio settings:</p>
   <dl>
     <dt>Preset</dt>
@@ -140,8 +177,8 @@ To connect to the wide-area MeshCore network in the NYC area:
 
 For repeaters:
 
-1. Set zero-hop auto advert interval to <u>180 minutes</u> or more
-2. Set flood auto advert interval to <u>12 hours</u> or more
+1. Set zero-hop auto advert interval to <u>360 minutes</u> or more
+2. Set flood auto advert interval to <u>24 hours</u> or more
 
 
 <script>
