@@ -110,7 +110,7 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
 There are currently two different Meshtastic networks operating in the NYC area. Joining a network requires configuring your radio to use the same LoRa settings. You are free to join whichever one you can reach, or both if you have multiple devices.
 
 <div class="callout -primary" id="mediumslow">
-  <p><strong><em>Please</em> ensure your node follows the <a href="#personal-node-configuration">above configuration</a> before connecting to the network.</strong></p>
+  <p><strong>Be a good mesh citizen:</strong> <em>Please</em> ensure your node follows the <a href="#personal-node-configuration">above configuration</a> before connecting to the network. Please do not use high-traffic applications like Reticulum or TAK on this network; they saturate the mesh and make it unusable for everyone. Sustained encrypted traffic will be detected and blocked by the infrastructure to protect the limited airtime.</p>
   <p>Current primary mesh radio settings:</p>
   <dl>
     <dt>Preset</dt>
