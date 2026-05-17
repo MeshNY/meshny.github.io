@@ -34,7 +34,7 @@ NYMe.sh utilizes the "Medium Range - Slow" preset, with a custom frequency slot 
 
 ### Configuring radios for NYMe.sh's MS48 network
 
-(**Note**: Throught this guide, settings not explicitly called out can be left at default values)
+(**Note**: Throughout this guide, settings not explicitly called out can be left at default values)
 
 1. In your Meshtastic App: Go to `Settings` -> `LoRa`
 2. Apply the following settings:
