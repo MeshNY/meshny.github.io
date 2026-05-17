@@ -1,45 +1,109 @@
----
-title: Getting Started
----
+# Getting Started with Meshtastic and NYMe.sh
 
-# Getting Started
+Getting started in NYMe.sh's Meshtastic network means both setting up Meshtastic and configuring your nodes to use the community's optimized radio settings for the NYC area and its infrastructure. To send your first message, you'll need to follow the steps below:
 
+1. Obtain compatible hardware (E.g. a radio node paired with a phone or a standalone node).
+2. Install Meshtastic software 
+3. Configure your radio node for NYMe.sh's optimized network settings.
+4. Say Hi!
+5. Optimize your node for its intended use on the network (E.g. roles & other settings)
 
-## Hardware
+Once you've done the above, we also laid out some additional suggestions to get the most out of the mesh:
 
-You will need at least a personal, handheld node that will be your direct connection to the mesh. Additionally, most people need a “roof” node to create a reliable first hop to the area infrastructure.
+6. Review the community's network use best practices
+7. See yourself on the network map
+8. Consider contributing to the community's infrastructure (routers)
+
+If at any point you have questions or doubts, join us on [Discord](https://discord.nyme.sh) in the [`#troubleshooting`](https://discord.com/channels/1395794339329998970/1395805706082324551) channel for help. 
+
+## 1. Compatible Hardware
+
+You will need at least one personal, handheld node that will be your first connection to the mesh. 
 
 If you don’t already have a device, see our list of [recommended complete nodes](/faq#hardware).
 
-<br>
+## 2. Install and update the Meshtastic firmware and app
 
-## Meshtastic
+To make full use of the NYMe.sh network, you'll need to make sure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)<span class="js-mt-firmware"></span>
 
-To connect to the wide-area Meshtastic networks in the NYC area…
+## 3. Optimize your Meshtastic radio for NYMe.sh
 
-1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)<span class="js-mt-firmware"></span>
-2. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
-3. Configure your node as described below, based on how you use it:
+By default, the Meshtastic software uses the "Long Range - Fast" LoRa radio preset. After [a long period of testing](https://nyme.sh/preset-testing/), the NYMe.sh community decided to migrate to a different radio configuration from the Meshtastic "LongFast" default considering NYC's specificities of an urban environment, high density and particular spectrum usage.
 
-### Personal node configuration
+NYMe.sh utilizes the "Medium Range - Slow" preset, with a custom frequency slot (48), or "MS48" for short.
 
-These are nodes that you send messages from. Either fixed or mobile.
+### Configuring radios for NYMe.sh's MS48 network
 
-#### Handheld node config
+(**Note**: Throughout this guide, settings not explicitly called out can be left at default values)
 
-These are nodes that you carry with you, in your pocket, bag, belt, mounted on your car, and so on.
+1. In your Meshtastic App: Go to `Settings` -> `LoRa`
+2. Apply the following settings:
+    - `Use Preset` -> `ENABLED`
+    - `Presets` -> `Medium Range - Slow`
+    - `Ignore MQTT` -> `DISABLED`
+    - (optional) `OK to MQTT` -> `ENABLED` (utilize only if you wish to show up on the [Meshview](https://meshview.nyme.sh/map) or [Malla](https://malla.nyme.sh/map) network maps)
+    - `Transmit Enabled` ->  `ENABLED`
+    - `Number of Hops` -> `7` (Yes, *really*)
+    - `Frequency Slot` -> `48`
+  
+### Set up NYMe.sh's Public Channel
 
-1. Role: <u>CLIENT_MUTE</u>
-2. Position: <u>disabled</u>, or
-    - <u>enable</u> smart position
-        - smart interval <u>30 minutes</u> or more
-        - update distance <u>100 m</u> or more
-    - <u>disable</u> altitude
-    - GPS polling interval: <u>30 minutes</u> or longer
-3. Telemetry: <u>off</u>
-4. Device info: <u>18 hour</u> interval or longer
-5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>7</u>
+1. In your Meshtastic App: Go to `Settings` -> `Channels`
+3. Apply the following settings to your Primary Channel
+   - `Channel Name` -> `MediumSlow` or leave blank
+   - `Key Size` -> `1 byte`
+   - `Key` -> `AQ==`
+   - (optional) `Positions Enabled` -> Enable if you'd like to transmit your position to other mesh nodes, and select desired accuracy. [Read here for more from Meshtastic.org on sharing your position through channels](https://meshtastic.org/docs/configuration/tips/#not-sharing-your-location).
 
+## 4. Say Hi on the Public Channel.
+
+You should now be ready to say "Hi" in the public channel, and see the nodes and map tabs in the app populate with other nodes.
+
+## 5. Optimize your node for your use-case
+
+Before we're done, we need to optimize a few settings that differ according how you'll use your node day-to-day. These settings allow us to make the most efficient use of the mesh's airtime and relays, and consider the fixed infrastructure the community has installed in the region. 
+
+We'll cover some typical use-cases for nodes, their different settings and why the settings differ.
+
+### Node use-cases
+1. **Handheld node**: a node that you carry with you, in your pocket, bag, belt, mounted on your car, and so on. Typically we want these nodes to receive and transmit, but *not* relay messages.
+2. **Stationary node**: a base station node that lives on your desk or your roof. Critically, these are nodes _that you also send messages from_, but generally have a fixed position and that you may some times connect directly to from your other nodes, rather than use solely as a relay.
+3. **Infrastructure node**: a node in a fixed location, intended *solely* for relay purposes and that you *do not* send messages from. They typically are solar builds in remote or elevated locations.
+
+If you're in doubt about which role your use-case your node falls into, or want to learn more about why these divisions were chosen, check out the FAQ's ["What role do I choose?"](https://nyme.sh/faq/#what-role-do-i-chose) section. You may need to adapt particular settings to your use-case, but always keep in mind the good use of the mesh's resources.
+
+### Handheld node configuration
+
+Handheld nodes are configured to send and receive messages and position data, but do not relay messages or transmit device telemetry.
+
+In your Meshtastic App:
+1. Configure the device's role.
+   - Go to `Settings` -> `Device`
+   - Apply the following settings `Device` Page
+       - `Device Role` -> `Client Mute`
+       - `Rebroadcast Mode` -> `All`
+       - `Node Info Broadcast Interval` -> `Eighteen Hours`
+2. Configure the device's position transmission settings.
+   - Go to `Settings` -> `Position`
+   - Choose between **disabling** position transmission or using **smart** position transmission
+       - To **disable** transmission, apply the following settings:
+            - `Broadcast Interval` -> `Never`
+            - `Smart Position` -> `DISABLED`
+       - To **enable** Smart Position transmission
+            - `Broadcast Interval` -> `Thirty Minutes` or longer
+            - `Smart Position` -> `ENABLED`
+            - `Minimum Interval` -> `Thirty Minutes` or longer
+            - `Minimum Distance` -> `100` or higher
+            - `Device GPS` -> `ENABLE`
+            - `Update Interval` -> `Thirty Minutes` or longer
+            - `Altitude` -> `DISABLE`
+3. Configure the device's telemetry settings.
+    - Go to `Settings` -> `Telemetry`
+    - Apply the following settings `Telemetry` Page
+        - `Broadcast Device Metrics` -> `DISABLED`
+        - `Environment Metrics Enabled` -> `DISABLED`
+        - `Power Sensor Options` -> `DISABLED`
+ 
 <details class="small">
   <summary>Explanation of the settings</summary>
   <p><code>CLIENT_MUTE</code> is the preferred starting point for mobile nodes because it avoids unexpected relay behavior in an infrastructure-based mesh. Personal or mobile nodes often experience worse SNRs than fixed nodes, which causes them to relay first and potentially stop a better-placed node from relaying. It’s also important if you have two nodes in close proximity, avoiding the <a href="https://nyme.sh/faq/#what-role-do-i-chose">“false ack”</a> problem that can hide connection issues.</p>
@@ -50,20 +114,31 @@ These are nodes that you carry with you, in your pocket, bag, belt, mounted on y
 </details>
 <br>
 
-#### Stationary personal node config
+### Stationary node configuration
 
-These are your base station nodes that live on your desk or your roof, _that you also send messages from_. They are nodes you connect directly to, rather than use as a relay. (If you _do not_ send messages directly from the roof node, see [below](#infrastructure-node-configuration).)
+Stationary nodes are configured to send and receive messages and position data, but do not relay messages or need to transmit device telemetry. These are your base station nodes that live on your desk or your roof
 
-1. Role: <u>CLIENT</u>
-2. Position: <u>disabled</u>, or
-    - <u>disable</u> smart position
-    - <u>enable</u> altitude
-    - fixed position recommended
-    - GPS polling interval (if applicable): <u>24 hours</u>
-    - broadcast interval: <u>24 hour</u> interval or longer
-3. Telemetry: <u>off</u>.
-4. Device info: <u>18 hour</u> interval or longer
-5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>7</u>
+In your Meshtastic App:
+1. Configure the device's role.
+   - Go to `Settings` -> `Device`
+   - Apply the following settings `Device` Page
+       - `Device Role` -> `Client`
+       - `Rebroadcast Mode` -> `All`
+       - `Node Info Broadcast Interval` -> `Eighteen Hours`
+2. Configure the device's position transmission settings.
+   - Go to `Settings` -> `Position`
+   - Apply the following settings `Position` Page
+            - `Broadcast Interval` -> `Twenty Four Hours` or longer
+            - `Smart Position` -> `DISABLED`
+            - `Device GPS` -> `DISABLED`
+            - `Fixed Position` -> `ENABLED`
+            - `Altitude` -> `ENABLED`
+3. Configure the device's telemetry settings.
+    - Go to `Settings` -> `Telemetry`
+    - Apply the following settings `Telemetry` Page
+        - `Broadcast Device Metrics` -> `DISABLED`
+        - `Environment Metrics Enabled` -> `DISABLED`
+        - `Power Sensor Options` -> `DISABLED`
 
 <details class="small">
   <summary>Explanation of the settings</summary>
@@ -78,20 +153,34 @@ These are your base station nodes that live on your desk or your roof, _that you
 
 ### Infrastructure node configuration
 
-Nodes that are in a fixed location and intended solely for relay purposes. These nodes are _not_ used to send messages directly. They typically are solar builds in remote locations. (If you _do_ send messages from the node, see [above](#stationary-personal-node-config).)
+Nodes that are in a fixed location and intended solely for relay purposes. These nodes are _not_ used to send messages directly. They typically are solar builds in remote locations. Here, telemetry and even changing the hop limit are important.
 
-1. Role: <u>CLIENT_BASE</u><sup><a href="/faq#what-role-do-i-chose">*</a></sup>
-2. Is Unmessagable: <u>true</u>
-3. Position:
-    - <u>disable</u> smart position
-    - <u>enable</u> altitude
-    - fixed position recommended
-    - GPS polling interval (if applicable): <u>24 hours</u>
-    - broadcast interval: <u>24 hour</u> interval or longer
-4. Telemetry: at least <u>6 hour</u> interval
-5. Device info: <u>48 hour</u> interval
-6. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>2</u>
-7. (Optional, _strongly recommended_) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
+In your Meshtastic App:
+1. Configure the device's role.
+   - Go to `Settings` -> `Device`
+   - Apply the following settings `Device` Page
+       - `Device Role` -> `Client Base`
+       - `Rebroadcast Mode` -> `All`
+       - `Node Info Broadcast Interval` -> `Forty Eight Hours`
+2. Configure the device's position transmission settings.
+   - Go to `Settings` -> `Position`
+   - Apply the following settings `Position` Page
+            - `Broadcast Interval` -> `Twenty Four Hours`
+            - `Smart Position` -> `DISABLED`
+            - `Device GPS` -> `DISABLED`
+            - `Fixed Position` -> `ENABLED`
+            - `Altitude` -> `ENABLED`
+3. Configure the device's telemetry settings.
+    - Go to `Settings` -> `Telemetry`
+    - Apply the following settings `Telemetry` Page
+        - `Broadcast Device Metrics` -> `ENABLED`
+            - `Device Metrics` -> `Six Hours` or longer
+        - `Environment Metrics Enabled` -> `DISABLED`
+        - `Power Sensor Options` -> `ENABLED`
+            - `Power Metrics` -> `Six Hours` or longer
+4. Configure the device's radio settings.
+    - Go to `Settings` -> `LoRa`
+    - `Number of Hops` -> `2`
 
 <details class="small">
   <summary>Explanation of the settings</summary>
@@ -104,53 +193,19 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
 </details>
 <br />
 
+## 6. Network use best practices
 
-### Radio settings
+Some guidelines on specific use cases or technologies that may affect the network differently:
 
-There are currently two different Meshtastic networks operating in the NYC area. Joining a network requires configuring your radio to use the same LoRa settings. You are free to join whichever one you can reach, or both if you have multiple devices.
+**Reticulum and TAK**: Please do not use high-traffic applications like Reticulum or TAK on this network; they saturate the mesh and make it unusable for everyone. Sustained encrypted traffic will be detected and blocked by the infrastructure to protect the limited airtime.
 
-<div class="callout -primary" id="mediumslow">
-  <p><strong>Be a good mesh citizen:</strong> <em>Please</em> ensure your node follows the <a href="#personal-node-configuration">above configuration</a> before connecting to the network. Please do not use high-traffic applications like Reticulum or TAK on this network; they saturate the mesh and make it unusable for everyone. Sustained encrypted traffic will be detected and blocked by the infrastructure to protect the limited airtime.</p>
-  <p>Current primary mesh radio settings:</p>
-  <dl>
-    <dt>Preset</dt>
-    <dd><u>Medium Range - Slow</u></dd>
-    <dt>Frequency slot</dt>
-    <dd><u>48</u></dd>
-    <dt>Public channel name</dt>
-    <dd><u>MediumSlow</u> or blank</dd>
-    <dt>Public channel key</dt>
-    <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
-  </dl>
-  <p>
-    <strong>Personal nodes: increase LoRa <span class="js-konami" data-alt="bunny">hop</span> limit to <u>7</u>.</strong> (Yes, really.)
-  </p>
-  <p class="small">
-    This network is <a href="/preset-testing/">actively forming</a>. Not all infrastructure has moved yet. You may find it difficult to reach some parts of the network during the transition. Network status and help is available in the <a href="https://discord.nyme.sh">Discord chat</a>.
-  </p>
-</div>
+## 7. Network Map
 
-<div class="callout" id="longfast">
-  <p>Legacy network settings (LongFast):</p>
-  <dl>
-    <dt>Preset</dt>
-    <dd><u>Long Range - Fast</u></dd>
-    <dt>Frequency slot</dt>
-    <dd><u>20</u> or <u>0</u></dd>
-    <dt>Public channel name</dt>
-    <dd><u>LongFast</u> or blank</dd>
-    <dt>Public channel key</dt>
-    <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
-  </dl>
-  <p class="small">
-    These settings are the default, out-of-the-box Meshtastic settings. A bit of infrastructure is maintained on these settings to catch newcomers, travelers, and stragglers. Some users continue with this network since it provides the greater range that they need (at the expense of severe congestion).
-  </p>
-</div>
+If you've enabled `OK to MQTT` in the LoRa page of your settings, you'll be able to see your node on NYMe.sh's [Meshview](https://meshview.nyme.sh/map) or [Malla](https://malla.nyme.sh/map) network maps
 
-<details>
-  <summary>Explanation of the settings</summary>
-  <p>The above settings are necessary to keep the network in a high-performing state. The Meshtastic default settings are oriented toward small-scale meshes that require frequent background packets to be effective. However, on large meshes these defaults are unnecessary and quickly create congestion that compromises the utility of the network for everyone. Reducing this extraneous background traffic as much as possible is essential for preserving the usefulness of the mesh.</p>
-</details>
+## 8. Consider contributing to the community's infrastructure
+
+You may have noticed in setting up your nodes that we did not use the `ROUTER` or `ROUTER LATE` roles even for stationary, relay-only nodes. This is because the community actively manages several Router nodes and proactively manages routers around the network based on location and traffic, as discussed in the [FAQ](https://nyme.sh/faq/) page. Join us in the [#infrastructure](https://discord.com/channels/1395794339329998970/1426696399235321906) channel on Discord to see if your stationary node could help as a router or if you're willing to help deploy additional router nodes. 
 
 <br>
 
@@ -158,7 +213,7 @@ There are currently two different Meshtastic networks operating in the NYC area.
 
 To connect to the wide-area MeshCore network in the NYC area:
 
-1. Ensure your companion is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-companion-firmware"></span>
+1. Ensure your companion is on the [latest firmware](https://flasher.meshcore.io)
 
 <div class="callout" id="meshcore-radio-settings">
   <p>MeshCore radio settings:</p>
@@ -182,70 +237,6 @@ To connect to the wide-area MeshCore network in the NYC area:
 
 For repeaters:
 
-1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
+1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io)
 2. Set zero-hop auto advert interval to <u>360 minutes</u> or more
 3. Set flood auto advert interval to <u>24 hours</u> or more
-
-
-<script>
-  (function () {
-    // Some Konami nonsense just for fun.
-    const KEY_UP = 38;
-    const KEY_DOWN = 40;
-    const KEY_LEFT = 37;
-    const KEY_RIGHT = 39;
-    const KEY_B = 66;
-    const KEY_A = 65;
-    const COMBO = [
-      KEY_UP,
-      KEY_UP,
-      KEY_DOWN,
-      KEY_DOWN,
-      KEY_LEFT,
-      KEY_RIGHT,
-      KEY_LEFT,
-      KEY_RIGHT,
-      KEY_B,
-      KEY_A,
-    ];
-    let combo;
-    function resetCombo () {
-      combo = [...COMBO];
-    }
-    function checkCombo (event) {
-      if (combo[0] === event.which) {
-        combo.shift();
-        if (combo.length === 0) {
-          Array.from(document.querySelectorAll('.js-konami')).forEach(el => {
-            const replacement = el.dataset.alt;
-            el.textContent = replacement;
-          });
-          window.removeEventListener('keydown', checkCombo);
-        }
-      } else {
-        resetCombo();
-      }
-    }
-    resetCombo();
-    window.addEventListener('keydown', checkCombo);
-  })();
-</script>
-
-<script>
-  (async function () {
-    const req = await fetch('https://prod-operator.fly.dev/api/firmware/latest');
-    const { meshtastic, meshcore } = await req.json();
-    if (meshtastic?.stable) {
-      const el = document.querySelector('.js-mt-firmware');
-      el.textContent = ` (${ meshtastic.stable.replace(/\.[\w]+$/,'') }+)`;
-    }
-    if (meshcore?.companion) {
-      const el = document.querySelector('.js-mc-companion-firmware');
-      el.textContent = ` (${ meshcore.companion.replace(/\.[\w]+$/,'') }+)`;
-    }
-    if (meshcore?.repeater) {
-      const el = document.querySelector('.js-mc-repeater-firmware');
-      el.textContent = ` (${ meshcore.repeater.replace(/\.[\w]+$/,'') }+)`;
-    }
-  })();
-</script>
