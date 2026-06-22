@@ -81,21 +81,23 @@ These are your base station nodes that live on your desk or your roof, _that you
 Nodes that are in a fixed location and intended solely for relay purposes. These nodes are _not_ used to send messages directly. They typically are solar builds in remote locations. (If you _do_ send messages from the node, see [above](#stationary-personal-node-config).)
 
 1. Role: <u>CLIENT_BASE</u><sup><a href="/faq#what-role-do-i-chose">*</a></sup>
-2. Is Unmessagable: <u>true</u>
-3. Position:
+2. Rebroadcast mode: <u>Core Portnums Only</u>
+3. Is Unmessagable: <u>true</u>
+4. Position:
     - <u>disable</u> smart position
     - <u>enable</u> altitude
     - fixed position recommended
     - GPS polling interval (if applicable): <u>24 hours</u>
     - broadcast interval: <u>24 hour</u> interval or longer
-4. Telemetry: at least <u>6 hour</u> interval
-5. Device info: <u>48 hour</u> interval
-6. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>2</u>
-7. (Optional, _strongly recommended_) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
+5. Telemetry: at least <u>6 hour</u> interval
+6. Device info: <u>48 hour</u> interval
+7. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>2</u>
+8. (Optional, _strongly recommended_) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
 
 <details class="small">
   <summary>Explanation of the settings</summary>
   <p><code>CLIENT_BASE</code> helps differentiate the infrastructure nodes from personal nodes. It also enables handy infrastructure behaviors through favoriting adjacent routers and personal nodes, features that work best when the node is in a static position. <code>CLIENT_BASE</code> is also the recommended starting point even if the node is well sited.</p>
+  <p><code>Core Portnums Only</code> will prevent propagation of custom packets or noisy applications like TAK that should not be used on a wide-area mesh, and ensure airtime remains available for text.</p>
   <p>Altitude is useful for line-of-sight estimates. But smart position has trouble with altitude if it changes due to GPS variation and can spam position unnecessarily. 24 hours is sufficient to stay on the map.</p>
   <p>Position is highly recommended for infrastructure nodes so users can understand which nodes provide coverage for them. (It doesn’t have to be exact, but should be a useful approximation.) Fixed position is recommended even if there is GPS present. The GPS is still useful for keeping the node's clock accurate, but it can cause unexpected position variations due to errant GPS signal reception. 24 hours is sufficient to maintain the clock without a meaningful drain on the battery of solar nodes.</p>
   <p>Telemetry broadcasts are useful to monitor the health of the node, but more frequent than 6 hours is excessive and takes up useful airtime.</p>
