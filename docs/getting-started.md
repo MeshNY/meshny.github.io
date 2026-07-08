@@ -161,6 +161,7 @@ There are currently two different Meshtastic networks operating in the NYC area.
 To connect to the wide-area MeshCore network in the NYC area:
 
 1. Ensure your companion is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-companion-firmware"></span>
+2. (recommended) Set your Path Hash Size to <u>2-byte</u> (in Experimental Settings in the app)
 
 <div class="callout" id="meshcore-radio-settings">
   <p>MeshCore radio settings:</p>
@@ -185,9 +186,15 @@ To connect to the wide-area MeshCore network in the NYC area:
 For repeaters:
 
 1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
-2. Set zero-hop auto advert interval to <u>360 minutes</u> or more
-3. Set flood auto advert interval to <u>24 hours</u> or more
+2. Set zero-hop auto advert interval to <u>240 minutes</u> or more
+3. Set flood auto advert interval to <u>47 hours</u> or more
+4. (<em>recommended</em>) Set 2-byte prefixes for adverts: `set path.hash.mode 1`
+4. (<em>recommended</em>) Set advert hop limits to 8 (already the default as of 1.16): `set flood.max.advert 8`
 
+<details>
+  <summary>Explanation of the settings</summary>
+  <p>Advert intervals are maximized and hops curtailed to reduce the airtime load on the mesh. The odd number of 47 ensures the flood adverts of the repeater rotate through the day over time, to avoid people missing it because they are only in an area at certain times of day. Packets can get routed and paths discovered even without hearing the adverts; knowing the full ID and name of the repeater is informational only. 2-byte prefixes are recommended to reduce chance of ID collision with other repeaters, for clarity and optimal routing.</p>
+</details>
 
 <script>
   (function () {
