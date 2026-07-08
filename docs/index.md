@@ -13,12 +13,8 @@ nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New
 
 ## Current Meshtastic Settings
 
-The main nyme.sh [Meshtastic](https://meshtastic.org) network is migrating to a mostly **custom** configuration, which includes a ***non**-default* Frequency Slot. See the [recommended configuration](/getting-started#meshtastic) for Meshtastic nodes.
+The main nyme.sh [Meshtastic](https://meshtastic.org) network is operating on a ***non**-default* Frequency Slot. See the [recommended configuration](/getting-started#meshtastic) for Meshtastic nodes**. See [preset testing](/preset-testing/) for the history.
 
-
-## Preset Testing
-
-We are actively seeking viable alternate radio settings. Check the [preset testing](/preset-testing/) page for the latest info.
 
 ## Stats & Services
 
