@@ -37,7 +37,7 @@ These are nodes that you carry with you, in your pocket, bag, belt, mounted on y
     - <u>disable</u> altitude
     - GPS polling interval: <u>30 minutes</u> or longer
 3. Telemetry: <u>off</u>
-4. Device info: <u>18 hour</u> interval or longer
+4. Device info: <u>19 hour</u> interval or longer (68,400 seconds)
 5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>7</u>
 
 <details class="small">
@@ -60,9 +60,9 @@ These are your base station nodes that live on your desk or your roof, _that you
     - <u>enable</u> altitude
     - fixed position recommended
     - GPS polling interval (if applicable): <u>24 hours</u>
-    - broadcast interval: <u>24 hour</u> interval or longer
+    - broadcast interval: <u>23 hour</u> interval or longer (82,800 seconds)
 3. Telemetry: <u>off</u>.
-4. Device info: <u>18 hour</u> interval or longer
+4. Device info: <u>19 hour</u> interval or longer (68,400 seconds)
 5. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>7</u>
 
 <details class="small">
@@ -88,9 +88,9 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
     - <u>enable</u> altitude
     - fixed position recommended
     - GPS polling interval (if applicable): <u>24 hours</u>
-    - broadcast interval: <u>24 hour</u> interval or longer
+    - broadcast interval: <u>23 hour</u> interval or longer (82,800 seconds)
 5. Telemetry: at least <u>6 hour</u> interval
-6. Device info: <u>48 hour</u> interval
+6. Device info: <u>47 hour</u> interval (169,200 seconds)
 7. LoRa <span class="js-konami" data-alt="bunny">hop</span> limit: <u>2</u>
 8. (Optional, _strongly recommended_) Enable <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a>
 
@@ -98,10 +98,10 @@ Nodes that are in a fixed location and intended solely for relay purposes. These
   <summary>Explanation of the settings</summary>
   <p><code>CLIENT_BASE</code> helps differentiate the infrastructure nodes from personal nodes. It also enables handy infrastructure behaviors through favoriting adjacent routers and personal nodes, features that work best when the node is in a static position. <code>CLIENT_BASE</code> is also the recommended starting point even if the node is well sited.</p>
   <p><code>Core Portnums Only</code> will prevent propagation of custom packets or noisy applications like TAK that should not be used on a wide-area mesh, and ensure airtime remains available for text.</p>
-  <p>Altitude is useful for line-of-sight estimates. But smart position has trouble with altitude if it changes due to GPS variation and can spam position unnecessarily. 24 hours is sufficient to stay on the map.</p>
+  <p>Altitude is useful for line-of-sight estimates. But smart position has trouble with altitude if it changes due to GPS variation and can spam position unnecessarily. 23 hours is sufficient to stay on the map and rotates the broadcast throughout the day.</p>
   <p>Position is highly recommended for infrastructure nodes so users can understand which nodes provide coverage for them. (It doesn’t have to be exact, but should be a useful approximation.) Fixed position is recommended even if there is GPS present. The GPS is still useful for keeping the node's clock accurate, but it can cause unexpected position variations due to errant GPS signal reception. 24 hours is sufficient to maintain the clock without a meaningful drain on the battery of solar nodes.</p>
   <p>Telemetry broadcasts are useful to monitor the health of the node, but more frequent than 6 hours is excessive and takes up useful airtime.</p>
-  <p>Device info is significantly curtailed because it’s not necessary for the nodes to route packets, and takes up airtime.</p>
+  <p>Device info is significantly curtailed because it’s not necessary for the nodes to route packets, and takes up airtime. The odd interval allows the info broadcast to rotate throughout the day.</p>
   <p><span class="js-konami" data-alt="Bunny">Hop</span> limit: fixed nodes should focus on advertising to their immediate vicinity. They also should be within direct or single-<span class="js-konami" data-alt="bunny">hop</span> range of infrastructure, and don’t need as many <span class="js-konami" data-alt="bunnies">hops</span> to reach through the infill — they <em>are</em> the infill.</p>
 </details>
 <br />
