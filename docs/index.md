@@ -11,9 +11,18 @@ nyme.sh is a group of enthusiasts who love Meshtastic! Most of us are in the New
 (If you’re looking for the mesh WiFi network, see [NYC Mesh](https://www.nycmesh.net/).)
 
 
-## Current Meshtastic Settings
+## What is this?
 
-The main nyme.sh [Meshtastic](https://meshtastic.org) network is operating on a ***non**-default* Frequency Slot. See the [recommended configuration](/getting-started#meshtastic) for Meshtastic nodes**. See [preset testing](/preset-testing/) for the history.
+[Meshtastic](https://meshtastic.org) and [MeshCore](https://meshcore.io) are tools for building networks using inexpensive, low-power radio devices, often paired with a smartphone, that operate in a decentralized mesh fashion on license-free frequencies. We are a group of people operating independent, autonomous communication networks covering [wide areas](https://coverage.nyme.sh) in the New York vicinity using these technologies. The networks are low-throughput and limited to short text messages, but they are resilient and can generally withstand widespread power or internet outages. Think walkie-talkies but with text messages. They are _not intended to be life-safety tools_, but we hope you still find the networks useful!
+
+We also have lots of experience using these tools in other contexts, like hiking and festivals, and other things like Amateur Radio, so hop onto the [network](/getting-started) or the [Discord](https://discord.nyme.sh) if you want to learn more. All questions welcome!
+
+
+## Current Settings
+
+The main NYC-area network uses **Meshtastic** and is operating on a [<u>non-default Frequency Slot</u>](/getting-started#meshtastic) ([history](/preset-testing/)).
+
+The NYC *MeshCore* presence is operating on <u>US defaults</u>, check the [config guide](/getting-started#meshcore) for details.
 
 
 ## Stats & Services
@@ -37,7 +46,9 @@ The main nyme.sh [Meshtastic](https://meshtastic.org) network is operating on a 
 - [https://w2asm.com/hops/](https://w2asm.com/hops/)
   - source: [https://github.com/morria/hops](https://github.com/morria/hops)
 
+
 # Adjacent Meshes
+
 > **_NOTE:_**  If you would like to be added to this list, [submit a pull request](https://github.com/MeshNY/meshny.github.io/pulls) or stop by the [Discord server](https://discord.nyme.sh) and ask for a volunteer.
 
 ## New York
