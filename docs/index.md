@@ -22,7 +22,7 @@ We also have lots of experience using these tools in other contexts, like hiking
 
 The main NYC-area network uses **Meshtastic** and is operating on a [<u>non-default Frequency Slot</u>](/getting-started#meshtastic) ([history](/preset-testing/)).
 
-The NYC *MeshCore* presence is operating on <u>US defaults</u>, check the [config guide](/getting-started#meshcore) for details.
+The NYC *MeshCore* presence is operating on <u>US defaults</u>. Check the [config guide](/getting-started#meshcore) for details.
 
 
 ## Stats & Services
@@ -68,7 +68,7 @@ The NYC *MeshCore* presence is operating on <u>US defaults</u>, check the [confi
 - [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US - NY Capital Region and Hudson Valley_](https://discord.com/channels/867578229534359593/1282698033657811105)
 
 ### Northern/Central New York
-- Rochester [ROCMesh](https://rocmesh.com/)
+- Rochester: [ROCMesh](https://rocmesh.com/)
 - [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867578229534359593/1292647069256913031)
 - [CNYMesh](https://cnymesh.org/)
 
