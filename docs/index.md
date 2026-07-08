@@ -42,19 +42,8 @@ The main nyme.sh [Meshtastic](https://meshtastic.org) network is operating on a 
 
 ## New York
 
-### Buffalo
-- BuffaLoRa & SnyderMesh: [buffalora.org](https://buffalora.org)
-- [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US - NY - Western_](https://discord.com/channels/867578229534359593/1214181209597280357)
-
-### Capital Region and Hudson Valley
-- Upstate Mesh: [upstatemesh.org](https://www.upstatemesh.org/)
-- [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US - NY Capital Region and Hudson Valley_](https://discord.com/channels/867578229534359593/1282698033657811105)
-
 ### Long Island Suffolk/Nassau/Queens
 - [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US NY - Long Island Suffolk/Nassau/Queens_](https://discord.com/channels/867578229534359593/1292647069256913031)
-
-### Rochester
-- [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867578229534359593/1292647069256913031)
 
 ### Sullivan County and the Southern Catskills
 - Kaatskills Mesh: [kmesh.us](https://kmesh.us)
@@ -63,6 +52,20 @@ The main nyme.sh [Meshtastic](https://meshtastic.org) network is operating on a 
 ### Westchester County
 - [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US - NY - Westchester County_](https://discord.com/channels/867578229534359593/1383046714763509910)
 
+### Capital Region and Hudson Valley
+- Upstate Mesh: [upstatemesh.org](https://www.upstatemesh.org/)
+- [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US - NY Capital Region and Hudson Valley_](https://discord.com/channels/867578229534359593/1282698033657811105)
+
+### Northern/Central New York
+- Rochester [ROCMesh](https://rocmesh.com/)
+- [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US-Rochester, NY_](https://discord.com/channels/867578229534359593/1292647069256913031)
+- [CNYMesh](https://cnymesh.org/)
+
+### Western New York
+- BuffaLoRa & SnyderMesh: [buffalora.org](https://buffalora.org)
+- [Meshtastic Discord](https://discord.com/invite/ktMAKGBnBs) under [_Social -> connect -> US - NY - Western_](https://discord.com/channels/867578229534359593/1214181209597280357)
+- [Southern Tier Mesh](https://stmesh.net/)
+
 ## New Jersey
 - Central NJ: [cnjmesh.me](https://cnjmesh.me)
 - Forest Edge: [forest-edge.info](https://forest-edge.info/)
@@ -70,3 +73,10 @@ The main nyme.sh [Meshtastic](https://meshtastic.org) network is operating on a 
 ## Connecticut
 - CT Mesh (Statewide): [ctmesh.org](https://ctmesh.org/)
 - [CT Mesh Discord](https://discord.gg/m4F328as3K)
+
+## Massachusetts
+- [Berkshire Mesh](https://brkme.sh/)
+
+## Pennsylvania
+
+- [Lehigh Valley Mesh](https://lvmesh.com/)
