@@ -188,8 +188,8 @@ For repeaters:
 1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
 2. Set zero-hop auto advert interval to <u>240 minutes</u> or more
 3. Set flood auto advert interval to <u>47 hours</u> or more
-4. (<em>recommended</em>) Set 2-byte prefixes for adverts: `set path.hash.mode 1`
-4. (<em>recommended</em>) Set advert hop limits to 8 (already the default as of 1.16): `set flood.max.advert 8`
+4. (<em>recommended</em>) Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1`
+4. (<em>recommended</em>) Set advert hop limits to <u>8</u> (already the default as of 1.16): `set flood.max.advert 8`
 
 <details>
   <summary>Explanation of the settings</summary>
