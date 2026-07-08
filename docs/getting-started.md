@@ -21,9 +21,11 @@ If you don’t already have a device, see our list of [recommended complete node
 
 To connect to the wide-area Meshtastic networks in the NYC area…
 
-1. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)<span class="js-mt-firmware"></span>
-2. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
-3. Configure your node as described below, based on how you use it:
+1. Familiarize yourself with the technology using the [official documentation](https://meshtastic.org/docs/getting-started/)
+2. Ensure your node is on the [latest Beta or Alpha firmware](https://flasher.meshtastic.org)<span class="js-mt-firmware"></span>
+3. (optional) Enable LoRa &gt; Ok To MQTT to show on the [map/chat](https://meshview.nyme.sh/map)
+4. Configure your node as described below, based on how you use it:
+  <br/><small>Note that the config guidelines below will likely deviate from the official recommendations. This is because a large wide-area mesh network has different requirements than the more personal mesh networks Meshtastic is oriented toward by default. The configs here are tailored specifically for our usecase; it makes for a good experience within the context of these networks, but may not be useful if you are using Meshtastic for personal meshes.</small>
 
 ### Personal node configuration
 
@@ -187,13 +189,14 @@ To connect to the wide-area MeshCore network in the NYC area:
 </div>
 
 
-For repeaters:
+### Repeaters
 
-1. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
-2. Set zero-hop auto advert interval to <u>240 minutes</u> or more
-3. Set flood auto advert interval to <u>47 hours</u> or more
-4. (<em>recommended</em>) Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1`
-4. (<em>recommended</em>) Set advert hop limits to <u>8</u> (already the default as of 1.16): `set flood.max.advert 8`
+1. Familiarize yourself with the techology using the [official documentation](https://docs.meshcore.io/faq/)
+2. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
+3. Set zero-hop auto advert interval to <u>240 minutes</u> or more
+4. Set flood auto advert interval to <u>47 hours</u> or more
+5. (<em>recommended</em>) Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1`
+6. (<em>recommended</em>) Set advert hop limits to <u>8</u> (already the default as of 1.16): `set flood.max.advert 8`
 
 <details>
   <summary>Explanation of the settings</summary>
