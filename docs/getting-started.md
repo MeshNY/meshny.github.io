@@ -4,10 +4,14 @@ title: Getting Started
 
 # Getting Started
 
+There are [several wide-area LoRa mesh networks](https://coverage.nyme.sh) in the NYC metro area, using different technologies and in various states of formation. You are welcome to join any or all of them! <em>Please</em> read and follow the configuration guidelines for each one, to give yourself and everyone else an optimal experience.
+
+Two networks use [Meshtastic](https://meshtastic.org), and one uses [MeshCore](https://meshcore.io). Which one you can reach depends on who else is around you. Be patient, try all three out, send hello messages to see if you are in range.
+
 
 ## Hardware
 
-You will need at least a personal, handheld node that will be your direct connection to the mesh. Additionally, most people need a “roof” node to create a reliable first hop to the area infrastructure.
+You will need at least a personal, handheld node that will be your direct connection to the mesh. Additionally, most people need a “roof” node to create a reliable first hop to the area infrastructure. If you want to join multiple networks at the same time, you will need a device for each.
 
 If you don’t already have a device, see our list of [recommended complete nodes](/faq#hardware).
 
