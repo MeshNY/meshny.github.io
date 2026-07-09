@@ -195,12 +195,12 @@ To connect to the wide-area MeshCore network in the NYC area:
 2. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
 3. Set zero-hop auto advert interval to <u>240 minutes</u> or more
 4. Set flood auto advert interval to <u>47 hours</u> or more
-5. (<em>recommended</em>) Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1`
+5. (<em>recommended</em>) Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1` then `clock sync`
 6. (<em>recommended</em>) Set advert hop limits to <u>8</u> (already the default as of 1.16): `set flood.max.advert 8`
 
 <details>
   <summary>Explanation of the settings</summary>
-  <p>Advert intervals are maximized and hops curtailed to reduce the airtime load on the mesh. The odd number of 47 ensures the flood adverts of the repeater rotate through the day over time, to avoid people missing it because they are only in an area at certain times of day. Packets can get routed and paths discovered even without hearing the adverts; knowing the full ID and name of the repeater is informational only. 2-byte prefixes are recommended to reduce chance of ID collision with other repeaters, for clarity and optimal routing.</p>
+  <p>Advert intervals are maximized and hops curtailed to reduce the airtime load on the mesh. The odd number of 47 ensures the flood adverts of the repeater rotate through the day over time, to avoid people missing it because they are only in an area at certain times of day. Packets can get routed and paths discovered even without hearing the adverts; knowing the full ID and name of the repeater is informational only. 2-byte prefixes are recommended to reduce chance of ID collision with other repeaters, for clarity and optimal routing, but when this is set, there is a bug that will change the clock time, so it will have to be resynced.</p>
 </details>
 
 <script>
