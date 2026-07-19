@@ -195,7 +195,7 @@ To connect to the wide-area MeshCore network in the NYC area:
 2. Ensure your repeater is on the [latest firmware](https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span>
 3. Set zero-hop auto advert interval to <u>240 minutes</u> or more
 4. Set flood auto advert interval to <u>47 hours</u> or more
-5. (<em>recommended</em>) Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1` then `clock sync`
+5. Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1` then `clock sync`
 6. (<em>recommended</em>) Set advert hop limits to <u>8</u> (already the default as of 1.16): `set flood.max.advert 8`
 
 <details>
