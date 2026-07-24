@@ -45,6 +45,7 @@ Use one of these stable values for `coordination_status`:
 | Value | Meaning in this viewer |
 | --- | --- |
 | `official_new_england` | Official New England Mesh Region |
+| `official_local` | Official region of the organization hosting the map |
 | `political_boundaries` | Political Boundaries |
 | `proposed` | Proposed Region |
 | `coordinated_external` | Coordinated External Region |

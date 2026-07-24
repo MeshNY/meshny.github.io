@@ -366,6 +366,12 @@
       color: #075e54;
     }
 
+    .coordination-badge.official-local {
+      background: #dff6f2;
+      border-color: #99e6d9;
+      color: #075e54;
+    }
+
     .coordination-badge.coordinated-external {
       background: #e8efff;
       border-color: #bdd0ff;
@@ -591,6 +597,7 @@
       }
       return {
         official_new_england: "Official New England Mesh Region",
+        official_local: "Official Local Region",
         political_boundaries: "Political Boundaries",
         proposed: "Proposed Region",
         coordinated_external: "Coordinated External Region",
@@ -729,14 +736,14 @@
       const id = regionId(feature.properties);
       const color = colorFor(id || "");
       const status = coordinationStatus(feature.properties || {});
-      const isOfficialNewEngland = status === "official_new_england";
+      const isOfficial = status === "official_new_england" || status === "official_local";
       const isHatched = status === "proposed" || status === "extrapolated_external";
       return {
         color,
         dashArray: status === "extrapolated_external" ? "6 5" : null,
         fillColor: isHatched ? `url(#hatch-${status}-${id})` : color,
-        fillOpacity: isHatched ? 0.18 : (isOfficialNewEngland ? 0.18 : 0.09),
-        opacity: isOfficialNewEngland ? 0.95 : 0.48,
+        fillOpacity: isHatched ? 0.18 : (isOfficial ? 0.18 : 0.09),
+        opacity: isOfficial ? 0.95 : 0.48,
         weight: id === "east" ? 2 : 3
       };
     }
