@@ -224,7 +224,7 @@ To connect to the wide-area MeshCore network in the NYC area:
           `region save`
 
 
-
+<details>
   <summary>Explanation of the settings</summary>
   <p>Advert intervals are maximized and hops curtailed to reduce the airtime load on the mesh. The odd number of 47 ensures the flood adverts of the repeater rotate through the day over time, to avoid people missing it because they are only in an area at certain times of day. Packets can get routed and paths discovered even without hearing the adverts; knowing the full ID and name of the repeater is informational only. 2-byte prefixes are recommended to reduce chance of ID collision with other repeaters, for clarity and optimal routing, but when this is set, there is a bug that will change the clock time, so it will have to be resynced. Regioning is implemented so clients can choose the area their signal floods to.</p>
 </details>
