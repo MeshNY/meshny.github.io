@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeshCore Regions</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQorGC6w5t2EWPMKdbTNOSpR4T9zD9M="
+    crossorigin=""
+  >
+  <style>
+    .leaflet-pane,
+    .leaflet-tile,
+    .leaflet-marker-icon,
+    .leaflet-marker-shadow,
+    .leaflet-tile-container,
+    .leaflet-pane > svg,
+    .leaflet-pane > canvas,
+    .leaflet-zoom-box,
+    .leaflet-image-layer,
+    .leaflet-layer {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    .leaflet-container {
+      background: #d8e2e8;
+      overflow: hidden;
+      position: relative;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .leaflet-map-pane {
+      z-index: 400;
+    }
+
+    .leaflet-tile-pane {
+      z-index: 200;
+    }
+
+    .leaflet-overlay-pane {
+      z-index: 400;
+    }
+
+    .leaflet-shadow-pane {
+      z-index: 500;
+    }
+
+    .leaflet-marker-pane {
+      z-index: 600;
+    }
+
+    .leaflet-tooltip-pane {
+      z-index: 650;
+    }
+
+    .leaflet-popup-pane {
+      z-index: 700;
+    }
+
+    .leaflet-tile,
+    .leaflet-marker-icon,
+    .leaflet-marker-shadow {
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .leaflet-tile {
+      filter: inherit;
+      visibility: hidden;
+    }
+
+    .leaflet-tile-loaded {
+      visibility: inherit;
+    }
+
+    .leaflet-zoom-animated {
+      transform-origin: 0 0;
+    }
+
+    .leaflet-interactive {
+      cursor: pointer;
+    }
+
+    .leaflet-control {
+      clear: both;
+      float: left;
+      pointer-events: auto;
+      position: relative;
+      z-index: 800;
+    }
+
+    .leaflet-top,
+    .leaflet-bottom {
+      pointer-events: none;
+      position: absolute;
+      z-index: 1000;
+    }
+
+    .leaflet-top {
+      top: 0;
+    }
+
+    .leaflet-right {
+      right: 0;
+    }
+
+    .leaflet-bottom {
+      bottom: 0;
+    }
+
+    .leaflet-left {
+      left: 0;
+    }
+
+    .leaflet-top .leaflet-control {
+      margin-top: 10px;
+    }
+
+    .leaflet-bottom .leaflet-control {
+      margin-bottom: 10px;
+    }
+
+    .leaflet-left .leaflet-control {
+      margin-left: 10px;
+    }
+
+    .leaflet-right .leaflet-control {
+      float: right;
+      margin-right: 10px;
+    }
+
+    .leaflet-control-layers,
+    .leaflet-bar {
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+    }
+
+    .leaflet-bar a {
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      color: #000;
+      display: block;
+      font: bold 18px/26px Arial, Helvetica, sans-serif;
+      height: 26px;
+      text-align: center;
+      text-decoration: none;
+      width: 26px;
+    }
+
+    .leaflet-control-layers {
+      padding: 6px 8px;
+    }
+
+    .leaflet-control-layers.panel-collapsed {
+      max-height: none;
+      max-width: none;
+      overflow: visible;
+      padding: 6px;
+      width: auto;
+    }
+
+    .leaflet-control-layers.panel-collapsed > *:not(.layer-actions),
+    .leaflet-control-layers.panel-collapsed .leaflet-control-layers-list,
+    .leaflet-control-layers.panel-collapsed .leaflet-control-layers-overlays,
+    .leaflet-control-layers.panel-collapsed .leaflet-control-layers-base,
+    .leaflet-control-layers.panel-collapsed .leaflet-control-layers-separator,
+    .leaflet-control-layers.panel-collapsed .deselect-action {
+      display: none;
+    }
+
+    .leaflet-control-layers label {
+      display: block;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .leaflet-control-layers .layer-actions {
+      border-top: 1px solid #d7dee7;
+      margin-top: 8px;
+      padding-top: 8px;
+    }
+
+    .leaflet-control-layers.panel-collapsed .layer-actions {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .leaflet-control-layers.panel-collapsed .layer-actions button {
+      min-width: 4.25rem;
+      width: auto;
+    }
+
+    .leaflet-control-layers .layer-actions button {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      color: #1e293b;
+      cursor: pointer;
+      font: 12px/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 5px 8px;
+      width: 100%;
+    }
+
+    .leaflet-control-layers .layer-actions button + button {
+      margin-top: 6px;
+    }
+
+    .leaflet-control-layers .layer-actions button:hover {
+      background: #e2e8f0;
+    }
+
+    .leaflet-popup {
+      margin-bottom: 20px;
+      position: absolute;
+      text-align: center;
+    }
+
+    .leaflet-popup-content-wrapper {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+      padding: 1px;
+      position: relative;
+      text-align: left;
+    }
+
+    .leaflet-popup-content {
+      line-height: 1.3;
+      margin: 13px 19px;
+    }
+
+    .leaflet-popup-close-button {
+      color: #475569;
+      font: 20px/20px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      height: 20px;
+      position: absolute;
+      right: 5px;
+      text-align: center;
+      text-decoration: none;
+      top: 5px;
+      width: 20px;
+      z-index: 1;
+    }
+
+    .leaflet-popup-close-button:hover {
+      color: #0f172a;
+    }
+
+    html,
+    body,
+    #map {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .title {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 6px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      color: #16202a;
+      line-height: 1.35;
+      padding: 10px 12px;
+    }
+
+    .title h1 {
+      font-size: 16px;
+      margin: 0 0 2px;
+    }
+
+    .title p {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .legend {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 6px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      color: #16202a;
+      max-height: min(52vh, 420px);
+      overflow: auto;
+      padding: 10px 12px;
+    }
+
+    .legend.panel-collapsed {
+      overflow: visible;
+      padding: 6px;
+    }
+
+    .legend h2 {
+      align-items: center;
+      display: flex;
+      font-size: 13px;
+      gap: 10px;
+      justify-content: space-between;
+      margin: 0 0 8px;
+    }
+
+    .legend.panel-collapsed h2 {
+      margin: 0;
+    }
+
+    .legend.panel-collapsed #legendRows {
+      display: none;
+    }
+
+    .panel-toggle {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      color: #1e293b;
+      cursor: pointer;
+      flex: 0 0 auto;
+      font: 12px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-width: 2.25rem;
+      padding: 5px 7px;
+    }
+
+    .panel-toggle:hover {
+      background: #e2e8f0;
+    }
+
+    .legend-row {
+      align-items: center;
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 18px 1fr;
+      font-size: 12px;
+      margin: 5px 0;
+      white-space: nowrap;
+    }
+
+    .legend-region-name,
+    .popup-region-name {
+      display: block;
+    }
+
+    .coordination-badge {
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      color: #334155;
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.2;
+      margin-top: 3px;
+      padding: 2px 5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .coordination-badge.official-new-england {
+      background: #dff6f2;
+      border-color: #99e6d9;
+      color: #075e54;
+    }
+
+    .coordination-badge.coordinated-external {
+      background: #e8efff;
+      border-color: #bdd0ff;
+      color: #1e3a8a;
+    }
+
+    .coordination-badge.political-boundaries {
+      background: #f0e7ff;
+      border-color: #d8bfff;
+      color: #5b21b6;
+    }
+
+    .coordination-badge.proposed {
+      background: #fff7ed;
+      border-color: #fdba74;
+      color: #9a3412;
+    }
+
+    .coordination-badge.extrapolated-external {
+      background: #fff4dc;
+      border-color: #f4cf86;
+      color: #7c4a03;
+    }
+
+    .region-code {
+      background: #eef2f7;
+      border: 1px solid #d6dee8;
+      border-radius: 4px;
+      color: #0f172a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+      padding: 1px 4px;
+      white-space: nowrap;
+    }
+
+    .swatch {
+      border: 2px solid currentColor;
+      border-radius: 3px;
+      height: 12px;
+      opacity: 0.85;
+      width: 14px;
+    }
+
+    .swatch.extrapolated-external {
+      background-image: repeating-linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 3px,
+        currentColor 3px,
+        currentColor 5px
+      );
+    }
+
+    .popup-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .popup-table {
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .popup-table th {
+      color: #536271;
+      font-weight: 600;
+      padding: 2px 8px 2px 0;
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .popup-table td {
+      padding: 2px 0;
+      vertical-align: top;
+    }
+
+    .region-list {
+      list-style: none;
+      margin: 8px 0 0;
+      padding: 0;
+    }
+
+    .region-list li {
+      align-items: center;
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 16px 1fr;
+      margin: 5px 0;
+    }
+
+    .region-list strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .region-list span {
+      color: #536271;
+      display: block;
+      font-size: 12px;
+    }
+
+    .error {
+      background: #fff3f0;
+      border-left: 4px solid #c8372d;
+      color: #43120e;
+      font-size: 14px;
+      left: 50%;
+      max-width: 560px;
+      padding: 12px 14px;
+      position: fixed;
+      top: 16px;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    @media (max-width: 700px) {
+      .title {
+        max-width: calc(100vw - 96px);
+        padding: 8px 10px;
+      }
+
+      .title h1 {
+        font-size: 14px;
+      }
+
+      .title p {
+        display: none;
+      }
+
+      .leaflet-right .leaflet-control,
+      .leaflet-left .leaflet-control {
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+
+      .leaflet-control-layers {
+        max-height: min(58vh, 390px);
+        max-width: calc(100vw - 24px);
+        overflow: auto;
+      }
+
+      .legend {
+        max-height: min(48vh, 320px);
+        max-width: calc(100vw - 24px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script>
+    const palette = [
+      "#0f766e",
+      "#b91c1c",
+      "#1d4ed8",
+      "#b45309",
+      "#6d28d9",
+      "#047857",
+      "#be123c",
+      "#0369a1",
+      "#a16207",
+      "#7e22ce",
+      "#15803d",
+      "#c2410c",
+      "#334155"
+    ];
+    const regionColors = new Map();
+
+    function colorFor(id) {
+      if (id === "east") {
+        return "#4b5563";
+      }
+      return regionColors.get(id) || "#111827";
+    }
+
+    function regionId(properties, fallback = "") {
+      return properties.id || properties.index || fallback;
+    }
+
+    function regionCode(properties) {
+      return String(regionId(properties) || properties.short_name || "").toLowerCase();
+    }
+
+    function titleCaseKind(kind) {
+      return String(kind || "")
+        .split("_")
+        .filter(Boolean)
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    }
+
+    function regionTypeLabel(properties) {
+      if (properties.region_type) {
+        return properties.region_type;
+      }
+      const id = regionId(properties);
+      if (id === "east") {
+        return "East Coast Region";
+      }
+      const kind = String(properties.kind || "");
+      if (kind === "adjacent_region") {
+        return "Adjacent Region";
+      }
+      if (kind.startsWith("adjacent_")) {
+        return `Adjacent Region - ${titleCaseKind(kind.replace(/^adjacent_/, ""))}`;
+      }
+      return titleCaseKind(kind);
+    }
+
+    function coordinationStatus(properties) {
+      return properties.coordination_status || "extrapolated_external";
+    }
+
+    function coordinationLabel(properties) {
+      if (properties.coordination_label) {
+        return properties.coordination_label;
+      }
+      return {
+        official_new_england: "Official New England Mesh Region",
+        political_boundaries: "Political Boundaries",
+        proposed: "Proposed Region",
+        coordinated_external: "Coordinated External Region",
+        extrapolated_external: "Suggested External Region"
+      }[coordinationStatus(properties)] || "Suggested External Region";
+    }
+
+    function coordinationClass(properties) {
+      return coordinationStatus(properties).replaceAll("_", "-");
+    }
+
+    function swatchClass(properties) {
+      return `swatch ${coordinationClass(properties)}`;
+    }
+
+    const defaultCenter = [43.06889, -71.61438];
+    const defaultZoom = 8;
+
+    function sharedViewFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const latParam = params.get("lat");
+      const lngParam = params.get("lng");
+      if (latParam === null || lngParam === null) {
+        return null;
+      }
+      const lat = Number(latParam);
+      const lng = Number(lngParam);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+        return null;
+      }
+      if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+        return null;
+      }
+      const zoomParam = params.get("z");
+      const zoom = zoomParam === null ? defaultZoom : Number(zoomParam);
+      return {
+        center: [lat, lng],
+        latlng: L.latLng(lat, lng),
+        zoom: Number.isFinite(zoom) ? Math.min(19, Math.max(1, Math.round(zoom))) : defaultZoom,
+      };
+    }
+
+    const initialSharedView = sharedViewFromUrl();
+    const initialCenter = initialSharedView?.latlng || L.latLng(defaultCenter[0], defaultCenter[1]);
+    const initialZoom = initialSharedView?.zoom || defaultZoom;
+    // Leaflet requires setView to establish its initial center and zoom.
+    const map = L.map("map", { minZoom: 1 }).setView(initialCenter, initialZoom, { animate: false });
+    const loadedRegionFeatures = [];
+    const regionLayers = [];
+    const regionPathPrefix = window.location.pathname.includes("/regions/") ? "" : "regions/";
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const overlayControl = L.control.layers(null, null, {
+      collapsed: false,
+      sortLayers: true
+    }).addTo(map);
+
+    function installLayerActions() {
+      const container = overlayControl.getContainer();
+      if (!container || container.querySelector(".layer-actions")) {
+        return;
+      }
+      const div = L.DomUtil.create("div", "layer-actions", container);
+      div.innerHTML = `
+        <button class="panel-toggle" type="button" aria-expanded="true">Hide layers</button>
+        <button class="deselect-action" type="button">Deselect all</button>
+      `;
+      const toggle = div.querySelector(".panel-toggle");
+      const deselect = div.querySelector(".deselect-action");
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.on(toggle, "click", (event) => {
+        L.DomEvent.stop(event);
+        const collapsed = container.classList.toggle("panel-collapsed");
+        toggle.textContent = collapsed ? "Layers" : "Hide layers";
+        toggle.setAttribute("aria-expanded", String(!collapsed));
+      });
+      L.DomEvent.on(deselect, "click", (event) => {
+        L.DomEvent.stop(event);
+        regionLayers.forEach((layer) => {
+          if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+          }
+        });
+      });
+    }
+    installLayerActions();
+
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = () => {
+      const div = L.DomUtil.create("div", "legend");
+      div.innerHTML = `
+        <h2>
+          <span>Regions</span>
+          <button class="panel-toggle" type="button" aria-expanded="true">Hide key</button>
+        </h2>
+        <div id="legendRows"></div>
+      `;
+      const toggle = div.querySelector(".panel-toggle");
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.on(toggle, "click", (event) => {
+        L.DomEvent.stop(event);
+        const collapsed = div.classList.toggle("panel-collapsed");
+        toggle.textContent = collapsed ? "Key" : "Hide key";
+        toggle.setAttribute("aria-expanded", String(!collapsed));
+      });
+      return div;
+    };
+    legend.addTo(map);
+
+    function collapseMobilePanels() {
+      if (!window.matchMedia("(max-width: 700px)").matches) {
+        return;
+      }
+      const layerContainer = overlayControl.getContainer();
+      const layerToggle = layerContainer?.querySelector(".panel-toggle");
+      if (layerContainer && layerToggle && !layerContainer.classList.contains("panel-collapsed")) {
+        layerContainer.classList.add("panel-collapsed");
+        layerToggle.textContent = "Layers";
+        layerToggle.setAttribute("aria-expanded", "false");
+      }
+      const legendContainer = legend.getContainer();
+      const legendToggle = legendContainer?.querySelector(".panel-toggle");
+      if (legendContainer && legendToggle && !legendContainer.classList.contains("panel-collapsed")) {
+        legendContainer.classList.add("panel-collapsed");
+        legendToggle.textContent = "Key";
+        legendToggle.setAttribute("aria-expanded", "false");
+      }
+    }
+    collapseMobilePanels();
+
+    function featureStyle(feature) {
+      const id = regionId(feature.properties);
+      const color = colorFor(id || "");
+      const status = coordinationStatus(feature.properties || {});
+      const isOfficialNewEngland = status === "official_new_england";
+      const isHatched = status === "proposed" || status === "extrapolated_external";
+      return {
+        color,
+        dashArray: status === "extrapolated_external" ? "6 5" : null,
+        fillColor: isHatched ? `url(#hatch-${status}-${id})` : color,
+        fillOpacity: isHatched ? 0.18 : (isOfficialNewEngland ? 0.18 : 0.09),
+        opacity: isOfficialNewEngland ? 0.95 : 0.48,
+        weight: id === "east" ? 2 : 3
+      };
+    }
+
+    function addHatchPattern(layer, properties) {
+      const status = coordinationStatus(properties);
+      if (status !== "proposed" && status !== "extrapolated_external") {
+        return;
+      }
+      const id = regionId(properties);
+      const patternId = `hatch-${status}-${id}`;
+      const pathLayer = layer.getLayers()[0];
+      const svg = pathLayer?._renderer?._container;
+      if (!svg || svg.querySelector(`#${patternId}`)) {
+        return;
+      }
+
+      const svgNamespace = "http://www.w3.org/2000/svg";
+      const defs = svg.querySelector("defs") || svg.insertBefore(
+        document.createElementNS(svgNamespace, "defs"),
+        svg.firstChild
+      );
+      const pattern = document.createElementNS(svgNamespace, "pattern");
+      pattern.setAttribute("id", patternId);
+      pattern.setAttribute("width", "12");
+      pattern.setAttribute("height", "12");
+      pattern.setAttribute("patternUnits", "userSpaceOnUse");
+
+      const background = document.createElementNS(svgNamespace, "rect");
+      background.setAttribute("width", "12");
+      background.setAttribute("height", "12");
+      background.setAttribute("fill", colorFor(id));
+      pattern.appendChild(background);
+
+      const hatch = document.createElementNS(svgNamespace, "path");
+      hatch.setAttribute(
+        "d",
+        status === "proposed"
+          ? "M -3,3 L 3,-3 M 0,12 L 12,0 M 9,15 L 15,9"
+          : "M -3,9 L 3,15 M 0,0 L 12,12 M 9,-3 L 15,3"
+      );
+      hatch.setAttribute("fill", "none");
+      hatch.setAttribute("stroke", "#111827");
+      hatch.setAttribute("stroke-opacity", "0.8");
+      hatch.setAttribute("stroke-width", "1.5");
+      pattern.appendChild(hatch);
+      defs.appendChild(pattern);
+    }
+
+    function showError(message) {
+      const div = document.createElement("div");
+      div.className = "error";
+      div.textContent = message;
+      document.body.appendChild(div);
+    }
+
+    function fetchJson(url) {
+      return fetch(url).then((response) => {
+        if (!response.ok) {
+          throw new Error(`${url}: HTTP ${response.status}`);
+        }
+        return response.json();
+      });
+    }
+
+    function pointOnSegment(point, a, b) {
+      const lengthSquared = (b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2;
+      if (lengthSquared === 0) {
+        return Math.abs(point[0] - a[0]) < 1e-10 && Math.abs(point[1] - a[1]) < 1e-10;
+      }
+      const cross = (point[1] - a[1]) * (b[0] - a[0]) - (point[0] - a[0]) * (b[1] - a[1]);
+      if (Math.abs(cross) > 1e-10) {
+        return false;
+      }
+      const dot = (point[0] - a[0]) * (b[0] - a[0]) + (point[1] - a[1]) * (b[1] - a[1]);
+      if (dot < 0) {
+        return false;
+      }
+      return dot <= lengthSquared;
+    }
+
+    function pointInRing(point, ring) {
+      let inside = false;
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const a = ring[i];
+        const b = ring[j];
+        if (pointOnSegment(point, a, b)) {
+          return true;
+        }
+        const intersects = ((a[1] > point[1]) !== (b[1] > point[1]))
+          && (point[0] < ((b[0] - a[0]) * (point[1] - a[1])) / (b[1] - a[1]) + a[0]);
+        if (intersects) {
+          inside = !inside;
+        }
+      }
+      return inside;
+    }
+
+    function pointInPolygon(point, polygon) {
+      if (!polygon.length || !pointInRing(point, polygon[0])) {
+        return false;
+      }
+      return !polygon.slice(1).some((hole) => pointInRing(point, hole));
+    }
+
+    function pointInGeometry(point, geometry) {
+      if (!geometry) {
+        return false;
+      }
+      if (geometry.type === "Polygon") {
+        return pointInPolygon(point, geometry.coordinates);
+      }
+      if (geometry.type === "MultiPolygon") {
+        return geometry.coordinates.some((polygon) => pointInPolygon(point, polygon));
+      }
+      if (geometry.type === "GeometryCollection") {
+        return geometry.geometries.some((child) => pointInGeometry(point, child));
+      }
+      return false;
+    }
+
+    function formatCoordinate(value) {
+      return Number(value).toFixed(6);
+    }
+
+    function formatShareCoordinate(value) {
+      return Number(value).toFixed(5);
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function locationLabel(address) {
+      if (!address) {
+        return "";
+      }
+      const town = address.city
+        || address.town
+        || address.village
+        || address.hamlet
+        || address.municipality
+        || address.suburb
+        || address.neighbourhood;
+      const county = address.county;
+      const state = address.state_code || address.state;
+      return [town, county, state].filter(Boolean).join(", ");
+    }
+
+    function reverseGeocode(latlng) {
+      const params = new URLSearchParams({
+        format: "jsonv2",
+        lat: latlng.lat,
+        lon: latlng.lng,
+        zoom: "18",
+        addressdetails: "1",
+      });
+      return fetchJson(`https://nominatim.openstreetmap.org/reverse?${params}`)
+        .then((data) => locationLabel(data.address) || data.display_name || "");
+    }
+
+    function regionListPopup(latlng, matches, place = "Looking up...") {
+      const coordinate = `${formatCoordinate(latlng.lat)}, ${formatCoordinate(latlng.lng)}`;
+      const placeRow = `<tr><th>Place</th><td>${escapeHtml(place)}</td></tr>`;
+      if (!matches.length) {
+        return `
+          <div class="popup-title">No MeshCore region</div>
+          <table class="popup-table">
+            <tr><th>GPS</th><td>${coordinate}</td></tr>
+            ${placeRow}
+          </table>
+        `;
+      }
+
+      return `
+        <div class="popup-title">${matches.length} MeshCore region${matches.length === 1 ? "" : "s"}</div>
+        <table class="popup-table">
+          <tr><th>GPS</th><td>${coordinate}</td></tr>
+          ${placeRow}
+        </table>
+        <ul class="region-list">
+          ${matches.map((props) => {
+            const id = regionId(props);
+            const color = colorFor(id);
+            return `
+              <li>
+                <span class="${swatchClass(props)}" style="color: ${color}; background-color: ${color}33"></span>
+                <div>
+                  <strong class="popup-region-name"><code class="region-code">${regionCode(props)}</code> - ${props.name}</strong>
+                  <span>${regionTypeLabel(props)}</span>
+                  <span class="coordination-badge ${coordinationClass(props)}">${coordinationLabel(props)}</span>
+                </div>
+              </li>
+            `;
+          }).join("")}
+        </ul>
+      `;
+    }
+
+    function queryRegionsAt(latlng) {
+      const point = [latlng.lng, latlng.lat];
+      return loadedRegionFeatures
+        .filter((feature) => pointInGeometry(point, feature.geometry))
+        .map((feature) => feature.properties)
+        .sort((a, b) => {
+          if (regionId(a) === "east") return 1;
+          if (regionId(b) === "east") return -1;
+          return String(a.short_name).localeCompare(String(b.short_name));
+        });
+    }
+
+    function updateShareUrl(latlng) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lat", formatShareCoordinate(latlng.lat));
+      url.searchParams.set("lng", formatShareCoordinate(latlng.lng));
+      url.searchParams.set("z", String(map.getZoom()));
+      window.history.replaceState(null, "", url);
+    }
+
+    function openRegionPopup(latlng, updateUrl = false) {
+      if (updateUrl) {
+        updateShareUrl(latlng);
+      }
+      const matches = queryRegionsAt(latlng);
+      const popup = L.popup({ maxWidth: 420, minWidth: 320 })
+        .setLatLng(latlng)
+        .setContent(regionListPopup(latlng, matches))
+        .openOn(map);
+
+      reverseGeocode(latlng)
+        .then((place) => {
+          if (map.hasLayer(popup)) {
+            popup.setContent(regionListPopup(latlng, matches, place || "Unknown"));
+          }
+        })
+        .catch(() => {
+          if (map.hasLayer(popup)) {
+            popup.setContent(regionListPopup(latlng, matches, "Unavailable"));
+          }
+        });
+    }
+
+    map.on("click", (event) => {
+      openRegionPopup(event.latlng, true);
+    });
+
+    fetchJson(`${regionPathPrefix}index.json`)
+      .then((index) => {
+        if (!Array.isArray(index)) {
+          throw new Error(`${regionPathPrefix}index.json must contain an array`);
+        }
+        index.forEach((entry, indexPosition) => {
+          if (entry.id !== "east") {
+            regionColors.set(entry.id, palette[indexPosition % palette.length]);
+          }
+        });
+        return Promise.all(index.map((entry) => {
+          if (!entry.file) {
+            throw new Error("Every index entry must include a file property");
+          }
+          if (!entry.id) {
+            throw new Error("Every index entry must include an id property");
+          }
+          // `file` may be a local filename or an externally hosted GeoJSON URL.
+          // Example external index entry (keep index.json valid JSON, so do not add
+          // this comment there):
+          // { "id": "ny", "name": "New York", "short_name": "NY", "coordination_status": "coordinated_external", "coordination_label": "Coordinated External Region", "file": "https://nyme.sh/regions/ny.geojson" }
+          const regionFileUrl = new URL(
+            entry.file,
+            new URL(regionPathPrefix, window.location.href)
+          ).href;
+          return fetchJson(regionFileUrl).then((data) => ({
+            entry,
+            data
+          }));
+        }));
+      })
+      .then((response) => {
+        const bounds = L.latLngBounds();
+        const legendRows = document.getElementById("legendRows");
+
+        response.forEach(({ entry, data }) => {
+          (data.features || []).forEach((feature) => {
+            const {
+              coordination_status: _featureCoordinationStatus,
+              coordination_label: _featureCoordinationLabel,
+              coordination_notes: _featureCoordinationNotes,
+              ...featureProperties
+            } = feature.properties || {};
+            feature.properties = {
+              ...featureProperties,
+              // The manifest owns region identity and coordination status. This
+              // prevents a remotely hosted GeoJSON file from self-designating
+              // its region as official.
+              ...entry,
+              id: entry.id,
+              coordination_status: entry.coordination_status || "extrapolated_external",
+            };
+          });
+          loadedRegionFeatures.push(...(data.features || []));
+          const layer = L.geoJSON(data, {
+            interactive: false,
+            style: featureStyle,
+          });
+          regionLayers.push(layer);
+
+          const props = data.features?.[0]?.properties || entry;
+          const id = regionId(props, entry.id);
+          const color = colorFor(id);
+          overlayControl.addOverlay(layer, `${regionCode(props)} - ${props.name}`);
+          if (id !== "east" && id !== "northeast") {
+            layer.addTo(map);
+            addHatchPattern(layer, props);
+          }
+          bounds.extend(layer.getBounds());
+
+          const row = document.createElement("div");
+          row.className = "legend-row";
+          row.innerHTML = `
+            <span class="${swatchClass(props)}" style="color: ${color}; background-color: ${color}33"></span>
+            <span><code class="region-code">${regionCode(props)}</code> - ${props.name}</span>
+          `;
+          legendRows.appendChild(row);
+        });
+
+        if (initialSharedView) {
+          map.setView(initialSharedView.latlng, initialSharedView.zoom);
+          openRegionPopup(initialSharedView.latlng);
+        } else {
+          map.invalidateSize();
+          map.setView(defaultCenter, defaultZoom, { animate: false });
+        }
+      })
+      .catch((error) => {
+        showError(`Could not load the GeoJSON manifest or region files: ${error.message}. Serve this folder over HTTP instead of opening the HTML file directly.`);
+      });
+  </script>
+</body>
+</html>

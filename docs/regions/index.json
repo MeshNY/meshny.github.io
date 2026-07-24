@@ -1,0 +1,20 @@
+[
+  {
+    "id": "nyc",
+    "name": "New York City / Lower Hudson",
+    "short_name": "NYC",
+    "region_type": "Adjacent Region - Metro",
+    "coordination_status": "coordinated_external",
+    "coordination_label": "Coordinated External Region",
+    "file": "nyc.geojson"
+  },
+  {
+    "id": "li",
+    "name": "Long Island",
+    "short_name": "LI",
+    "region_type": "Adjacent Region - Island",
+    "coordination_status": "coordinated_external",
+    "coordination_label": "Coordinated External Region",
+    "file": "li.geojson"
+  }
+]
