@@ -4,31 +4,42 @@ This folder contains a portable static region-map viewer. An organization may
 copy `map.html`, publish an `index.json` beside it, and host each referenced
 GeoJSON file locally or on a separate HTTPS origin.
 
-`index.json` is the public authority for a region's identity and coordination
-status. GeoJSON supplies geometry and optional descriptive/provenance data; its
-coordination fields are ignored by the viewer.
+`index.json` is the public authority for the map title and each region's
+identity and coordination status. GeoJSON supplies geometry and optional
+descriptive/provenance data; its coordination fields are ignored by the viewer.
 
 ## `index.json`
 
-The manifest must be a JSON array. Each item represents one map layer and must
-include `id` and `file`. Use a `name` and `short_name` for every item; these are
-used for stable layer names, colors, the legend, and popup content.
+The manifest must be a JSON object containing a `regions` array. Each region
+item represents one map layer and must include `id` and `file`. Use a `name`
+and `short_name` for every item; these are used for stable layer names, colors,
+the legend, and popup content.
 
 ```json
-[
-  {
-    "id": "example",
-    "name": "Example Mesh Region",
-    "short_name": "EXAMPLE",
-    "region_type": "Regional",
-    "coordination_status": "coordinated_external",
-    "coordination_label": "Coordinated External Region",
-    "file": "example.geojson"
-  }
-]
+{
+  "title": "Example Mesh Region Map",
+  "regions": [
+    {
+      "id": "example",
+      "name": "Example Mesh Region",
+      "short_name": "EXAMPLE",
+      "region_type": "Regional",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "example.geojson"
+    }
+  ]
+}
 ```
 
-### Manifest fields
+### Top-level fields
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `title` | Recommended | Map title shown in the browser tab and map key. |
+| `regions` | Yes | Array of region-layer objects. |
+
+### Region fields
 
 | Field | Required | Description |
 | --- | --- | --- |
@@ -64,7 +75,8 @@ allow a coordinator to operate their own GeoJSON endpoint:
 }
 ```
 
-`index.json` is strict JSON, so do not add comments to it.
+`index.json` is strict JSON, so do not add comments to it. The viewer also
+accepts a legacy array-only manifest, but new maps should use the object form.
 
 ## GeoJSON files
 

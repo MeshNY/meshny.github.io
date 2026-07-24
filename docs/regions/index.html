@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MeshCore Regions</title>
+  <title>Regions</title>
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -694,7 +694,7 @@
       const div = L.DomUtil.create("div", "legend");
       div.innerHTML = `
         <h2>
-          <span>Regions</span>
+          <span data-map-title>Regions</span>
           <button class="panel-toggle" type="button" aria-expanded="true">Hide key</button>
         </h2>
         <div id="legendRows"></div>
@@ -710,6 +710,14 @@
       return div;
     };
     legend.addTo(map);
+
+    function setMapTitle(value) {
+      const title = typeof value === "string" && value.trim() ? value.trim() : "Regions";
+      document.title = title;
+      document.querySelectorAll("[data-map-title]").forEach((element) => {
+        element.textContent = title;
+      });
+    }
 
     function collapseMobilePanels() {
       if (!window.matchMedia("(max-width: 700px)").matches) {
@@ -996,9 +1004,13 @@
     });
 
     fetchJson(`${regionPathPrefix}index.json`)
-      .then((index) => {
+      .then((manifest) => {
+        const index = Array.isArray(manifest) ? manifest : manifest?.regions;
         if (!Array.isArray(index)) {
-          throw new Error(`${regionPathPrefix}index.json must contain an array`);
+          throw new Error(`${regionPathPrefix}index.json must contain a regions array`);
+        }
+        if (!Array.isArray(manifest)) {
+          setMapTitle(manifest.title);
         }
         index.forEach((entry, indexPosition) => {
           if (entry.id !== "east") {
