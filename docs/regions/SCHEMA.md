@@ -47,6 +47,8 @@ the legend, and popup content.
 | `name` | Recommended | Human-readable region name. |
 | `short_name` | Recommended | Short region code shown on the map. |
 | `region_type` | No | Boundary category shown in popups. |
+| `optional` | No | When `true`, labels the layer as optional. It does not affect visibility. |
+| `visible` | No | When `false`, the layer is available in the layer control but is hidden by default. Defaults to `true`. |
 | `coordination_status` | Recommended | Public status controlling the badge and boundary style. If omitted, the viewer uses `extrapolated_external`. |
 | `coordination_label` | No | Optional text for the status badge. The viewer supplies a standard label when omitted. |
 | `file` | Yes | Local GeoJSON filename/path or an absolute `https://` GeoJSON URL. |

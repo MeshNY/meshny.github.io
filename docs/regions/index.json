@@ -8,7 +8,9 @@
       "region_type": "East Coast Region",
       "coordination_status": "coordinated_external",
       "coordination_label": "Coordinated External Region",
-      "file": "https://newenglandme.sh/regions/east.geojson"
+      "file": "https://newenglandme.sh/regions/east.geojson",
+      "optional": true,
+      "visible": false
     },
     {
       "id": "northeast",
@@ -17,7 +19,8 @@
       "region_type": "Northeast Region",
       "coordination_status": "coordinated_external",
       "coordination_label": "Coordinated External Region",
-      "file": "https://newenglandme.sh/regions/northeast.geojson"
+      "file": "https://newenglandme.sh/regions/northeast.geojson",
+      "visible": false
     },
     {
       "id": "me",
