@@ -1015,13 +1015,11 @@
 
     fetchJson(`${regionPathPrefix}index.json`)
       .then((manifest) => {
-        const index = Array.isArray(manifest) ? manifest : manifest?.regions;
+        const index = manifest?.regions;
         if (!Array.isArray(index)) {
           throw new Error(`${regionPathPrefix}index.json must contain a regions array`);
         }
-        if (!Array.isArray(manifest)) {
-          setMapTitle(manifest.title);
-        }
+        setMapTitle(manifest.title);
         index.forEach((entry, indexPosition) => {
           if (entry.id !== "east") {
             regionColors.set(entry.id, palette[indexPosition % palette.length]);

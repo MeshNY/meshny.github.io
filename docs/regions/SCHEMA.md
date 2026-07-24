@@ -77,8 +77,7 @@ allow a coordinator to operate their own GeoJSON endpoint:
 }
 ```
 
-`index.json` is strict JSON, so do not add comments to it. The viewer also
-accepts a legacy array-only manifest, but new maps should use the object form.
+`index.json` is strict JSON, so do not add comments to it.
 
 ## GeoJSON files
 
