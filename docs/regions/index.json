@@ -1,0 +1,193 @@
+{
+  "title": "NYME Region Map",
+  "regions": [
+    {
+      "id": "east",
+      "name": "East Coast Region",
+      "short_name": "EAST",
+      "region_type": "East Coast Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/east.geojson",
+      "optional": true,
+      "visible": false
+    },
+    {
+      "id": "northeast",
+      "name": "Northeast Region",
+      "short_name": "NORTHEAST",
+      "region_type": "Northeast Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/northeast.geojson",
+      "visible": false
+    },
+    {
+      "id": "me",
+      "name": "Maine",
+      "short_name": "ME",
+      "region_type": "State Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/me.geojson"
+    },
+    {
+      "id": "nh",
+      "name": "New Hampshire",
+      "short_name": "NH",
+      "region_type": "State Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/nh.geojson"
+    },
+    {
+      "id": "vt",
+      "name": "Vermont",
+      "short_name": "VT",
+      "region_type": "State Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/vt.geojson"
+    },
+    {
+      "id": "bos",
+      "name": "Boston / Eastern Massachusetts",
+      "short_name": "BOS",
+      "region_type": "Metro Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/bos.geojson"
+    },
+    {
+      "id": "pv",
+      "name": "Pioneer Valley",
+      "short_name": "PV",
+      "region_type": "Regional",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/pv.geojson"
+    },
+    {
+      "id": "brk",
+      "name": "Berkshires / Western Massachusetts",
+      "short_name": "BRK",
+      "kind": "regional",
+      "region_type": "Regional",
+      "boundary_basis": "Community consensus boundary represented by a U.S. Census county boundary",
+      "notes": "Berkshire County, west of the Pioneer Valley.",
+      "draft": false,
+      "source": "U.S. Census Bureau 2024 cartographic boundary files",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/brk.geojson"
+    },
+    {
+      "id": "ct",
+      "name": "Connecticut",
+      "short_name": "CT",
+      "region_type": "State Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/ct.geojson"
+    },
+    {
+      "id": "ct-rv",
+      "name": "Connecticut River Valley",
+      "short_name": "CT-RV",
+      "region_type": "Corridor",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/ct-rv.geojson"
+    },
+    {
+      "id": "ri",
+      "name": "Rhode Island",
+      "short_name": "RI",
+      "region_type": "State Region",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/ri.geojson"
+    },
+    {
+      "id": "msv",
+      "name": "Sullivan County / MSV",
+      "short_name": "MSV",
+      "region_type": "Adjacent Region - County",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/msv.geojson"
+    },
+    {
+      "id": "hud",
+      "name": "Hudson River Valley",
+      "short_name": "HUD",
+      "region_type": "Adjacent Region - Corridor",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/hud.geojson"
+    },
+    {
+      "id": "adk",
+      "name": "Adirondacks",
+      "short_name": "ADK",
+      "region_type": "Adjacent Region - Park Boundary",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/adk.geojson"
+    },
+    {
+      "id": "erie",
+      "name": "Erie Canal Corridor",
+      "short_name": "ERIE",
+      "region_type": "Adjacent Region - Corridor",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/erie.geojson"
+    },
+    {
+      "id": "nyc",
+      "name": "New York City / Lower Hudson",
+      "short_name": "NYC",
+      "region_type": "Adjacent Region - Metro",
+      "coordination_status": "official_local",
+      "coordination_label": "Official NYME Region",
+      "file": "nyc.geojson"
+    },
+    {
+      "id": "hv",
+      "name": "Hudson Valley",
+      "short_name": "HV",
+      "region_type": "Adjacent Region - Corridor",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/hv.geojson"
+    },
+    {
+      "id": "alb",
+      "name": "Albany / Capital Region",
+      "short_name": "ALB",
+      "region_type": "Adjacent Region - Metro",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/alb.geojson"
+    },
+    {
+      "id": "mv",
+      "name": "Mohawk Valley",
+      "short_name": "MV",
+      "region_type": "Adjacent Region - Corridor",
+      "coordination_status": "coordinated_external",
+      "coordination_label": "Coordinated External Region",
+      "file": "https://newenglandme.sh/regions/mv.geojson"
+    },
+    {
+      "id": "li",
+      "name": "Long Island",
+      "short_name": "LI",
+      "region_type": "Adjacent Region - Island",
+      "coordination_status": "official_local",
+      "coordination_label": "Official NYME Region",
+      "file": "li.geojson"
+    }
+  ]
+}
