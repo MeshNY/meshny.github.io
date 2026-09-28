@@ -205,12 +205,17 @@ To connect to the wide-area MeshCore network in the NYC area:
 4. (experimental) Set region scope in channels, 3 dots in the top right while in the channel and click Set Region Scope. If there are no regions in there, click the 3 dots in the top right and click Discover Regions, and click the check mark to the regions for them to show up in the Set Region Scope menu. You can also click the 3 dots in the top right of the Set Region Scope and click clear scope to go back to default flooding. Other MeshCore client apps have a way to do this as well.
 
 Channels:
+- Public, the default channel
 - #hud - scoped to hud
 - #nyc - scoped to nyc
 - #hv - scoped to hv
 - #li - scoped to li
 - #testing - choose which region you want to flood to, or can be left as no scope for now
 - #emergency - no scope (will change later)
+<details>
+  <summary>Note on scoping</summary>
+  <p>Scoping is not fully implemented, so scoped channels may not work as expected. A very small number of people use these channels unscoped, but we are trying to encourage scoping to curb future airtime issues when they arise.</p>
+</details>
 
 <div class="callout" id="meshcore-radio-settings">
   <h4>MC</h4>
@@ -241,7 +246,7 @@ Channels:
 4. Set flood auto advert interval to <u>47 hours</u> or more
 5. Set <u>2-byte</u> prefixes for adverts: `set path.hash.mode 1` then `clock sync`
 6. (<em>recommended</em>) Set advert hop limits to <u>8</u> (already the default as of 1.16): `set flood.max.advert 8`
-7. (<em>experimental</em>) Set regioning as specified below:
+7. (<em>experimental</em>) Set regioning as specified below (note: **CONFIGURE THE SAME REGIONS ON YOUR REPEATER AS WELL**):
     1. Check out the New England Mesh Map linked [here](https://newenglandme.sh/regions/map), click on your repeater location, and note down the region codes that your region falls under (e.g. Manhattans are hud, northeast, nyc, and east).
     2. If you are in range of an existing repeater and on the official MeshCore app, click the 3 dots in the top right, click Tools, then click Discover Regions. The regions that show up can be used in your repeater setup instead. Other MeshCore client apps have a way to do this as well.
     3. If you are at the edge of a region, or steps 1 and 2 give different results, you are free to combine the results, just don't list the shorthands twice.
@@ -269,7 +274,7 @@ Channels:
 
 <details>
   <summary>Explanation of the settings</summary>
-  <p>Advert intervals are maximized and hops curtailed to reduce the airtime load on the mesh. The odd number of 47 ensures the flood adverts of the repeater rotate through the day over time, to avoid people missing it because they are only in an area at certain times of day. Packets can get routed and paths discovered even without hearing the adverts; knowing the full ID and name of the repeater is informational only. 2-byte prefixes are recommended to reduce chance of ID collision with other repeaters, for clarity and optimal routing, but when this is set, there is a bug that will change the clock time, so it will have to be resynced. Regioning is implemented so clients can choose the area their signal floods to.</p>
+  <p>Advert intervals are maximized and hops curtailed to reduce the airtime load on the mesh. The odd number of 47 ensures the flood adverts of the repeater rotate through the day over time, to avoid people missing it because they are only in an area at certain times of day. Packets can get routed and paths discovered even without hearing the adverts; knowing the full ID and name of the repeater is informational only. 2-byte prefixes are recommended to reduce chance of ID collision with other repeaters, for clarity and optimal routing, but when this is set, there is a bug that will change the clock time, so it will have to be resynced. Regioning is implemented so clients can choose the area their signal floods to, and will be used to curb future airtime issues.</p>
 </details>
 
 <script>
