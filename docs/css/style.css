@@ -21,6 +21,10 @@
   margin-bottom: 0.5rem;
 }
 
+.nav-links .nav-subitem {
+  padding-left: 0.75rem;
+}
+
 
 @media screen and (max-width: 768px) {
   .logo-link {
