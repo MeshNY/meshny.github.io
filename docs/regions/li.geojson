@@ -1286,8 +1286,8 @@
                 "short_name": "LI",
                 "kind": "adjacent_island",
                 "region_type": "Adjacent Region - Island",
-                "boundary_basis": "Existing geographic boundary represented by U.S. Census county boundaries",
-                "notes": "Long Island, including Brooklyn and Queens, represented by Kings, Queens, Nassau, and Suffolk Counties.",
+                "boundary_basis": "Western edge follows the HUD region boundary (about 73.72°W), where the terrain drops south; U.S. Census coastline elsewhere",
+                "notes": "Long Island east of New York City: most of Nassau County and all of Suffolk County. Brooklyn and Queens are in the NYC region.",
                 "draft": false,
                 "source": "U.S. Census Bureau 2024 cartographic boundary files"
             }
