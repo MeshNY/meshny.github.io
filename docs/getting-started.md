@@ -250,8 +250,8 @@ Channels:
     1. Check out the New England Mesh Map linked [here](https://newenglandme.sh/regions/map), click on your repeater location, and note down the region codes that your region falls under (e.g. Manhattans are hud, northeast, nyc, and east).
     2. If you are in range of an existing repeater and on the official MeshCore app, click the 3 dots in the top right, click Tools, then click Discover Regions. The regions that show up can be used in your repeater setup instead. Other MeshCore client apps have a way to do this as well.
     3. If you are at the edge of a region, or steps 1 and 2 give different results, you are free to combine the results, just don't list the shorthands twice.
-    4. Once you have your list, run `region put <region>` for every region, then `region allowf <region>` for every region, then `region save`.
-        - Example for Manhattan:
+    4. Once you have your list, run `region put <region>` for every region. Then `region save`.
+        - Example for NYC (5 boroughs) for repeater on (https://flasher.meshcore.io) <span class="js-mc-repeater-firmware"></span> (you can run these commands one after another in that area):
 
           `region put east`
 
@@ -261,15 +261,9 @@ Channels:
 
           `region put nyc`
 
-          `region allowf east`
-
-          `region allowf northeast`
-
-          `region allowf hud`
-
-          `region allowf nyc`
-
           `region save`
+
+    5. If unable to update past v1.15, run region allowf <region> after every put.
 
 
 <details>
