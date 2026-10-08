@@ -263,7 +263,7 @@ Channels:
 
           `region save`
 
-    5. If unable to update past v1.15, run region allowf <region> after every put.
+    5. If unable to update past v1.15, run `region allowf <region>` after every `region put`.
 
 
 <details>
