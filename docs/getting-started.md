@@ -138,9 +138,9 @@ There are currently three different Meshtastic networks operating in the NYC are
     <dd><u>Medium Range - Slow</u></dd>
     <dt>Frequency slot</dt>
     <dd><u>48</u></dd>
-    <dt>Public channel name</dt>
+    <dt>Primary channel name</dt>
     <dd><u>MediumSlow</u> or blank</dd>
-    <dt>Public channel key</dt>
+    <dt>Primary channel key</dt>
     <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
   </dl>
   <p class="small">
@@ -155,12 +155,27 @@ There are currently three different Meshtastic networks operating in the NYC are
     <dt>Preset</dt>
     <dd><u>Long Range - Turbo</u> or <u>LONG_TURBO</u></dd>
     <dt>Frequency slot</dt>
-    <dd><u>14</u> or <u>0</u></dd>
-    <dt>Public channel name</dt>
+    <dd><u>14</u> or <u>0</u><br><small>Leaving it at <code>0</code> automatically applies slot <code>14</code></small></dd>
+    <dt>Primary channel name</dt>
     <dd><u>LongTurbo</u> or blank</dd>
-    <dt>Public channel key</dt>
+    <dt>Primary channel key</dt>
     <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
   </dl>
+  <details>
+    <summary>Migrating from LongFast?</summary>
+    <p>When migrating your Meshtastic nodes from <u>LONG_FAST</u> to <u>LONG_TURBO</u>, check or apply the following configuration:</p>
+    <ol>
+      <li>Use preset: <u>enabled</u> (with it off, the bandwidth, spread factor and coding rate fields are used instead)</li>
+      <li>Modem preset: <u>Long Range - Turbo</u> (<u>LONG_TURBO</u>)</li>
+      <li>Frequency slot: <u>0</u> (the firmware derives the slot from the primary channel name, which is slot <u>14</u> for LongTurbo)</li>
+      <li>Primary channel name: <u>LongTurbo</u>, or blank to keep the default (recommended)</li>
+      <li>Frequency override: left blank (it will auto fill the value based on preset and frequency slot)</li>
+    </ol>
+    <p><strong>Modem preset:</strong> nodes require identical <a href="https://meshtastic.org/docs/configuration/radio/lora/">modem presets</a> to hear one another.</p>
+    <p><strong>Channel name hashing:</strong> with the slot left at <code>0</code>, Meshtastic falls back to hashing the <a href="https://meshtastic.org/docs/getting-started/joining-your-local-mesh/">primary channel name</a> to pick the slot, and the preset supplies the base frequency and bandwidth the slot is counted from. Nodes using different names (e.g. <code>LongTurbo</code> vs. <code>LongTurboNYC</code>) land on different slots and won’t connect.</p>
+    <p><strong>Hardcoding slots or frequencies:</strong> avoid assigning a specific slot (like <code>20</code>) or typing in a custom frequency. Leaving the slot at <code>0</code> and letting the channel name pick it avoids the mismatch.</p>
+    <p><strong>Renaming the primary channel:</strong> channel 0 feeds the frequency slot, so giving it a private name moves the node to a different frequency and leaves it alone on a mesh of one. Keep the <u>1 byte</u> <code>AQ==</code> key here, and put private channels on slots 1–7 instead.</p>
+  </details>
   <p class="small">
     These settings are the new default settings for Meshtastic as of version 2.8. The network is <a href="https://coverage.nyme.sh/#12/40.72867/-73.95292/LT14/v=noninfra,cells,contours">very small</a>, with only a handful of users and infrastructure nodes.
   </p>
@@ -177,14 +192,14 @@ There are currently three different Meshtastic networks operating in the NYC are
       <dd><u>Long Range - Fast</u></dd>
       <dt>Frequency slot</dt>
       <dd><u>20</u> or <u>0</u></dd>
-      <dt>Public channel name</dt>
+      <dt>Primary channel name</dt>
       <dd><u>LongFast</u> or blank</dd>
-      <dt>Public channel key</dt>
+      <dt>Primary channel key</dt>
       <dd><u>1 byte</u>, <u><code>AQ==</code></u></dd>
     </dl>
   </details>
   <p class="small">
-    These settings used to be the default, out-of-the-box Meshtastic settings prior to version 2.8. A bit of infrastructure is maintained on these settings to catch newcomers, travelers, and stragglers. The LongFast settings are <em>not recommended</em> for new nodes.
+    These settings used to be the default, out-of-the-box Meshtastic settings prior to version 2.8. A bit of infrastructure is maintained on these settings to catch newcomers, travelers, and stragglers. The LongFast settings are <em>not recommended</em> for new nodes. To move a node to the current defaults, see <a href="#longturbo">LT14</a> above.
   </p>
 </div>
 
@@ -192,7 +207,6 @@ There are currently three different Meshtastic networks operating in the NYC are
   <summary>Explanation of the settings</summary>
   <p>The above settings are necessary to keep the network in a high-performing state. The Meshtastic default settings are oriented toward small-scale meshes that require frequent background packets to be effective. However, on large meshes these defaults are unnecessary and quickly create congestion that compromises the utility of the network for everyone. Reducing this extraneous background traffic as much as possible is essential for preserving the usefulness of the mesh.</p>
 </details>
-
 <br>
 
 ## MeshCore
