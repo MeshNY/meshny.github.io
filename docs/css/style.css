@@ -25,6 +25,26 @@
   padding-left: 0.75rem;
 }
 
+.nav-tag {
+  display: inline-block;
+  margin-left: 0.3em;
+  padding: 0 0.35em;
+  border: 1px solid currentColor;
+  border-radius: 0.3em;
+  font-size: 0.65em;
+  font-weight: 700;
+  line-height: 1.4;
+  vertical-align: 0.15em;
+  opacity: 0.7;
+}
+.nav-tag + .nav-tag {
+  margin-left: 0.2em;
+}
+.nav-tag.tag-ext {
+  font-weight: 400;
+  border-style: dashed;
+}
+
 
 @media screen and (max-width: 768px) {
   .logo-link {
