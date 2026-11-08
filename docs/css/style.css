@@ -156,7 +156,8 @@ main {
     display: flex;
   }
   nav {
-    width: calc(10rem + var(--gutter-half));
+    /* 10rem sidebar content + 1rem breathing room before the main text */
+    width: calc(11rem + var(--gutter-half));
     padding: var(--gutter) var(--gutter-half) var(--gutter) var(--gutter);
     display: block;
     flex-shrink: 0;
